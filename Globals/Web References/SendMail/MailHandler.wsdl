@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendMailWithHtmlBody">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailBody" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isBodyHtml" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachedFiles" type="tns:ArrayOfAttachedFile" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailServerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAttachedFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AttachedFile" nillable="true" type="tns:AttachedFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AttachedFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ContentStream" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendMailWithHtmlBodyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendMailWithImages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="images" type="tns:ArrayOfEmbeddedImage" />
+            <s:element minOccurs="1" maxOccurs="1" name="isBodyHtml" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachedFiles" type="tns:ArrayOfAttachedFile" />
+            <s:element minOccurs="0" maxOccurs="1" name="mailServerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmbeddedImage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EmbeddedImage" nillable="true" type="tns:EmbeddedImage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmbeddedImage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ContentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileStream" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendMailWithImagesResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendMailWithHtmlBodySoapIn">
+    <wsdl:part name="parameters" element="tns:SendMailWithHtmlBody" />
+  </wsdl:message>
+  <wsdl:message name="SendMailWithHtmlBodySoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailWithHtmlBodyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMailWithImagesSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMailWithImages" />
+  </wsdl:message>
+  <wsdl:message name="SendMailWithImagesSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailWithImagesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MailHandlerSoap">
+    <wsdl:operation name="SendMail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send HTML Mail</wsdl:documentation>
+      <wsdl:input name="SendMailWithHtmlBody" message="tns:SendMailWithHtmlBodySoapIn" />
+      <wsdl:output name="SendMailWithHtmlBody" message="tns:SendMailWithHtmlBodySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMailWithEmbeddedImage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send HTML Mail With embedded images</wsdl:documentation>
+      <wsdl:input name="SendMailWithImages" message="tns:SendMailWithImagesSoapIn" />
+      <wsdl:output name="SendMailWithImages" message="tns:SendMailWithImagesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MailHandlerSoap" type="tns:MailHandlerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMail">
+      <soap:operation soapAction="http://tempuri.org/SendMailWithHtmlBody" style="document" />
+      <wsdl:input name="SendMailWithHtmlBody">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendMailWithHtmlBody">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailWithEmbeddedImage">
+      <soap:operation soapAction="http://tempuri.org/SendMailWithImages" style="document" />
+      <wsdl:input name="SendMailWithImages">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendMailWithImages">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MailHandlerSoap12" type="tns:MailHandlerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMail">
+      <soap12:operation soapAction="http://tempuri.org/SendMailWithHtmlBody" style="document" />
+      <wsdl:input name="SendMailWithHtmlBody">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendMailWithHtmlBody">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailWithEmbeddedImage">
+      <soap12:operation soapAction="http://tempuri.org/SendMailWithImages" style="document" />
+      <wsdl:input name="SendMailWithImages">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendMailWithImages">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MailHandler">
+    <wsdl:port name="MailHandlerSoap" binding="tns:MailHandlerSoap">
+      <soap:address location="http://mkweb011/sendMailService/MailHandler.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MailHandlerSoap12" binding="tns:MailHandlerSoap12">
+      <soap12:address location="http://mkweb011/sendMailService/MailHandler.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

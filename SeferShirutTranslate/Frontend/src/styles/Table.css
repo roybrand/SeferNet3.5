@@ -1,0 +1,142 @@
+.table {
+    padding: 20px 0px;
+    border: 0px solid #06a555;
+    border-radius: 3px;
+    max-width: 900px;
+    min-width: 100px;
+    color: #105f7c;
+    width: max-content;
+}
+
+.table__name {
+    font-size: 30px;
+}
+
+.table__row-header {
+    border: 0px solid #20b8ed;
+    display: flex;
+    flex-direction: row;
+    /*align-items: stretch;*/
+    border-radius: 6px 6px 0 0;
+    background-color: #20b8ed;
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    /*width: max-content;*/
+}
+
+.table__row {
+    border-bottom: 1px solid #20b8ed;
+    display: flex;
+    flex-direction: row;
+    /*align-items: stretch;*/
+    margin: 0;
+    /*width: max-content;*/
+
+    transition: background-color 0.2s linear;
+}
+
+.table__row:hover {
+    background-color: #7dcdeb;
+}
+
+.table__column {
+    border-right: 0px solid #20b8ed;
+    border-left: 0px solid #20b8ed;
+    min-width: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 4px;
+}
+
+.table__column:last-of-type {
+    border-left: 0px solid #20b8ed;
+}
+
+/*.table__column:first-of-type {
+    border-right: 0px solid #20b8ed;
+}*/
+
+.table__column_background:hover {
+    background-color: #0ab0ec;
+}
+
+.table__column_width-20 {
+    width: 20px;
+}
+
+.table__column_width-100 {
+    width: 100px;
+}
+
+.table__column_width-150 {
+    width: 150px;
+}
+
+.table__column_width-200 {
+    width: 200px;
+}
+
+.table__column_left {
+    text-align: left;
+    direction: ltr;
+}
+
+.table__column_center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.table__element {
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+.table__changeable-input {
+    border-width: 0;
+    border-radius: 3px;
+    background-color: transparent;
+    height: 30px;
+    margin: 0 0;
+    width: 100%
+}
+
+.table__changeable-input:focus {    
+    outline: none;
+}
+
+.table__pagging {
+    font-size: 20px;
+}
+
+.table__page-index {
+    border-radius: 3px;
+}
+
+.table__page-size {
+    border-radius: 3px;
+    width: 30px;
+    text-align: center;
+}
+
+.table__button {
+    width: 60px;
+    height: 26px;
+    border: 0;
+    background-color: #0ab0ec;
+    border-radius: 3px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s linear;
+    margin: 0 0;
+}
+
+.table__button:hover {
+    /*opacity: 0.8;*/
+    background-color: #048dbe;
+}
+

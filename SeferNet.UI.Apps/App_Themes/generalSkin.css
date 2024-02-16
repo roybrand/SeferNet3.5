@@ -1,0 +1,30 @@
+﻿.RegularLabel
+{
+	font-family:arial;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 13px;
+	COLOR: #525552;
+	
+}
+.UpdateDateLabel
+{
+	font-family:arial;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 13px;
+	COLOR: #00AAEF;
+	
+}
+
+.DataListItem
+{
+	FONT-WEIGHT: bold;
+    FONT-SIZE: 18px;
+   color:Red;
+}
+
+.DataListItem:Hover
+{
+	FONT-WEIGHT: bold;
+    FONT-SIZE: 13px; 
+    background-color:Red;
+}

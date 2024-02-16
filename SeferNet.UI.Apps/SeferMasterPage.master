@@ -1,0 +1,422 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    Inherits="SeferMasterPage" Codebehind="SeferMasterPage.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+    <%--<meta http-equiv="X-UA-Compatible" content="IE=8" />--%>
+
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <title>Untitled Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="CSS/BaseFormsMenus.css" rel="STYLESHEET" type="text/css" />
+    <link href="CSS/SearchApplies.css" rel="STYLESHEET" type="text/Css" />
+    <link rel="STYLESHEET" href="CSS/General/general.css" type="text/css" />
+    <link rel="STYLESHEET" href="CSS/General/StyleGuide.css" type="text/css" />
+    <link rel="SHORTCUT ICON" type="image/x-icon" href="Images/Applic/favicon.ico" />
+
+    <link href="CSS/Popup.css" type="text/css" rel="stylesheet" />
+   
+    <script type="text/javascript" defer="defer">
+
+        /* Load LoadJqueryIfNeeded.js */
+        var mainDirectory = document.location.toString().split(document.domain)[1].split("/")[1];
+        var filename = "/" + mainDirectory + "/Scripts/LoadJqueryIfNeeded.js";
+        var scriptTag = document.createElement("script")
+        scriptTag.setAttribute("type", "text/javascript")
+        scriptTag.setAttribute("src", filename);
+        document.getElementsByTagName("head")[0].appendChild(scriptTag);
+        /********************************/
+
+        function ShowLoginPopUp() {
+
+            var topi = 50;
+            var lefti = 100;
+            var features = "top:" + topi + "px;left:" + lefti + "px; dialogWidth:340px; dialogheight:300px; help:no; status:no;";
+
+            //url = '<%# Request.ApplicationPath + "/Public/PopUpLogin.aspx" %>';
+
+            url = window.location.protocol + "//" + window.location.host + "/" + '<%# Request.ApplicationPath + "/Public/PopUpLogin.aspx" %>';
+
+            if (document.getElementById('<%# hdnHttpsEnabled.ClientID %>').value != null || document.getElementById('<%# hdnHttpsEnabled.ClientID %>').value != '')
+            {
+                var HTTPS_enabled = document.getElementById('<%# hdnHttpsEnabled.ClientID %>').value;
+                if (HTTPS_enabled == "1") {
+                    url = url.replace("http:", "https:");
+                }
+            }
+
+            var obj = window.showModalDialog(url, "LoginWindow", features);
+
+            document.getElementById('<%# hdnAfterLoginLogout.ClientID %>').value = true;
+
+            DoSubmit();
+
+        }
+
+        function FeaturesForModalDialogPopup() {
+            var topi = 50;
+            var lefti = 100;
+            var features = "top:" + topi + "px;left:" + lefti + "px; dialogWidth:410px; dialogheight:630px; help:no; status:no;";
+            return features;
+        }
+
+        function DoSubmit() {
+            var pageUrl = window.location.href;
+
+            if (pageUrl.toLowerCase().indexOf("searchdoctors.aspx") > 0
+                 || pageUrl.toLowerCase().indexOf("searchevents.aspx") > 0
+                 || pageUrl.toLowerCase().indexOf("searchsalservices.aspx") > 0
+                 || pageUrl.toLowerCase().indexOf("searchclinics.aspx") > 0
+                 || pageUrl.endsWith("/")) {
+                $("input:submit[id*=ToDo_Submeet]").click();
+            }
+            else {
+                window.document.forms(0).submit();
+            }
+        }
+
+        function Logout() {
+            if (RaiseDoActionAtServerOnLogoutFinished != null)
+                RaiseDoActionAtServerOnLogoutFinished();
+        }
+
+        function OnLogoutFinished(arg) {
+            if (arg.toString() == '<%#  (int)SeferNet.Globals.Enums.LogoutResult.Unknown %>' ||
+                        arg.toString() == '<%#  (int)SeferNet.Globals.Enums.LogoutResult.Failed %>') {
+                //true means it succeeded in logout
+                //meaning that we WOULD NOT NEED to refresh the master page
+                alert('Logout failed');
+            }
+            else if (arg.toString() == '<%# (int)SeferNet.Globals.Enums.LogoutResult.Success %>') {
+                //true means it succeeded in logout
+                //meaning that we WOULD NEED to refresh the master page
+                document.getElementById('<%# hdnAfterLoginLogout.ClientID %>').value = true;
+
+                DoSubmit();
+            }
+        }
+
+        function OpenInNewWindow(url, IsWinDialog, sizeX, sizeY, resize) {
+            var parameters;
+            if (IsWinDialog == '0') {
+                parameters = "scrollbars = yes, menubar = yes, toolbar = yes";
+
+                if (sizeX == "")
+                    sizeX = screen.width;
+
+                if (sizeY == "")
+                    sizeY = screen.height;
+
+                if (sizeX != "")
+                    parameters += ",width=" + sizeX + "px";
+                if (sizeY != "")
+                    parameters += ",height=" + sizeY + "px";
+                if (resize == '1')
+                    parameters += ",resizable=yes";
+
+                var newWindow = window.open(url, "newWindow", parameters);
+                newWindow.focus();
+            }
+            else {
+                parameters = "help:no; status:no;";
+                if (sizeX != "")
+                    parameters += "dialogWidth:" + sizeX + "px;";
+                if (sizeY != "")
+                    parameters += "dialogheight:" + sizeY + "px;";
+                if (resize == "1")
+                    parameters += "resizable:yes;";
+
+                var obj = window.showModalDialog(url, "newWindowDialog", parameters);
+                if (obj != null) {
+                    if (obj.Url != null) {
+                        var newWindow = window.open(obj.Url, "newWindow", "scrollbars = yes, menubar = yes, toolbar = yes, resizable = yes");
+                        newWindow.focus();
+                    }
+
+                }
+            }
+        }
+
+        function showTimeoutMessage(messageType) {
+            switch (messageType) {
+                case 1:
+                    var inner = document.getElementById("spanLoginTimeout").innerHTML;
+                    if (sessionTimeout != "" && sessionTimeout > 0)
+                        inner = inner.replace("#time#", parseInt(sessionTimeout) / 60);
+                    else
+                        inner = inner.replace("#time#", "20");
+                    document.getElementById("spanLoginTimeout").innerHTML = inner;
+                    document.getElementById("spanLoginTimeout").style.display = "block";
+                    document.getElementById("spanTimeout").style.display = "none";
+                    break;
+                case 2:
+                    document.getElementById("spanLoginTimeout").style.display = "none";
+                    document.getElementById("spanTimeout").style.display = "block";
+                    break;
+            }
+            
+            
+            /*
+            If the browser is IE6 we need to set the grey div hight, because it
+            does not support "height=100%".
+            Also we need to hide the dropdown boxes because they are allways on the top
+            of the grey div.
+            */
+            var nav = navigator.userAgent;
+            if (nav.indexOf("MSIE 6.0")) {
+                var screenHight = window.screen.height;
+                $("body").find("select").css("display", "none");
+                $("#<%# divTimeout.ClientID %>").css("height", screenHight);
+            }
+            document.getElementById('<%# divTimeout.ClientID %>').style.display = 'block';
+            document.getElementById('divInner').style.display = 'block';
+        }
+
+        var defaultTimeout = 1200;
+        var countSinceLastPostBack = 0;
+        var sessionTimeout = "<%#strSessionTimeoutInSeconds %>";
+        var sessionTimeoutCounter = "";
+        var waitingTimeBeforeKillingSessionInSecondes = parseInt("<%#waitingTimeBeforeKillingSessionInMinutes %>") * 60;    
+        
+        /*
+        The function check the session timeout every 10 seconds.
+        If the user is not login then one minute before the session ends
+        we execute a call to the server to keep the session alive.
+        */
+        function CheckTimeout()
+        {
+            // Vadim Rasin, 11/11/13
+            // Dont check for timeout if the current page is availble to anonymous user
+//            if (   document.URL.toLowerCase().indexOf('searchsalservices.aspx') > -1 ||
+//                    document.URL.toLowerCase().indexOf('zoomsalservice.aspx') > -1 )
+//            {
+//                return;
+//            }
+
+            countSinceLastPostBack += 10;
+            sessionTimeoutCounter -= 10;
+            
+            if (sessionTimeoutCounter <= 60) {
+                if ($("#<%#lblLogin.ClientID %>").text() == "Logout") {
+                    if (sessionTimeoutCounter < 10) {
+                        window.clearInterval(inter);
+                        showTimeoutMessage(1);
+                    }
+                }
+                else {
+                    /* -- waitingTimeBeforeKillingSessionInSecondes --
+                    If there is no postBack for the time we set at the web.config,
+                    we abandon the session */
+                    if (countSinceLastPostBack < waitingTimeBeforeKillingSessionInSecondes) {
+                        $.get("/" + mainDirectory + "/handlers/keepsessionalive.ashx");
+                        if (sessionTimeout != "" && sessionTimeout > 0)
+                            sessionTimeoutCounter = sessionTimeout;
+                        else
+                            sessionTimeoutCounter = defaultTimeout;
+                    }
+                    else {
+                        /* Abandon the session */
+                        window.clearInterval(inter);
+                        showTimeoutMessage(2);
+                    }
+                }
+            }
+
+
+        }
+
+        var inter;
+
+        function pageLoad(sender, args) {
+            
+            var progDiv = document.getElementById("divProgressBar");
+            if (progDiv)
+                hideProgressBar();
+
+            /* Everytime there is a postBack we need to initial the session timeout counter */
+            if (sessionTimeout != "" && sessionTimeout > 0)
+                sessionTimeoutCounter = sessionTimeout;
+            else
+                sessionTimeoutCounter = defaultTimeout;
+            if(inter)
+                window.clearInterval(inter);
+            inter = window.setInterval("CheckTimeout()", 10000);
+            countSinceLastPostBack = 0;
+            
+        }
+
+        function CloseTimeoutPopup() {
+            document.getElementById('<%# divTimeout.ClientID %>').style.display = 'none';
+            document.location.href = '<%# Request.ApplicationPath %>' + '/SearchClinics.aspx';
+        }
+
+        function checkIfPopup() {
+            if (window.dialogArguments != null) {
+                var menuID = '<%# UpdatePanelMenu.ClientID %>';
+
+                document.getElementById(menuID).style.visibility = "hidden";
+            }
+        }
+
+        function hideProgressBarGeneral() {
+            //debugger;
+            document.getElementById("divProgressBarGeneral").style.visibility = "hidden";
+        }
+
+        function showProgressBarGeneral(validation_group) {
+            //debugger;
+            var isValid = false;
+            if (validation_group == "0") {
+                isValid = true;
+            }
+            else if (validation_group == "") {
+                isValid = Page_ClientValidate("");
+            }
+            else
+            {
+                isValid = Page_ClientValidate(validation_group);
+            }
+
+            if (isValid) {
+                document.getElementById("divProgressBarGeneral").style.visibility = "visible";
+            }
+        }
+
+        </script>
+    <%--<script type="text/javascript" src="../Scripts/srcScripts/Thickbox.js"></script>--%>
+    <asp:ContentPlaceHolder runat="server" ID="phHead">
+        <%--contains the script of the override page --%>
+    </asp:ContentPlaceHolder>
+</head>
+<body dir='<%$ Resources:ApplicResources, TextDirection %>' runat="server" id="MasterPageBody" leftmargin="0px" rightmargin="0px;" bottommargin="0px;" topmargin="0px">
+    <form id="form1" runat="server">
+    <div id="popup" runat="server" class="popup">
+        <div class='popup__container'>
+            <div class="popup__container-header"><asp:Button class="popup__button" runat="server" OnClick="ClosePopup_Click" Text="X"></asp:Button></div>
+            <div class="popup__label"><asp:Label ID="popupLabel" runat="server" Font-Size="26px" Text=""></asp:Label></div>
+        </div>
+    </div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true" EnablePageMethods="true">
+        <Services>
+            <asp:ServiceReference Path="~/AjaxWebServices/AutoComplete.asmx" />
+            <asp:ServiceReference Path="~/AjaxWebServices/SimpleService.asmx" />
+            <%--<asp:ServiceReference Path="~/AjaxWebServices/SetSelectedTabInSession.asmx" />--%>
+        </Services>
+    </asp:ScriptManager>
+   
+    <table id="Table1" height="100%" runat="server" dir='<%$ Resources:ApplicResources, TextDirection %>'
+        cellspacing="0" cellpadding="0" width="990px" border="0" align="right">
+        <tr>
+            <td valign="top" style="height: 24px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;">
+                <table cellpadding="0" cellspacing="0" width="995px" dir="rtl" style="background-repeat: repeat-x;">
+                    <tr>
+                        <td style="width: 50%; padding: 5px 10px 0px 0px;" class="menuRightBack">
+                            <!-- Title -->
+                            <asp:Label ID="lblPageTitle" Style="font-size: 24px" CssClass="LabelCaptionGreenBold_14"
+                                EnableTheming="false" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="lblUnclassified" runat="server" CssClass="LabelCaptionGreenBold_13" EnableTheming="false" >מידע&nbsp;בלתי&nbsp;מסווג</asp:Label>
+                        </td>
+                        <td align="left" valign="top" style="width: 50%;" class="menuLeftBack">
+                            <!-- menu -->
+                            <asp:UpdatePanel ID="UpdatePanelMenu" UpdateMode="Conditional" runat="server">
+                                <ContentTemplate>
+                                    <table cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="menuGreyBack">
+                                                <div style="width: 50px">
+                                                </div>
+                                            </td>
+                                            <td align="left" class="menuThick">
+                                                <asp:Menu ID="SiteMenuSql" runat="server" Orientation="Horizontal" StaticBottomSeparatorImageUrl="~/Images/Applic/menu_delimeter.gif"
+                                                    StaticEnableDefaultPopOutImage="False">
+                                                    <StaticMenuStyle CssClass="StaticMenuStyle" />
+                                                    <StaticHoverStyle CssClass="StaticHoverStyle" />
+                                                    <StaticMenuItemStyle CssClass="StaticMenuItemStyle" />
+                                                    <DynamicMenuStyle CssClass="DynamicMenuStyle" />
+                                                    <DynamicMenuItemStyle CssClass="DynamicMenuItemStyle" />
+                                                    <DynamicHoverStyle CssClass="DynamicHoverStyle" />
+                                                    <DynamicSelectedStyle CssClass="DynamicSelectedStyle" />
+                                                </asp:Menu>
+                                            </td>
+                                            <td class="loginThick" style="padding-left:4px">
+                                                <asp:Label ID="lblLogin" runat="server" Style="cursor: pointer" Text="Login" CssClass="LoginLabel"
+                                                    EnableTheming="false"></asp:Label>
+                                                <asp:Button ID="ToDo_Submeet" runat="server" Width="17px" Text="Do" CssClass="DisplayNone"
+                                                    EnableTheming="false" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" align="left">
+                                                <asp:Label ID="lblLastTimeEntry" runat="server" CssClass="BlueBoldLabel" EnableTheming="false" Visible="false"></asp:Label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                    
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td valign="top" style="padding-top: 0px;">
+                            <asp:UpdatePanel runat="server" ID="upContent" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <asp:ContentPlaceHolder ID="pageContent" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            <asp:ContentPlaceHolder ID="postBackContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <asp:ContentPlaceHolder ID="postBackPageContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div id="divTimeout" runat="server" class="TimeOutBackground">
+    </div>
+        <div id="divInner" class="TimeoutDiv">
+            <asp:ImageButton ID="imgClose" runat="server" ImageUrl="~/Images/Applic/btn_X_grey.gif"
+                OnClientClick="CloseTimeoutPopup();return false;" />
+            <span id="spanLoginTimeout" class="LabelBoldBlack_14" style="display: block; padding-right: 4px; padding-top: 3px">
+                
+                עברו #time# דקות מהשימוש האחרון במערכת.<br />
+                הנך מועבר לדף הראשי לחיפוש מחדש</span>
+            <span id="spanTimeout" class="LabelBoldBlack_14" style="display: none; padding-right: 4px; padding-top: 3px">
+                
+                עבר זמן רב מהשימוש האחרון במערכת.
+                <br />
+                 הנך מועבר לדף הראשי
+            </span>
+        </div>
+    <div id="divProgressBarGeneral" class="progressBarDiv" >
+        <asp:Image ID="imgProgressBar" runat="server" ImageUrl ="Images/Applic/imgProgressBarOuterCircle.png" />
+    </div>
+
+    <asp:HiddenField ID="hdnAfterLoginLogout" runat="server" />
+    <asp:HiddenField ID="hdnHttpsEnabled" runat="server" />
+    
+    </form>
+    <script type="text/javascript">
+        checkIfPopup();
+
+        
+        
+        
+    </script>
+    
+    
+    
+</body>
+</html>

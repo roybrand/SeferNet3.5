@@ -1,0 +1,47 @@
+.loader{
+  position: fixed;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100vh;
+  opacity: 0.5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  z-index: 3;
+}
+
+.loader_open {
+  visibility: visible;
+}
+
+.loader__content {
+  font-size: 88px;
+  color: #FFF;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  transform: translate(0, 50%);
+}
+
+.loader__content:after{
+  content: 'Loading';
+  position: relative;
+  z-index: 5;
+}
+
+.loader__content:before{
+  content: '';
+  height: 6px;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  background: linear-gradient(#FF3D00 100%, transparent 0) no-repeat;
+  background-size: 0% auto;
+  animation: 30s lineGrow linear infinite;
+}
+
+@keyframes lineGrow {to {  background-size: 100% auto}}

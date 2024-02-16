@@ -1,0 +1,192 @@
+﻿function ToggleQueueOrderPhonesAndHours(elemName) {
+    RaiseOnToggleQueueOrderPhonesAndHours(elemName);
+}
+
+function OnCloseQueueOrderPhonesAndHoursPopUp() {
+    RaiseOnCloseQueueOrderPhonesAndHoursPopUp();
+}
+
+
+
+function SelectUnitType() {
+    var url = "Public/SelectPopUp.aspx";
+    var txtUnitTypeListCodes = document.getElementById(txtUnitTypeListCodesClientID);
+    var cbHandleSubUnitTypes = document.getElementById(cbHandleSubUnitTypesClientID);
+    var txtUnitTypeList = document.getElementById(txtUnitTypeListClientID);
+    var SelectedUnitTypeList = txtUnitTypeListCodes.innerText;
+    url = url + "?SelectedValuesList=" + SelectedUnitTypeList;
+    url = url + "&popupType=6";
+    var features = featuresForPopUp();
+
+    var obj = window.showModalDialog(url, "SelectClinicType", features);
+
+    if (obj != null) {
+        txtUnitTypeListCodes.innerText = obj.Value;
+        txtUnitTypeList.innerText = obj.Text;
+
+        cbHandleSubUnitTypes.checked = true;
+        DoSubmit();
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+function SelectServicesAndEvents() {
+    var url = "Public/SelectPopUp.aspx";
+    var txtServiceCodes = document.getElementById(txtServiceCodeClientID);
+    var txtServiceNames = document.getElementById(txtServicesEventsClientID);
+    var txtServicesEvents_ToCompare = document.getElementById(txtServicesEvents_ToCompareClientID)
+
+    var SelectedServicesList = txtServiceCodes.value;
+    url = url + "?SelectedValuesList=" + SelectedServicesList;
+    url = url + "&popupType=12";
+    url += "&AgreementTypes= " + GetSelectedValues();
+    var features = featuresForPopUp();
+
+    var obj = window.showModalDialog(url, "SelectServices", features);
+
+    if (obj != null) {
+        txtServiceCodes.innerText = obj.Value;
+        txtServiceNames.innerText = obj.Text;
+        txtServicesEvents_ToCompare.innerText = obj.Text;
+        return false;
+    }
+    else {
+        return false;
+    }
+}
+
+
+function OpenEventWindow(ServiceOrEventCode) {
+    var topi = 50;
+    var lefti = 100;
+    var features = "dialogWidth:650px; dialogHeight:570px; help:no; status:no; scroll:no ";
+
+    $find(MasterGetModalPopupGrayScreenClientID).show();
+    var obj = window.showModalDialog("Public/DeptEventPopUp.aspx?EventCode=" + ServiceOrEventCode,
+        "DeptEvent", features);
+    $find(MasterGetModalPopupGrayScreenClientID).hide();
+}
+
+
+
+// "UnitTypes" management functions
+function ClearUnitTypeList() {
+    if (document.getElementById(txtUnitTypeList_ToCompareClientID).value != document.getElementById(txtUnitTypeListClientID).value) {
+        document.getElementById(txtUnitTypeList_ToCompareClientID).value = "";
+        document.getElementById(txtUnitTypeListClientID).value = "";
+        document.getElementById(txtUnitTypeListCodesClientID).value = "";
+
+        document.getElementById(cbHandleSubUnitTypesClientID).checked = true;
+    }
+}
+
+function ClearServicesAndEvents() {
+    if (document.getElementById(txtServicesEvents_ToCompareClientID).value != document.getElementById(txtServicesEventsClientID).value) {
+        document.getElementById(txtServicesEvents_ToCompareClientID).value = "";
+        document.getElementById(txtServicesEventsClientID).value = "";
+        document.getElementById(txtServiceCodeClientID).value = "";
+    }
+}
+
+// "HandicappedFacilities" management functions
+function ClearHandicappedFacilitiesList() {
+    if (document.getElementById(txtHandicappedFacilitiesList_ToCompareClientID).value != document.getElementById(txtHandicappedFacilitiesListClientID).value) {
+        document.getElementById(txtHandicappedFacilitiesList_ToCompareClientID).value = "";
+        document.getElementById(txtHandicappedFacilitiesListClientID).value = "";
+        document.getElementById(txtHandicappedFacilitiesCodesClientID).value = "";
+    }
+}
+
+function UpdateAutoCompleteProfessions() {
+    var membershipValues = GetSelectedValues();
+
+    var comp_ACProfessions = Sys.Application._components[AutoCompleteExtender_ServicesEventsClientID];
+    comp_ACProfessions.set_contextKey(membershipValues);
+}
+
+function SyncronizeHandicappedFacilitiesList() {
+    document.getElementById(txtHandicappedFacilitiesList_ToCompareClientID).value = document.getElementById(txtHandicappedFacilitiesListClientID).value;
+}
+
+function SyncronizeServicesAndEvents() {
+    document.getElementById(txtServicesEvents_ToCompareClientID).value = document.getElementById(txtServicesEventsClientID).value;
+}
+
+function SyncronizeUnitTypeList() {
+    document.getElementById(txtUnitTypeList_ToCompareClientID).value = document.getElementById(txtUnitTypeListClientID).value;
+}
+
+function getSelectedHandicappedFacilityCode(source, eventArgs) {
+    document.getElementById(txtHandicappedFacilitiesCodesClientID).value = eventArgs.get_value();
+    document.getElementById(txtHandicappedFacilitiesList_ToCompareClientID).value = eventArgs.get_text();
+    document.getElementById(txtHandicappedFacilitiesListClientID).value = eventArgs.get_text();
+
+    document.getElementById("btnHandicappedFacilitiesPopUp").focus();
+}
+
+function getSelectedUnitTypeCode(source, eventArgs) {
+    document.getElementById(txtUnitTypeListCodesClientID).value = eventArgs.get_value();
+    document.getElementById(txtUnitTypeList_ToCompareClientID).value = eventArgs.get_text();
+    document.getElementById(txtUnitTypeListClientID).value = eventArgs.get_text();
+
+    if (document.getElementById(txtUnitTypeListCodesClientID).value != "") {
+        document.getElementById(cbHandleSubUnitTypesClientID).checked = true;
+
+        raisePanelTopPostBackFromMaster();
+    }
+}
+
+function ClientPopulated(source, eventArgs) {
+    CommonClientPopulated(source, eventArgs);
+}
+
+function setSelectedClinicName(source, eventArgs) {
+    var txtClinicName = document.getElementById(txtClinicNameClientID);
+    var values = eventArgs.get_value();
+    var valuesArr = values.split(",");
+    txtClinicName.value = valuesArr[1].trim();
+}
+
+function setSelectedServiceEventName(source, eventArgs) {
+    var txtServicesEvents = document.getElementById(txtServicesEventsClientID);
+    var txtServicesCodes = document.getElementById(txtServiceCodeClientID);
+    var txtServicesEvents_ToCompare = document.getElementById(txtServicesEvents_ToCompareClientID);
+    txtServicesCodes.value = eventArgs.get_value();
+
+    var text = eventArgs.get_text();
+    if (text != null) {
+        txtServicesEvents.value = text;
+        txtServicesEvents_ToCompare.value = text;
+    }
+    else {
+        txtServicesEvents.value = '';
+    }
+}
+
+function ActionOnDistrictCodeChanged(newDistrictCodes) {
+    var txtClinicName = document.getElementById(txtClinicNameClientID);
+    txtClinicName.value = "";
+
+    context = $find('acClinicName')._contextKey;
+    contextArr = context.split(',');
+
+    newContext = newDistrictCodes + ',' + contextArr[1];
+
+    $find('acClinicName').set_contextKey(newContext);
+
+}
+
+
+
+function InitPage() {
+    OnDistrictCodeChanged = ActionOnDistrictCodeChanged;
+    OnMapSearchControlsExpanded = ActionOnMapSearchControlsExpanded;
+    OnMapSearchControlsCollapsed = ActionOnMapSearchControlsCollapsed;
+    OnShowSearchParameters = ActionOnShowSearchParameters;
+    StretchElementHeightToBottomAccordingToScreenCommon(divGvServicesAndEventListClientID);
+}

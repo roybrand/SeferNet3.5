@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Administration>
+  <Tables>
+    <Table tableMFNumber="All">
+      הכל
+    </Table>
+    <Table tableMFNumber="601">
+      ט601
+    </Table>
+    <Table tableMFNumber="606">
+      ט606
+    </Table>
+  </Tables>
+  <Categories>
+    <Category value="All" >הכל</Category>
+    <Category value ="service">שירות</Category>
+    <Category value="profession" >מקצוע</Category>
+    <Category value="not defined" >לא הוגדר</Category>
+  </Categories>
+  <OldCategories>
+    <OldCategory value="All" >הכל</OldCategory>
+      <OldCategory value ="service">שירות</OldCategory>
+        <OldCategory value="profession" >מקצוע</OldCategory>    
+  </OldCategories>
+</Administration>

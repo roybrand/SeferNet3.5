@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71EE7EF8-F57B-4A9F-AA27-586DBE592ACF}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>BusinessLayer</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SeferNet.BusinessLayer</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/BusinessLayer/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Clalit.Exceptions.ExceptionData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Exceptions.ExceptionData.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Infrastructure.ApplicationFileManager">
+      <HintPath>..\RelateFiles\Clalit.Infrastructure.ApplicationFileManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Infrastructure.ServiceInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Infrastructure.ServiceInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Infrastructure.ServicesManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Infrastructure.ServicesManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.SeferNet.GeneratedEnums, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.SeferNet.GeneratedEnums.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.SeferNet.GeneratedEnums.DBMetadata, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.SeferNet.GeneratedEnums.DBMetadata.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlTemplateParsing">
+      <HintPath>..\RelateFiles\HtmlTemplateParsing.dll</HintPath>
+    </Reference>
+    <Reference Include="LogAsyncClalitLibrary, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\LogAsyncClalitLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Matrix.ExceptionHandling, Version=1.0.3946.18088, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Matrix.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.XML">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessObject\AppQueries.cs" />
+    <Compile Include="BusinessObject\Brochures.cs" />
+    <Compile Include="BusinessObject\EmployeeEntity.cs" />
+    <Compile Include="BusinessObject\Forms.cs" />
+    <Compile Include="BusinessObject\MapSearchInfo.cs" />
+    <Compile Include="BusinessObject\MushlamObjects.cs" />
+    <Compile Include="BusinessObject\Phone.cs" />
+    <Compile Include="BusinessObject\ReceptionHoursInfo.cs" />
+    <Compile Include="BusinessObject\SearchModeInfo.cs" />
+    <Compile Include="BusinessObject\SearchPagingDBParams.cs" />
+    <Compile Include="BusinessObject\ServiceCategoriesSearchParameters.cs" />
+    <Compile Include="BusinessObject\UpdateParameters.cs" />
+    <Compile Include="BusinessObject\DvRemarkInfo.cs" />
+    <Compile Include="BusinessObject\QueryJoin.cs" />
+    <Compile Include="BusinessObject\QueryField.cs" />
+    <Compile Include="BusinessObject\DvDeptRemarkInfo.cs" />
+    <Compile Include="BusinessObject\DvDeptHoursInfo.cs" />
+    <Compile Include="BusinessObject\DvUserInfo.cs" />
+    <Compile Include="BusinessObject\dvUserPermissionsInfo.cs" />
+    <Compile Include="BusinessObject\QueryParam.cs" />
+    <Compile Include="BusinessObject\ReportParametres.cs" />
+    <Compile Include="BusinessObject\SearchParameters.cs" />
+    <Compile Include="BusinessObject\SessionParams.cs" />
+    <Compile Include="BusinessObject\Dept.cs" />
+    <Compile Include="BusinessObject\doctor.cs" />
+    <Compile Include="BusinessObject\enums.cs" />
+    <Compile Include="BusinessObject\UserPermission.cs" />
+    <Compile Include="BusinessObject\UserInfo.cs" />
+    <Compile Include="BusinessObject\WS_Dept.cs" />
+    <Compile Include="TemplatesData\EmployeeDetailsDataTemplateInfo.cs" />
+    <Compile Include="Web References\ClalitOnlineWS_NEW\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSSendMessages\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WorkFlow\AgreementTypeManager.cs" />
+    <Compile Include="WorkFlow\BaseProxy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WorkFlow\EmailHandler.cs" />
+    <Compile Include="ObjectDataSource\GeneralDictionariesBO.cs" />
+    <Compile Include="ObjectDataSource\DeptBO.cs" />
+    <Compile Include="ObjectDataSource\EmployeeServicesBO.cs" />
+    <Compile Include="ObjectDataSource\DeptHandicappedFacilitiesBO.cs" />
+    <Compile Include="ObjectDataSource\DeptEmoloyeePhonesBO.cs" />
+    <Compile Include="ObjectDataSource\EmployeePositionsBO.cs" />
+    <Compile Include="ObjectDataSource\EmployeeProfessionInDeptBO.cs" />
+    <Compile Include="ObjectDataSource\EmployeeRemarksBO.cs" />
+    <Compile Include="ObjectDataSource\EmployeeLanguagesBO.cs" />
+    <Compile Include="ObjectDataSource\EmployeeProfessionBO.cs" />
+    <Compile Include="ObjectDataSource\EmployeeBO.cs" />
+    <Compile Include="ObjectDataSource\DeptEventsBO.cs" />
+    <Compile Include="ObjectDataSource\DeptReceptionRemarksBO.cs" />
+    <Compile Include="ObjectDataSource\EmployeeServiceInDeptBO.cs" />
+    <Compile Include="ObjectDataSource\ManageItemsBO.cs" />
+    <Compile Include="ObjectDataSource\DeptPhonesBO.cs" />
+    <Compile Include="ObjectDataSource\QueueOrderMethodBO.cs" />
+    <Compile Include="ObjectDataSource\ServiceRemarksBO.cs" />
+    <Compile Include="ObjectDataSource\RemarkInfoBO.cs" />
+    <Compile Include="ObjectDataSource\Dic_GeneralRemarksBO.cs" />
+    <Compile Include="ObjectDataSource\DeptRemarksBO.cs" />
+    <Compile Include="ObjectDataSource\StatusBO.cs" />
+    <Compile Include="ObjectDataSource\DoctorsInClinicBo.cs" />
+    <Compile Include="ObjectDataSource\ServiceHoursBO.cs" />
+    <Compile Include="ObjectDataSource\DoctorHoursBO.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Web References\ADClalit\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClalitOnlineWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\demography\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WorkFlow\AddressManagerWS.cs" />
+    <Compile Include="WorkFlow\addressHandler.cs" />
+    <Compile Include="WorkFlow\AppQueries.cs" />
+    <Compile Include="WorkFlow\ClinicManager.cs" />
+    <Compile Include="WorkFlow\ClinicQueryGenerator.cs" />
+    <Compile Include="WorkFlow\EmployeeDetailsFromWS.cs" />
+    <Compile Include="WorkFlow\EmployeeManager.cs" />
+    <Compile Include="WorkFlow\FaxHandler.cs" />
+    <Compile Include="WorkFlow\LanguagesManager.cs" />
+    <Compile Include="WorkFlow\MenuManager.cs" />
+    <Compile Include="WorkFlow\MushlamManager.cs" />
+    <Compile Include="WorkFlow\OrganizationSectorManager.cs" />
+    <Compile Include="WorkFlow\QueryJoinManager.cs" />
+    <Compile Include="WorkFlow\QueryFieldManager.cs" />
+    <Compile Include="WorkFlow\phoneHandler.cs" />
+    <Compile Include="WorkFlow\QueryGenerator.cs" />
+    <Compile Include="WorkFlow\QueryParamManager.cs" />
+    <Compile Include="WorkFlow\ReceptionHoursManager.cs" />
+    <Compile Include="WorkFlow\RemarkManager.cs" />
+    <Compile Include="WorkFlow\Remarks.cs" />
+    <Compile Include="WorkFlow\ReportErrorBO.cs" />
+    <Compile Include="WorkFlow\ReportToUsers.cs" />
+    <Compile Include="WorkFlow\ServiceManager.cs" />
+    <Compile Include="WorkFlow\SessionParamsHandler.cs" />
+    <Compile Include="WorkFlow\StreetAndCityManager.cs" />
+    <Compile Include="WorkFlow\doctorManager.cs" />
+    <Compile Include="WorkFlow\TablesNameManager.cs" />
+    <Compile Include="WorkFlow\UpdateTablesManager.cs" />
+    <Compile Include="WorkFlow\UserManager.cs" />
+    <Compile Include="WorkFlow\WSADToolsService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ClalitOnlineWS_NEW\ClalitCustomersResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClalitOnlineWS_NEW\ClalitCustomersService.wsdl" />
+    <None Include="Web References\ClalitOnlineWS_NEW\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSSendMessages\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSSendMessages\WSSendFax.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Web References\ADClalit\ADservice.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://mkweb111/WSSendFaxes/">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSSendMessages\</RelPath>
+      <UpdateFromURL>http://mkweb111/WSSendFaxes/</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BusinessLayer_WSSendMessages_WSFaxSender</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://online.clalit.org.il/ClalitCustomersForSuppliers/ClalitCustomersForSuppliers.asmx%3fop=ClalitRun">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\demography\</RelPath>
+      <UpdateFromURL>http://online.clalit.org.il/ClalitCustomersForSuppliers/ClalitCustomersForSuppliers.asmx%3fop=ClalitRun</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BusinessLayer_demography_ClalitCustomersForSuppliers</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://online.clalit.org.il:8199/Clalit.ClalitCustomers/ClalitOnLine.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClalitOnlineWS\</RelPath>
+      <UpdateFromURL>http://online.clalit.org.il:8199/Clalit.ClalitCustomers/ClalitOnLine.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BusinessLayer_ClalitOnlineWS_ClalitOnLine</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://onlinedemog.clalit.org.il:8199/Clalit.ClalitCustomers/ClalitCustomersService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClalitOnlineWS_NEW\</RelPath>
+      <UpdateFromURL>http://onlinedemog.clalit.org.il:8199/Clalit.ClalitCustomers/ClalitCustomersService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BusinessLayer_il_org_clalit_onlinedemog_ClalitCustomersService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://wsadmin.clalit.org.il/ADservice/ADservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ADClalit\</RelPath>
+      <UpdateFromURL>https://wsadmin.clalit.org.il/ADservice/ADservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>BusinessLayer_ADClalit_Service1</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Web References\ADClalit\ADservice.disco" />
+    <None Include="Web References\ADClalit\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{FAD76F8A-B277-4726-BEE2-040AC4E48E92}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExceptionHandler\ExceptionHandler.csproj">
+      <Project>{1FE7B198-1DEB-45C4-998C-9FDAEEE4C72E}</Project>
+      <Name>ExceptionHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Globals\Globals.csproj">
+      <Project>{CD3F3209-91EB-4C82-817D-AEF0A0D6874C}</Project>
+      <Name>Globals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Matrix.Infrastructure.GenericDal\Matrix.Infrastructure.GenericDal.csproj">
+      <Project>{D15CBACB-A83A-4DBD-99FA-29985178B371}</Project>
+      <Name>Matrix.Infrastructure.GenericDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Microsoft.ApplicationBlocks.ExceptionManagement\Microsoft.ApplicationBlocks.ExceptionManagement.csproj">
+      <Project>{386CBF50-F4A9-4F05-98CB-B387D2D8F357}</Project>
+      <Name>Microsoft.ApplicationBlocks.ExceptionManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ClalitOnlineWS\ClalitOnLine.wsdl" />
+    <None Include="Web References\demography\ClalitCustomersForSuppliers.disco" />
+    <None Include="Web References\demography\ClalitCustomersForSuppliers.wsdl" />
+    <None Include="Web References\demography\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ClalitOnlineWS\ClalitOnLine.disco" />
+    <None Include="Web References\ClalitOnlineWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WSSendMessages\WSSendFax.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ClalitOnlineWS_NEW\ClalitCustomersService.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

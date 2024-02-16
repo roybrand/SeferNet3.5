@@ -1,0 +1,2272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD811306-7F95-4CBB-BEFD-28AA6214994F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeferNet.UI.Apps</RootNamespace>
+    <AssemblyName>SeferNet.UI.Apps</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BasicFrame.WebControls.BasicDatePicker, Version=1.2.2411.0, Culture=neutral, PublicKeyToken=e1cce521aa9b4849, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\BasicFrame.WebControls.BasicDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="CacheAction_ServerNotificationManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\CacheAction_ServerNotificationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Exceptions.ExceptionData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Exceptions.ExceptionData.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Global.EntitiesDal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Global.EntitiesDal.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Infrastructure.ApplicationFileManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Infrastructure.ApplicationFileManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Infrastructure.CacheManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Infrastructure.CacheManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Infrastructure.CacheManageService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Infrastructure.CacheManageService.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Infrastructure.ServiceInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Infrastructure.ServiceInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Infrastructure.ServicesManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Infrastructure.ServicesManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.Infrastructure.WCFInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.Infrastructure.WCFInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.SeferNet.GeneratedEnums, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.SeferNet.GeneratedEnums.dll</HintPath>
+    </Reference>
+    <Reference Include="Clalit.SeferNet.GeneratedEnums.DBMetadata, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Clalit.SeferNet.GeneratedEnums.DBMetadata.dll</HintPath>
+    </Reference>
+    <Reference Include="CoordinatesConvertLib">
+      <HintPath>..\RelateFiles\CoordinatesConvertLib.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFrameworkHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\EntityFrameworkHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlTemplateManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\HtmlTemplateManager.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlTemplateParsing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\HtmlTemplateParsing.dll</HintPath>
+    </Reference>
+    <Reference Include="LogAsyncClalitLibrary, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\LogAsyncClalitLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MapsManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\MapsManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Matrix.ExceptionHandling, Version=1.0.4075.16838, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Matrix.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RelateFiles\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AddEmployeeToClinic.aspx" />
+    <Content Include="Admin\AddEmployeeToSefer.aspx" />
+    <Content Include="Admin\AddRemark.aspx" />
+    <Content Include="Admin\AddRemark_NEW.aspx" />
+    <Content Include="Admin\AdminBasePage.aspx" />
+    <Content Include="Admin\AdministratorOptions.aspx" />
+    <Content Include="Admin\AdminPopupBasePage.aspx" />
+    <Content Include="Admin\BlackListForSimul.aspx" />
+    <Content Include="Admin\ClinicDetails.aspx" />
+    <Content Include="Admin\ConfirmHoursOverlapping.aspx" />
+    <Content Include="Admin\ConfirmPopUp.aspx" />
+    <Content Include="Admin\ConfirmSavingPopUp.aspx" />
+    <Content Include="Admin\EditRemarkByselectedType.aspx" />
+    <Content Include="Admin\EditRemarkByselectedType_NEW.aspx" />
+    <Content Include="Admin\ErrorsReportSimulVcSefer.aspx" />
+    <Content Include="Admin\GetAllDataPopup.aspx" />
+    <Content Include="Admin\HandleSweepingRemarks.aspx" />
+    <Content Include="Admin\ListMFCodes.aspx" />
+    <Content Include="Admin\ListOldOperations.aspx" />
+    <Content Include="Admin\ManageGeneralRemarksDictionary.aspx" />
+    <Content Include="Admin\ManageRemarkCategory.aspx" />
+    <Content Include="Admin\ManageSubUnitTypeSubstituteName.aspx" />
+    <Content Include="Admin\MasterDetailsExample.aspx" />
+    <Content Include="Admin\NewClinicDetails.aspx" />
+    <Content Include="Admin\NewClinicsList.aspx" />
+    <Content Include="Admin\PopupYesNo.aspx" />
+    <Content Include="Admin\ReceptionHoursPreview.aspx" />
+    <Content Include="Admin\scripts\EditItem.js" />
+    <Content Include="Admin\scripts\EditRemarkByselectedType.js" />
+    <Content Include="Admin\scripts\JScript.js" />
+    <Content Include="Admin\scripts\JScript2.js" />
+    <Content Include="Admin\scripts\ListOldOperations.js" />
+    <Content Include="Admin\SelectEmployeeDeptsPopup.aspx" />
+    <Content Include="Admin\SelectGeneralRemarkPopUp.aspx" />
+    <Content Include="Admin\SelectQueueMethod.aspx" />
+    <Content Include="Admin\ServiceCategories.aspx" />
+    <Content Include="Admin\SubUnitTypesDictionaryPopUp.aspx" />
+    <Content Include="Admin\SweepingRemarkExclusionsPopUp.aspx" />
+    <Content Include="Admin\Translations.aspx" />
+    <Content Include="Admin\UpdateClinicDetails.aspx" />
+    <Content Include="Admin\UpdateClinicEvents.aspx" />
+    <Content Include="Admin\UpdateDeptEmployee.aspx" />
+    <Content Include="Admin\UpdateDeptNames.aspx" />
+    <Content Include="Admin\UpdateDeptReceptionHours.aspx" />
+    <Content Include="Admin\UpdateEmployeeDataPopup.aspx" />
+    <Content Include="Admin\UpdateEmployeeExpertProfession.aspx" />
+    <Content Include="Admin\updateEmployee.aspx" />
+    <Content Include="Admin\UpdateEmployeeReception.aspx" />
+    <Content Include="Admin\UpdateEmployeeRemarks.aspx" />
+    <Content Include="Admin\UpdateEmployeeServiceRemarks.aspx" />
+    <Content Include="Admin\UpdateMainMenu.aspx" />
+    <Content Include="Admin\UpdateRemarks.aspx" />
+    <Content Include="Admin\UpdateSalServiceDetails.aspx" />
+    <Content Include="Admin\UpdateServiceCategories.aspx" />
+    <Content Include="Admin\UpdateServicePhones.aspx" />
+    <Content Include="Admin\UpdateStatus.aspx" />
+    <Content Include="Admin\UpdateSweepingRemarks.aspx" />
+    <Content Include="Admin\UpdateUser.aspx" />
+    <Content Include="Admin\UserAdministration.aspx" />
+    <Content Include="AjaxWebServices\AutoComplete.asmx" />
+    <Content Include="AjaxWebServices\LoginService.asmx" />
+    <Content Include="AjaxWebServices\SimpleService.asmx" />
+    <Content Include="App_Themes\generalSkin.css" />
+    <Content Include="AppWebReferences\DoctorSrv\DoctorService.disco" />
+    <Content Include="CLEditor\images\buttons.gif" />
+    <Content Include="CLEditor\images\toolbar.gif" />
+    <Content Include="CLEditor\jquery-latest.min.js" />
+    <Content Include="CLEditor\jquery.cleditor.css" />
+    <Content Include="CLEditor\jquery.cleditor.js" />
+    <Content Include="CLEditor\jquery.cleditor.min.js" />
+    <Content Include="Configuration\ExceptionHandling.xml" />
+    <Content Include="Configuration\LoadBalancerInformation.xml" />
+    <Content Include="CSS\BaseFormsMenus.css" />
+    <Content Include="CSS\General\general.css" />
+    <Content Include="CSS\General\StyleGuide.css" />
+    <Content Include="CSS\General\thickbox.css" />
+    <Content Include="CSS\Popup.css" />
+    <Content Include="CSS\PrintTemplate.css" />
+    <Content Include="CSS\SearchApplies.css" />
+    <Content Include="Global.asax" />
+    <Content Include="HelpFiles\ShowHelp.aspx" />
+    <Content Include="Images\2700.gif" />
+    <Content Include="Images\abc\0.gif" />
+    <Content Include="Images\abc\1.gif" />
+    <Content Include="Images\abc\2.gif" />
+    <Content Include="Images\abc\224.gif" />
+    <Content Include="Images\abc\225.gif" />
+    <Content Include="Images\abc\226.gif" />
+    <Content Include="Images\abc\227.gif" />
+    <Content Include="Images\abc\228.gif" />
+    <Content Include="Images\abc\229.gif" />
+    <Content Include="Images\abc\230.gif" />
+    <Content Include="Images\abc\231.gif" />
+    <Content Include="Images\abc\232.gif" />
+    <Content Include="Images\abc\233.gif" />
+    <Content Include="Images\abc\234.gif" />
+    <Content Include="Images\abc\235.gif" />
+    <Content Include="Images\abc\236.gif" />
+    <Content Include="Images\abc\237.gif" />
+    <Content Include="Images\abc\238.gif" />
+    <Content Include="Images\abc\239.gif" />
+    <Content Include="Images\abc\240.gif" />
+    <Content Include="Images\abc\241.gif" />
+    <Content Include="Images\abc\242.gif" />
+    <Content Include="Images\abc\243.gif" />
+    <Content Include="Images\abc\244.gif" />
+    <Content Include="Images\abc\245.gif" />
+    <Content Include="Images\abc\246.gif" />
+    <Content Include="Images\abc\247.gif" />
+    <Content Include="Images\abc\248.gif" />
+    <Content Include="Images\abc\249.gif" />
+    <Content Include="Images\abc\250.gif" />
+    <Content Include="Images\abc\3.gif" />
+    <Content Include="Images\abc\32.gif" />
+    <Content Include="Images\abc\33.gif" />
+    <Content Include="Images\abc\34.gif" />
+    <Content Include="Images\abc\4.gif" />
+    <Content Include="Images\abc\40.gif" />
+    <Content Include="Images\abc\41.gif" />
+    <Content Include="Images\abc\44.gif" />
+    <Content Include="Images\abc\45.gif" />
+    <Content Include="Images\abc\46.gif" />
+    <Content Include="Images\abc\47.gif" />
+    <Content Include="Images\abc\5.gif" />
+    <Content Include="Images\abc\58.gif" />
+    <Content Include="Images\abc\59.gif" />
+    <Content Include="Images\abc\6.gif" />
+    <Content Include="Images\abc\68.gif" />
+    <Content Include="Images\abc\7.gif" />
+    <Content Include="Images\abc\8.gif" />
+    <Content Include="Images\abc\9.gif" />
+    <Content Include="Images\abc\Icon.gif" />
+    <Content Include="Images\abc\Mem.gif" />
+    <Content Include="Images\abc\Sheen.gif" />
+    <Content Include="Images\action_stop.gif" />
+    <Content Include="Images\active-bg.gif" />
+    <Content Include="Images\add.GIF" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\Applic\8pxWhite.jpg" />
+    <Content Include="Images\Applic\A.gif" />
+    <Content Include="Images\Applic\attr_Community.gif" />
+    <Content Include="Images\Applic\attr_Community.png" />
+    <Content Include="Images\Applic\attr_CommunityAgreement.gif" />
+    <Content Include="Images\Applic\attr_CommunityAgreement.png" />
+    <Content Include="Images\Applic\attr_CommunityAndMushlam.gif" />
+    <Content Include="Images\Applic\attr_CommunityAndMushlam.png" />
+    <Content Include="Images\Applic\attr_HospitalAndMushlam.gif" />
+    <Content Include="Images\Applic\attr_hospitals.gif" />
+    <Content Include="Images\Applic\attr_hospitals.png" />
+    <Content Include="Images\Applic\attr_hospitalsAndCommunity.gif" />
+    <Content Include="Images\Applic\attr_Mushlam.gif" />
+    <Content Include="Images\Applic\attr_Mushlam.png" />
+    <Content Include="Images\Applic\attr_Mushlam1.png" />
+    <Content Include="Images\Applic\attr_MushlamRefund.png" />
+    <Content Include="Images\Applic\attr_PaidServices.png" />
+    <Content Include="Images\Applic\backGroundForCityControl.jpg" />
+    <Content Include="Images\Applic\bar_Vertical_1px.gif" />
+    <Content Include="Images\Applic\bar_Vertical_2px.gif" />
+    <Content Include="Images\Applic\bg_mapControlsDoctorSearch.gif" />
+    <Content Include="Images\Applic\bg_mapControlsEventsSearch.gif" />
+    <Content Include="Images\Applic\blueClock.gif" />
+    <Content Include="Images\Applic\blueClock.png" />
+    <Content Include="Images\Applic\blue_white_bottom.gif" />
+    <Content Include="Images\Applic\blue_white_left_Bottom.gif" />
+    <Content Include="Images\Applic\blue_white_left_top_corner.gif" />
+    <Content Include="Images\Applic\blue_white_right_Bottom.gif" />
+    <Content Include="Images\Applic\blue_white_right_top_corner.gif" />
+    <Content Include="Images\Applic\blue_white_top.gif" />
+    <Content Include="Images\Applic\book!.gif" />
+    <Content Include="Images\Applic\bookc.gif" />
+    <Content Include="Images\Applic\borderGreyH.jpg" />
+    <Content Include="Images\Applic\borderGreyV.jpg" />
+    <Content Include="Images\Applic\btnDown_disabled.gif" />
+    <Content Include="Images\Applic\btnDown_enabled.gif" />
+    <Content Include="Images\Applic\btnUpdateRemarksYellow.jpg" />
+    <Content Include="Images\Applic\btnUp_disabled.gif" />
+    <Content Include="Images\Applic\btnUp_enabled.gif" />
+    <Content Include="Images\Applic\btn_AddYellow.gif" />
+    <Content Include="Images\Applic\btn_back.PNG" />
+    <Content Include="Images\Applic\btn_BG_grey_left.gif" />
+    <Content Include="Images\Applic\btn_BG_grey_middle.gif" />
+    <Content Include="Images\Applic\btn_BG_grey_right.gif" />
+    <Content Include="Images\Applic\btn_CancelYellow.gif" />
+    <Content Include="Images\Applic\btn_Clean_Blue.jpg" />
+    <Content Include="Images\Applic\btn_ClinicDetails.gif" />
+    <Content Include="Images\Applic\btn_ClinicDetails.jpg" />
+    <Content Include="Images\Applic\btn_ClinicHours.gif" />
+    <Content Include="Images\Applic\btn_ClinicHours.jpg" />
+    <Content Include="Images\Applic\btn_ClosePopUpBlue.gif" />
+    <Content Include="Images\Applic\btn_Cross_Blue.jpg" />
+    <Content Include="Images\Applic\btn_DeleteOrangeSmall.gif" />
+    <Content Include="Images\Applic\btn_DoctorsEmployees copy.jpg" />
+    <Content Include="Images\Applic\btn_DoctorsEmployees.gif" />
+    <Content Include="Images\Applic\btn_DoctorsEmployees.jpg" />
+    <Content Include="Images\Applic\btn_EmployeeDetails.gif" />
+    <Content Include="Images\Applic\btn_GoToAddPlaceOfWork.gif" />
+    <Content Include="Images\Applic\btn_GoToUpdateClinicDetails.gif" />
+    <Content Include="Images\Applic\btn_GoToUpdateClinicEvents.jpg" />
+    <Content Include="Images\Applic\btn_GoToUpdateClinicHours.gif" />
+    <Content Include="Images\Applic\btn_GoToUpdateEmployees.gif" />
+    <Content Include="Images\Applic\btn_Help.gif" />
+    <Content Include="Images\Applic\btn_Help_on.gif" />
+    <Content Include="Images\Applic\btn_Map.gif" />
+    <Content Include="Images\Applic\btn_Map_on.gif" />
+    <Content Include="Images\Applic\btn_Minus_Blue_12.gif" />
+    <Content Include="Images\Applic\btn_OrganizingTree.gif" />
+    <Content Include="Images\Applic\btn_OrganizingTree_on.gif" />
+    <Content Include="Images\Applic\btn_Plus_Blue_12.gif" />
+    <Content Include="Images\Applic\btn_Plus_Blue_16.gif" />
+    <Content Include="Images\Applic\btn_Plus_Green.jpg" />
+    <Content Include="Images\Applic\btn_Reports.gif" />
+    <Content Include="Images\Applic\btn_Reports_on.gif" />
+    <Content Include="Images\Applic\btn_SaveYellow.gif" />
+    <Content Include="Images\Applic\btn_Seach_Blue.jpg" />
+    <Content Include="Images\Applic\btn_SearchClinic.gif" />
+    <Content Include="Images\Applic\btn_SearchClinic_on.gif" />
+    <Content Include="Images\Applic\btn_SearchDoc.gif" />
+    <Content Include="Images\Applic\btn_SearchDoc_on.gif" />
+    <Content Include="Images\Applic\btn_ServicesEvents.gif" />
+    <Content Include="Images\Applic\btn_ServicesEvents.jpg" />
+    <Content Include="Images\Applic\btn_SubClinics.gif" />
+    <Content Include="Images\Applic\btn_SubClinics.jpg" />
+    <Content Include="Images\Applic\btn_UpdateGreenSmall.gif" />
+    <Content Include="Images\Applic\btn_UpdateRemarksYellow.gif" />
+    <Content Include="Images\Applic\btn_UpdateYellow.gif" />
+    <Content Include="Images\Applic\btn_X_grey.gif" />
+    <Content Include="Images\Applic\btn_X_red.gif" />
+    <Content Include="Images\Applic\calendarIcon.png" />
+    <Content Include="Images\Applic\Checked.gif" />
+    <Content Include="Images\Applic\Checked_NOT.gif" />
+    <Content Include="Images\Applic\circleGrey20.gif" />
+    <Content Include="Images\Applic\clalit-mushlamLogo.gif" />
+    <Content Include="Images\Applic\clalit100logo.gif" />
+    <Content Include="Images\Applic\CloseDoor.png" />
+    <Content Include="Images\Applic\Excel_Button.png" />
+    <Content Include="Images\Applic\ExclamationMark.GIF" />
+    <Content Include="Images\Applic\ExclamationMarkOrange.gif" />
+    <Content Include="Images\Applic\favicon.ico" />
+    <Content Include="Images\Applic\fax-round.png" />
+    <Content Include="Images\Applic\filler_gray_opacity_05.gif" />
+    <Content Include="Images\Applic\gradient_almost_white.jpg" />
+    <Content Include="Images\Applic\gradient_gray_to_white.jpg" />
+    <Content Include="Images\Applic\greenClock.gif" />
+    <Content Include="Images\Applic\greenClock.png" />
+    <Content Include="Images\Applic\HalfClock.gif" />
+    <Content Include="Images\Applic\icon_magnify.gif" />
+    <Content Include="Images\Applic\icon_map.gif" />
+    <Content Include="Images\Applic\icon_sort.gif" />
+    <Content Include="Images\Applic\icon_sort_ascending.gif" />
+    <Content Include="Images\Applic\icon_sort_descending.gif" />
+    <Content Include="Images\Applic\icon_time.gif" />
+    <Content Include="Images\Applic\imgProgressBarOuterCircle.png" />
+    <Content Include="Images\Applic\LBcornerGrey10.gif" />
+    <Content Include="Images\Applic\LogoClalit.gif" />
+    <Content Include="Images\Applic\LTcornerGrey10.gif" />
+    <Content Include="Images\Applic\M.gif" />
+    <Content Include="Images\Applic\magnifying-glass-disable.gif" />
+    <Content Include="Images\Applic\mainHeader.gif" />
+    <Content Include="Images\Applic\man_little_green.gif" />
+    <Content Include="Images\Applic\map.gif" />
+    <Content Include="Images\Applic\mapNew.gif" />
+    <Content Include="Images\Applic\menu_BGthick.gif" />
+    <Content Include="Images\Applic\menu_BGthickTothin.gif" />
+    <Content Include="Images\Applic\menu_BGthin.gif" />
+    <Content Include="Images\Applic\menu_delimeter.gif" />
+    <Content Include="Images\Applic\mushlam_left_Bottom.gif" />
+    <Content Include="Images\Applic\mushlam_left_Middle.gif" />
+    <Content Include="Images\Applic\mushlam_left_top.gif" />
+    <Content Include="Images\Applic\mushlam_middle_bottom.gif" />
+    <Content Include="Images\Applic\mushlam_middle_top.gif" />
+    <Content Include="Images\Applic\mushlam_right_Bottom.gif" />
+    <Content Include="Images\Applic\mushlam_right_Bottom_trans.gif" />
+    <Content Include="Images\Applic\mushlam_right_Middle.gif" />
+    <Content Include="Images\Applic\mushlam_right_Top.gif" />
+    <Content Include="Images\Applic\Mushlam_small.PNG" />
+    <Content Include="Images\Applic\nonself.gif" />
+    <Content Include="Images\Applic\NOTreceiveGuests.png" />
+    <Content Include="Images\Applic\NOTreceiveGuestsSmall.png" />
+    <Content Include="Images\Applic\OpenDoor.png" />
+    <Content Include="Images\Applic\phone-direct.png" />
+    <Content Include="Images\Applic\phone-round.png" />
+    <Content Include="Images\Applic\pic_NotShowInInternet.gif" />
+    <Content Include="Images\Applic\pic_NotShowInInternet.png" />
+    <Content Include="Images\Applic\pic_NotShowInInternetSmall.gif" />
+    <Content Include="Images\Applic\pic_NotShowInInternetSmall.png" />
+    <Content Include="Images\Applic\pic_NotShowInInternetSmall1.gif" />
+    <Content Include="Images\Applic\pic_OrderMethod_1.gif" />
+    <Content Include="Images\Applic\pic_OrderMethod_2.gif" />
+    <Content Include="Images\Applic\pic_OrderMethod_3.gif" />
+    <Content Include="Images\Applic\pic_OrderMethod_4.gif" />
+    <Content Include="Images\Applic\pic_OrderMethod_5.gif" />
+    <Content Include="Images\Applic\pic_ShowInInternet.gif" />
+    <Content Include="Images\Applic\pointer_blue.gif" />
+    <Content Include="Images\Applic\pointer_blue.jpg" />
+    <Content Include="Images\Applic\progressBar.gif" />
+    <Content Include="Images\Applic\queueOrder.jpg" />
+    <Content Include="Images\Applic\RBcornerGrey10.gif" />
+    <Content Include="Images\Applic\ReceiveGuests.png" />
+    <Content Include="Images\Applic\ReceiveGuestsPartTime.png" />
+    <Content Include="Images\Applic\ReceiveGuestsSmall.png" />
+    <Content Include="Images\Applic\regButtonBG_Left.gif" />
+    <Content Include="Images\Applic\regButtonBG_Middle.gif" />
+    <Content Include="Images\Applic\regButtonBG_Right.gif" />
+    <Content Include="Images\Applic\remark.gif" />
+    <Content Include="Images\Applic\remark.png" />
+    <Content Include="Images\Applic\remarkGreen.gif" />
+    <Content Include="Images\Applic\remark_blue.gif" />
+    <Content Include="Images\Applic\remark_Phone.png" />
+    <Content Include="Images\Applic\RTcornerGrey10.gif" />
+    <Content Include="Images\Applic\searchResultGrid_Address.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnAddressDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnAddressTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnAddressUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnAttributionDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnAttributionTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnAttributionUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnCityDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnCityTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnCityUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorAdditionalClinicsDownArr_1.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorAdditionalClinicsDownArr_2.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorAdditionalClinicsTwoArr_1.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorAdditionalClinicsTwoArr_2.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorAdditionalClinicsUpArr_1.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorAdditionalClinicsUpArr_2.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorAttributionDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorAttributionTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorAttributionUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorNameDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorNameDownArr2.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorNameTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorNameTwoArr2.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorNameUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorNameUpArr2.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorProfessionDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorProfessionTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorProfessionUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorQueueDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorQueueTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorQueueUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorServiceDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorServiceTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnDoctorServiceUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnGivenByDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnGivenByTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnGivenByUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnMap.gif" />
+    <Content Include="Images\Applic\searchResultGrid_btnPhoneDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnPhonesDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnPhonesTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnPhonesUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnPhoneTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnPhoneUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnServiceEventDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnServiceEventTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnServiceEventUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnServiseOf.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnUnitNameDownArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnUnitNameTwoArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_btnUnitNameUpArr.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_gradienForPagingBar.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_gradienForSortingBar.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_picDictrictLevel.gif" />
+    <Content Include="Images\Applic\searchResultGrid_picHours.gif" />
+    <Content Include="Images\Applic\searchResultGrid_picHoursAndRem.gif" />
+    <Content Include="Images\Applic\searchResultGrid_picStateLevel.gif" />
+    <Content Include="Images\Applic\searchResultGrid_titleHours.jpg" />
+    <Content Include="Images\Applic\searchResultGrid_titleMap.jpg" />
+    <Content Include="Images\Applic\Security.png" />
+    <Content Include="Images\Applic\self.gif" />
+    <Content Include="Images\Applic\ServiceProviders.gif" />
+    <Content Include="Images\Applic\tab_ClinicDetails.jpg" />
+    <Content Include="Images\Applic\tab_EmployeeDetails.jpg" />
+    <Content Include="Images\Applic\tab_Left.gif" />
+    <Content Include="Images\Applic\tab_Middle.gif" />
+    <Content Include="Images\Applic\tab_Right.gif" />
+    <Content Include="Images\Applic\tab_ServicesEvents.jpg" />
+    <Content Include="Images\Applic\tab_SubClinics.jpg" />
+    <Content Include="Images\Applic\tab_WhiteBlueBackGround.jpg" />
+    <Content Include="Images\Applic\time.gif" />
+    <Content Include="Images\Applic\time.png" />
+    <Content Include="Images\Applic\time_internet.gif" />
+    <Content Include="Images\Applic\time_internet_old.gif" />
+    <Content Include="Images\Applic\time_original.gif" />
+    <Content Include="Images\Applic\time_remark.gif" />
+    <Content Include="Images\Applic\time_remark.png" />
+    <Content Include="Images\Applic\time_remark_blue.gif" />
+    <Content Include="Images\Applic\time_remark_green.gif" />
+    <Content Include="Images\arrow.gif" />
+    <Content Include="Images\ArrowBlue.gif" />
+    <Content Include="Images\arrowdn.gif" />
+    <Content Include="Images\arrowgreen.gif" />
+    <Content Include="Images\arrowup.GIF" />
+    <Content Include="Images\arrow_refresh.png" />
+    <Content Include="Images\Attachment.gif" />
+    <Content Include="Images\belonging.gif" />
+    <Content Include="Images\BgOrange.gif" />
+    <Content Include="Images\BigButton.gif" />
+    <Content Include="Images\blue3.gif" />
+    <Content Include="Images\btnExcel.gif" />
+    <Content Include="Images\btn_add copyOld.gif" />
+    <Content Include="Images\btn_add.gif" />
+    <Content Include="Images\btn_approve.gif" />
+    <Content Include="Images\btn_approve.png" />
+    <Content Include="Images\btn_cancel.gif" />
+    <Content Include="Images\btn_clear.gif" />
+    <Content Include="Images\btn_clear.png" />
+    <Content Include="Images\btn_delete.gif" />
+    <Content Include="Images\btn_edit.gif" />
+    <Content Include="Images\btn_InstructionalVideo.png" />
+    <Content Include="Images\btn_room.gif" />
+    <Content Include="Images\btn_save.gif" />
+    <Content Include="Images\btn_search.gif" />
+    <Content Include="Images\btn_ShowSearchResultClosed.jpg" />
+    <Content Include="Images\btn_ShowSearchResultClosed.png" />
+    <Content Include="Images\btn_ShowSearchResultOpened.jpg" />
+    <Content Include="Images\btn_ShowSearchResultOpened.png" />
+    <Content Include="Images\Closearrow.gif" />
+    <Content Include="Images\curve_blue.gif" />
+    <Content Include="Images\curve_green.gif" />
+    <Content Include="Images\DDImageDown.bmp" />
+    <Content Include="Images\DDImageUp.bmp" />
+    <Content Include="Images\EmptyImage.gif" />
+    <Content Include="Images\Fax.gif" />
+    <Content Include="Images\GradientVerticalBlue.jpg" />
+    <Content Include="Images\GradientVerticalBlueAndWhite.jpg" />
+    <Content Include="Images\GradientVerticalWhiteBlue.jpg" />
+    <Content Include="Images\GradientVerticalWhiteBlueBottomBorder.jpg" />
+    <Content Include="Images\green2.gif" />
+    <Content Include="Images\HasComments-True.png" />
+    <Content Include="Images\headerLogo.gif" />
+    <Content Include="Images\headerTxtPrefix.gif" />
+    <Content Include="Images\hide-search-rollover.gif" />
+    <Content Include="Images\hide-search.gif" />
+    <Content Include="Images\hover-bg.gif" />
+    <Content Include="Images\HozreiSherut.jpg" />
+    <Content Include="Images\HozreiSherut.png" />
+    <Content Include="Images\imgCalendar.gif" />
+    <Content Include="Images\imgConflict.gif" />
+    <Content Include="Images\IncludeInBasket-True.png" />
+    <Content Include="Images\IncludeInBasket-Warning1.gif" />
+    <Content Include="Images\IncludeInBasket-Warning1.jpeg" />
+    <Content Include="Images\IncludeInBasket-Warning2.gif" />
+    <Content Include="Images\indicator.gif" />
+    <Content Include="Images\Info.gif" />
+    <Content Include="Images\info2.gif" />
+    <Content Include="Images\insBluer.jpg" />
+    <Content Include="Images\insgreenl.jpg" />
+    <Content Include="Images\internet.gif" />
+    <Content Include="Images\InternetNOT_blue.gif" />
+    <Content Include="Images\Internet_blue.gif" />
+    <Content Include="Images\left-corners-rollover.gif" />
+    <Content Include="Images\left-corners.gif" />
+    <Content Include="Images\Left02.gif" />
+    <Content Include="Images\Limiter-True.gif" />
+    <Content Include="Images\Limiter-True.jpeg" />
+    <Content Include="Images\Limiter-True.png" />
+    <Content Include="Images\Lock.gif" />
+    <Content Include="Images\LockS.gif" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logoClalit.jpg" />
+    <Content Include="Images\mador.gif" />
+    <Content Include="Images\mador_18_08_2004.gif" />
+    <Content Include="Images\magnifying-glass-.gif" />
+    <Content Include="Images\magnifying-glass-disable.gif" />
+    <Content Include="Images\magnifying-glass-rollover.gif" />
+    <Content Include="Images\Mail.gif" />
+    <Content Include="Images\map-2.gif" />
+    <Content Include="Images\map-icon.gif" />
+    <Content Include="Images\medness.gif" />
+    <Content Include="Images\medness2.gif" />
+    <Content Include="Images\men-icon.gif" />
+    <Content Include="Images\Message.gif" />
+    <Content Include="Images\middle-rollover.gif" />
+    <Content Include="Images\middle.gif" />
+    <Content Include="Images\minimize.gif" />
+    <Content Include="Images\normal-bg.gif" />
+    <Content Include="Images\open-search-rollover.gif" />
+    <Content Include="Images\open-search.gif" />
+    <Content Include="Images\openarrow.gif" />
+    <Content Include="Images\OpenS.gif" />
+    <Content Include="Images\other-icon.gif" />
+    <Content Include="Images\page_first.gif" />
+    <Content Include="Images\page_last.gif" />
+    <Content Include="Images\page_next.gif" />
+    <Content Include="Images\page_previous.gif" />
+    <Content Include="Images\Pepoles.jpg" />
+    <Content Include="Images\phone.gif" />
+    <Content Include="Images\phoneSpecial.gif" />
+    <Content Include="Images\phone_blue.GIF" />
+    <Content Include="Images\phone_orange.GIF" />
+    <Content Include="Images\plus-sign-rollovre.gif" />
+    <Content Include="Images\plus-sign.gif" />
+    <Content Include="Images\PopulationTitle.gif" />
+    <Content Include="Images\PopUpLink.gif" />
+    <Content Include="Images\printLetter.gif" />
+    <Content Include="Images\printLetterBig.gif" />
+    <Content Include="Images\queueOrder.jpg" />
+    <Content Include="Images\right-corners-rollover.gif" />
+    <Content Include="Images\right-corners.gif" />
+    <Content Include="Images\Right02.gif" />
+    <Content Include="Images\search.jpg" />
+    <Content Include="Images\secret.gif" />
+    <Content Include="Images\ShowInternetComplete0.png" />
+    <Content Include="Images\ShowInternetComplete1.png" />
+    <Content Include="Images\Spacer.gif" />
+    <Content Include="Images\Taarifun.gif" />
+    <Content Include="Images\table_multiple.jpg" />
+    <Content Include="Images\Up01.gif" />
+    <Content Include="Images\Up02.gif" />
+    <Content Include="Images\Up03.gif" />
+    <Content Include="Images\update.gif" />
+    <Content Include="Images\user.jpg" />
+    <Content Include="Images\user_female.jpg" />
+    <Content Include="Images\ValErrorIcon.gif" />
+    <Content Include="Images\vSign.gif" />
+    <Content Include="Images\vSign.jpg" />
+    <Content Include="Images\v_blue.gif" />
+    <Content Include="Images\v_sign_blue.gif" />
+    <Content Include="Images\withfile.gif" />
+    <Content Include="Images\Word.gif" />
+    <Content Include="PopUpLogin.aspx" />
+    <Content Include="Public\DeptEventPopUp.aspx" />
+    <Content Include="Public\DeptMap.aspx" />
+    <Content Include="Public\DeptReceptionPopUp.aspx" />
+    <Content Include="Public\DeptServices.aspx" />
+    <Content Include="Public\DeptSubClinics.aspx" />
+    <Content Include="Public\DoctorReceptionPopUp.aspx" />
+    <Content Include="Public\DocumentsOpener.aspx" />
+    <Content Include="Public\EmployeeReceptionExpirationPopUp.aspx" />
+    <Content Include="Public\EnterSalServicesPopUp.aspx" />
+    <Content Include="Public\MedicalAspects.aspx" />
+    <Content Include="Public\MushlamServices.aspx" />
+    <Content Include="Public\OrganizationTree.aspx" />
+    <Content Include="Public\PopulationDetails.aspx" />
+    <Content Include="Public\PopUpLogin.aspx" />
+    <Content Include="Public\PrintPopUp.aspx" />
+    <Content Include="Public\ReportOnIncorrectData.aspx" />
+    <Content Include="Public\ReportSearchResult.aspx" />
+    <Content Include="Public\ReportsSearchResult_CreateExcel.aspx" />
+    <Content Include="Public\SelectDepts.aspx" />
+    <Content Include="Public\SelectEmployeePopUp.aspx" />
+    <Content Include="Public\SelectPopUp.aspx" />
+    <Content Include="Public\sendBrochuresAndForms.aspx" />
+    <Content Include="Public\SendBrochuresAndFormsByMailPopUp.aspx" />
+    <Content Include="Public\ServiceHoursPopUp.aspx" />
+    <Content Include="Public\ZoomClinic.aspx" />
+    <Content Include="Public\zoomDoctor.aspx" />
+    <Content Include="Public\ZoomSalService.aspx" />
+    <Content Include="ReportsForDeveloper\Report.aspx" />
+    <Content Include="Public\ReportsParametersForSearchResult.aspx" />
+    <Content Include="Reports\ReportsParameters.aspx" />
+    <Content Include="Reports\Reports_CreateExcel.aspx" />
+    <Content Include="Reports\RS_ReportResult.aspx" />
+    <Content Include="Scripts\Applic\general.js" />
+    <Content Include="Scripts\Applic\PopupSearch.js" />
+    <Content Include="Scripts\BrowserVersions.js" />
+    <Content Include="Scripts\GridReceptionHoursUC.js" />
+    <Content Include="Scripts\jquery-ui\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui\jquery_inputmask_bundle.js" />
+    <Content Include="Scripts\jquery\jquery.js" />
+    <Content Include="Scripts\LoadJqueryIfNeeded.js" />
+    <Content Include="Scripts\searchClinics.js" />
+    <Content Include="Scripts\searchDoctors.js" />
+    <Content Include="Scripts\SearchPages.js" />
+    <Content Include="Scripts\searchSalServices.js" />
+    <Content Include="Scripts\srcScripts\jquery.js" />
+    <Content Include="Scripts\srcScripts\thickbox.js" />
+    <Content Include="Scripts\UpadeRemarkPages.js" />
+    <Content Include="Scripts\updateItems.js" />
+    <Content Include="Scripts\ValidationMethods\Validation1.js" />
+    <Content Include="SearchClinics.aspx" />
+    <Content Include="SearchDoctors.aspx" />
+    <Content Include="SearchSalServices.aspx" />
+    <Content Include="SeferMasterPageIE.Master" />
+    <Content Include="SeferMasterPageIEwide.Master" />
+    <None Include="Service References\BakaratKnisotService\HandshakeService.wsdl" />
+    <None Include="Service References\BakaratKnisotService\HandshakeService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BakaratKnisotService\HandshakeService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BakaratKnisotService\HandshakeService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\BakaratKnisotService\SeferNet.UI.Apps.BakaratKnisotService.CheckTokenBaseResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\BakaratKnisotService\SeferNet.UI.Apps.BakaratKnisotService.GetTokenBaseResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\CentralLogRegularService\CentralLogRegularService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CentralLogRegularService\CentralLogRegularService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CentralLogRegularService\CentralLogRegularService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CentralLogRegularService\CentralLogService.wsdl" />
+    <None Include="Service References\BakaratKnisotService\HandshakeService.disco" />
+    <None Include="Service References\BakaratKnisotService\configuration91.svcinfo" />
+    <None Include="Service References\BakaratKnisotService\configuration.svcinfo" />
+    <None Include="Service References\BakaratKnisotService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\CentralLogRegularService\SeferNet.UI.Apps.CentralLogRegularService.CentralLogOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\GetEmployeeDetailes\GetEmployeeDetailsByID.disco" />
+    <None Include="Service References\GetEmployeeDetailes\configuration91.svcinfo" />
+    <None Include="Service References\GetEmployeeDetailes\configuration.svcinfo" />
+    <None Include="Service References\GetEmployeeDetailes\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CentralLogRegularService\CentralLogRegularService.disco" />
+    <None Include="Service References\CentralLogRegularService\configuration91.svcinfo" />
+    <None Include="Service References\CentralLogRegularService\configuration.svcinfo" />
+    <None Include="Service References\CentralLogRegularService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Templates\FrmSelectTemplate.aspx" />
+    <Content Include="Templates\Mails\MushlamMail.htm" />
+    <Content Include="Templates\PrintClinicList.htm" />
+    <Content Include="Templates\PrintEmployeeDetails.htm" />
+    <Content Include="Templates\PrintingParameters.aspx" />
+    <Content Include="Templates\PrintingParameters_ZoomSalService.aspx" />
+    <Content Include="Templates\PrintSalServicesList.htm" />
+    <Content Include="Templates\PrintZoomClinic.aspx" />
+    <Content Include="Templates\PrintZoomClinic.htm" />
+    <Content Include="Templates\PrintZoomSalService.htm" />
+    <Content Include="Templates\ZoomSalService_PrintOptions.aspx" />
+    <Content Include="Tests\Default.aspx" />
+    <Content Include="Tests\Default2.aspx" />
+    <Content Include="Tests\DefaultMultDDl.aspx" />
+    <Content Include="Tests\DefaultPhones.aspx" />
+    <Content Include="Tests\Test.aspx" />
+    <Content Include="Tests\TestJS.aspx" />
+    <Content Include="Tests\TestRemarksPopUp.aspx" />
+    <Content Include="Tests\Test_with_master.aspx" />
+    <Content Include="Tests\TryAjax.aspx" />
+    <Content Include="UpdateTables\CorrectGeneralRemarksText.aspx" />
+    <Content Include="UpdateTables\SelectServiceFromMFtables.aspx" />
+    <Content Include="UpdateTables\UpdateBrochuresAndForms.aspx" />
+    <Content Include="UpdateTables\UpdateDays.aspx" />
+    <Content Include="UpdateTables\UpdateDIC_PhonePrefix.aspx" />
+    <Content Include="UpdateTables\UpdateEvents.aspx" />
+    <Content Include="UpdateTables\UpdateMushlamProfessionsMapping.aspx" />
+    <Content Include="UpdateTables\UpdatePositions.aspx" />
+    <Content Include="UpdateTables\UpdateProfessionsForInternet.aspx" />
+    <Content Include="UpdateTables\UpdateProfessionsNew.aspx" />
+    <Content Include="UpdateTables\UpdateSalCategories.aspx" />
+    <Content Include="UpdateTables\UpdateSalCategoryProfessions.aspx" />
+    <Content Include="UpdateTables\UpdateSalServicesAdminComments.aspx" />
+    <Content Include="UpdateTables\UpdateServiceExtensions.aspx" />
+    <Content Include="UpdateTables\UpdateServices.aspx" />
+    <Content Include="UpdateTables\UpdateServiceSynonym.aspx" />
+    <Content Include="UpdateTables\UpdateSpecificService.aspx" />
+    <Content Include="UpdateTables\UpdateUnitTypeConversion.aspx" />
+    <Content Include="UpdateTables\UpdateUnitTypes.aspx" />
+    <Content Include="UserControls\CustomPopUp.ascx" />
+    <Content Include="UserControls\DeptMapUC.ascx" />
+    <Content Include="UserControls\DeptReceptionAndRemarks.ascx" />
+    <Content Include="UserControls\GetClinicByName.ascx" />
+    <Content Include="UserControls\GridDeptReceptionHoursByType.ascx" />
+    <Content Include="UserControls\GridDeptReceptionHoursUC.ascx" />
+    <Content Include="UserControls\GridReceptionHoursUC.ascx" />
+    <Content Include="UserControls\GridTreeView.ascx" />
+    <Content Include="UserControls\GridTreeViewTableList.ascx" />
+    <Content Include="UserControls\GridUnitTypes.ascx" />
+    <Content Include="UserControls\HourControl.ascx" />
+    <Content Include="UserControls\MapSearchControl.ascx" />
+    <Content Include="UserControls\MultiDDlSelect.ascx" />
+    <Content Include="UserControls\MultiDDlSelectUC.ascx" />
+    <Content Include="UserControls\MultiSelectAndUpdate.ascx" />
+    <Content Include="UserControls\PhonesGridUC.ascx" />
+    <Content Include="UserControls\QueueOrderHoursUC.ascx" />
+    <Content Include="UserControls\RemarkClientHandler.ascx" />
+    <Content Include="UserControls\RemarkControl.ascx" />
+    <Content Include="UserControls\SearchModeSelector.ascx" />
+    <Content Include="UserControls\selectDays.ascx" />
+    <Content Include="UserControls\SelectLetter.ascx" />
+    <Content Include="UserControls\ServicesControl.ascx" />
+    <Content Include="UserControls\SortableColumnHeader.ascx" />
+    <Content Include="WCFWebServices\WCFCacheService.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Xml\ManagingServicesProfessions.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AddEmployeeToClinic.aspx.cs">
+      <DependentUpon>AddEmployeeToClinic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEmployeeToClinic.aspx.designer.cs">
+      <DependentUpon>AddEmployeeToClinic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEmployeeToSefer.aspx.cs">
+      <DependentUpon>AddEmployeeToSefer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEmployeeToSefer.aspx.designer.cs">
+      <DependentUpon>AddEmployeeToSefer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddRemark.aspx.cs">
+      <DependentUpon>AddRemark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddRemark.aspx.designer.cs">
+      <DependentUpon>AddRemark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddRemark_NEW.aspx.cs">
+      <DependentUpon>AddRemark_NEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddRemark_NEW.aspx.designer.cs">
+      <DependentUpon>AddRemark_NEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminBasePage.aspx.cs">
+      <DependentUpon>AdminBasePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminBasePage.aspx.designer.cs">
+      <DependentUpon>AdminBasePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdministratorOptions.aspx.cs">
+      <DependentUpon>AdministratorOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdministratorOptions.aspx.designer.cs">
+      <DependentUpon>AdministratorOptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminPopupBasePage.aspx.cs">
+      <DependentUpon>AdminPopupBasePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminPopupBasePage.aspx.designer.cs">
+      <DependentUpon>AdminPopupBasePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BlackListForSimul.aspx.cs">
+      <DependentUpon>BlackListForSimul.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BlackListForSimul.aspx.designer.cs">
+      <DependentUpon>BlackListForSimul.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ClinicDetails.aspx.cs">
+      <DependentUpon>ClinicDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ClinicDetails.aspx.designer.cs">
+      <DependentUpon>ClinicDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ConfirmHoursOverlapping.aspx.cs">
+      <DependentUpon>ConfirmHoursOverlapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ConfirmHoursOverlapping.aspx.designer.cs">
+      <DependentUpon>ConfirmHoursOverlapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ConfirmPopUp.aspx.cs">
+      <DependentUpon>ConfirmPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ConfirmPopUp.aspx.designer.cs">
+      <DependentUpon>ConfirmPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ConfirmSavingPopUp.aspx.cs">
+      <DependentUpon>ConfirmSavingPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ConfirmSavingPopUp.aspx.designer.cs">
+      <DependentUpon>ConfirmSavingPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditRemarkByselectedType.aspx.cs">
+      <DependentUpon>EditRemarkByselectedType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditRemarkByselectedType.aspx.designer.cs">
+      <DependentUpon>EditRemarkByselectedType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditRemarkByselectedType_NEW.aspx.cs">
+      <DependentUpon>EditRemarkByselectedType_NEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditRemarkByselectedType_NEW.aspx.designer.cs">
+      <DependentUpon>EditRemarkByselectedType_NEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ErrorsReportSimulVcSefer.aspx.cs">
+      <DependentUpon>ErrorsReportSimulVcSefer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ErrorsReportSimulVcSefer.aspx.designer.cs">
+      <DependentUpon>ErrorsReportSimulVcSefer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GetAllDataPopup.aspx.cs">
+      <DependentUpon>GetAllDataPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GetAllDataPopup.aspx.designer.cs">
+      <DependentUpon>GetAllDataPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HandleSweepingRemarks.aspx.cs">
+      <DependentUpon>HandleSweepingRemarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HandleSweepingRemarks.aspx.designer.cs">
+      <DependentUpon>HandleSweepingRemarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListMFCodes.aspx.cs">
+      <DependentUpon>ListMFCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListMFCodes.aspx.designer.cs">
+      <DependentUpon>ListMFCodes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListOldOperations.aspx.cs">
+      <DependentUpon>ListOldOperations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListOldOperations.aspx.designer.cs">
+      <DependentUpon>ListOldOperations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageGeneralRemarksDictionary.aspx.cs">
+      <DependentUpon>ManageGeneralRemarksDictionary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageGeneralRemarksDictionary.aspx.designer.cs">
+      <DependentUpon>ManageGeneralRemarksDictionary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageRemarkCategory.aspx.cs">
+      <DependentUpon>ManageRemarkCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageRemarkCategory.aspx.designer.cs">
+      <DependentUpon>ManageRemarkCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageSubUnitTypeSubstituteName.aspx.cs">
+      <DependentUpon>ManageSubUnitTypeSubstituteName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageSubUnitTypeSubstituteName.aspx.designer.cs">
+      <DependentUpon>ManageSubUnitTypeSubstituteName.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MasterDetailsExample.aspx.cs">
+      <DependentUpon>MasterDetailsExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewClinicDetails.aspx.cs">
+      <DependentUpon>NewClinicDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewClinicDetails.aspx.designer.cs">
+      <DependentUpon>NewClinicDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewClinicsList.aspx.cs">
+      <DependentUpon>NewClinicsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewClinicsList.aspx.designer.cs">
+      <DependentUpon>NewClinicsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PopupYesNo.aspx.cs">
+      <DependentUpon>PopupYesNo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PopupYesNo.aspx.designer.cs">
+      <DependentUpon>PopupYesNo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ReceptionHoursPreview.aspx.cs">
+      <DependentUpon>ReceptionHoursPreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ReceptionHoursPreview.aspx.designer.cs">
+      <DependentUpon>ReceptionHoursPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SelectEmployeeDeptsPopup.aspx.cs">
+      <DependentUpon>SelectEmployeeDeptsPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SelectEmployeeDeptsPopup.aspx.designer.cs">
+      <DependentUpon>SelectEmployeeDeptsPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SelectGeneralRemarkPopUp.aspx.cs">
+      <DependentUpon>SelectGeneralRemarkPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SelectGeneralRemarkPopUp.aspx.designer.cs">
+      <DependentUpon>SelectGeneralRemarkPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SelectQueueMethod.aspx.cs">
+      <DependentUpon>SelectQueueMethod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SelectQueueMethod.aspx.designer.cs">
+      <DependentUpon>SelectQueueMethod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ServiceCategories.aspx.cs">
+      <DependentUpon>ServiceCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ServiceCategories.aspx.designer.cs">
+      <DependentUpon>ServiceCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SubUnitTypesDictionaryPopUp.aspx.cs">
+      <DependentUpon>SubUnitTypesDictionaryPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SubUnitTypesDictionaryPopUp.aspx.designer.cs">
+      <DependentUpon>SubUnitTypesDictionaryPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SweepingRemarkExclusionsPopUp.aspx.cs">
+      <DependentUpon>SweepingRemarkExclusionsPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SweepingRemarkExclusionsPopUp.aspx.designer.cs">
+      <DependentUpon>SweepingRemarkExclusionsPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Translations.aspx.cs">
+      <DependentUpon>Translations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Translations.aspx.designer.cs">
+      <DependentUpon>Translations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateClinicDetails.aspx.cs">
+      <DependentUpon>UpdateClinicDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateClinicDetails.aspx.designer.cs">
+      <DependentUpon>UpdateClinicDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateClinicEvents.aspx.cs">
+      <DependentUpon>UpdateClinicEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateClinicEvents.aspx.designer.cs">
+      <DependentUpon>UpdateClinicEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateDeptEmployee.aspx.cs">
+      <DependentUpon>UpdateDeptEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateDeptEmployee.aspx.designer.cs">
+      <DependentUpon>UpdateDeptEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateDeptNames.aspx.cs">
+      <DependentUpon>UpdateDeptNames.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateDeptNames.aspx.designer.cs">
+      <DependentUpon>UpdateDeptNames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateDeptReceptionHours.aspx.cs">
+      <DependentUpon>UpdateDeptReceptionHours.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateDeptReceptionHours.aspx.designer.cs">
+      <DependentUpon>UpdateDeptReceptionHours.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateEmployeeDataPopup.aspx.cs">
+      <DependentUpon>UpdateEmployeeDataPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateEmployeeDataPopup.aspx.designer.cs">
+      <DependentUpon>UpdateEmployeeDataPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateEmployeeExpertProfession.aspx.cs">
+      <DependentUpon>UpdateEmployeeExpertProfession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateEmployeeExpertProfession.aspx.designer.cs">
+      <DependentUpon>UpdateEmployeeExpertProfession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\updateEmployee.aspx.cs">
+      <DependentUpon>updateEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\updateEmployee.aspx.designer.cs">
+      <DependentUpon>updateEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateEmployeeReception.aspx.cs">
+      <DependentUpon>UpdateEmployeeReception.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateEmployeeReception.aspx.designer.cs">
+      <DependentUpon>UpdateEmployeeReception.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateEmployeeRemarks.aspx.cs">
+      <DependentUpon>UpdateEmployeeRemarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateEmployeeRemarks.aspx.designer.cs">
+      <DependentUpon>UpdateEmployeeRemarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateEmployeeServiceRemarks.aspx.cs">
+      <DependentUpon>UpdateEmployeeServiceRemarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateEmployeeServiceRemarks.aspx.designer.cs">
+      <DependentUpon>UpdateEmployeeServiceRemarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateMainMenu.aspx.cs">
+      <DependentUpon>UpdateMainMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateMainMenu.aspx.designer.cs">
+      <DependentUpon>UpdateMainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateRemarks.aspx.cs">
+      <DependentUpon>UpdateRemarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateRemarks.aspx.designer.cs">
+      <DependentUpon>UpdateRemarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateSalServiceDetails.aspx.cs">
+      <DependentUpon>UpdateSalServiceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateSalServiceDetails.aspx.designer.cs">
+      <DependentUpon>UpdateSalServiceDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateServiceCategories.aspx.cs">
+      <DependentUpon>UpdateServiceCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateServiceCategories.aspx.designer.cs">
+      <DependentUpon>UpdateServiceCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateServicePhones.aspx.cs">
+      <DependentUpon>UpdateServicePhones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateServicePhones.aspx.designer.cs">
+      <DependentUpon>UpdateServicePhones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateStatus.aspx.cs">
+      <DependentUpon>UpdateStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateStatus.aspx.designer.cs">
+      <DependentUpon>UpdateStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateSweepingRemarks.aspx.cs">
+      <DependentUpon>UpdateSweepingRemarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateSweepingRemarks.aspx.designer.cs">
+      <DependentUpon>UpdateSweepingRemarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateUser.aspx.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateUser.aspx.designer.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserAdministration.aspx.cs">
+      <DependentUpon>UserAdministration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserAdministration.aspx.designer.cs">
+      <DependentUpon>UserAdministration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AjaxWebServices\AutoComplete.cs">
+      <DependentUpon>AutoComplete.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AjaxWebServices\LoginService.cs">
+      <DependentUpon>LoginService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AjaxWebServices\SimpleService.cs">
+      <DependentUpon>SimpleService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppCode\GetEmployeeDetailesByID.cs" />
+    <Compile Include="HelpFiles\ShowHelp.aspx.designer.cs">
+      <DependentUpon>ShowHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpLogin.aspx.cs">
+      <DependentUpon>PopUpLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PopUpLogin.aspx.designer.cs">
+      <DependentUpon>PopUpLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DeptEventPopUp.aspx.designer.cs">
+      <DependentUpon>DeptEventPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DeptMap.aspx.designer.cs">
+      <DependentUpon>DeptMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DeptReceptionPopUp.aspx.designer.cs">
+      <DependentUpon>DeptReceptionPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DeptServices.aspx.designer.cs">
+      <DependentUpon>DeptServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DeptSubClinics.aspx.designer.cs">
+      <DependentUpon>DeptSubClinics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DoctorReceptionPopUp.aspx.designer.cs">
+      <DependentUpon>DoctorReceptionPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DocumentsOpener.aspx.designer.cs">
+      <DependentUpon>DocumentsOpener.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\EmployeeReceptionExpirationPopUp.aspx.designer.cs">
+      <DependentUpon>EmployeeReceptionExpirationPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\EnterSalServicesPopUp.aspx.cs">
+      <DependentUpon>EnterSalServicesPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\EnterSalServicesPopUp.aspx.designer.cs">
+      <DependentUpon>EnterSalServicesPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\MedicalAspects.aspx.designer.cs">
+      <DependentUpon>MedicalAspects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\MushlamServices.aspx.designer.cs">
+      <DependentUpon>MushlamServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\OrganizationTree.aspx.designer.cs">
+      <DependentUpon>OrganizationTree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\PopulationDetails.aspx.designer.cs">
+      <DependentUpon>PopulationDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\PopUpLogin.aspx.designer.cs">
+      <DependentUpon>PopUpLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\PrintPopUp.aspx.designer.cs">
+      <DependentUpon>PrintPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ReportOnIncorrectData.aspx.designer.cs">
+      <DependentUpon>ReportOnIncorrectData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ReportSearchResult.aspx.cs">
+      <DependentUpon>ReportSearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ReportSearchResult.aspx.designer.cs">
+      <DependentUpon>ReportSearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ReportsSearchResult_CreateExcel.aspx.cs">
+      <DependentUpon>ReportsSearchResult_CreateExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\SelectDepts.aspx.designer.cs">
+      <DependentUpon>SelectDepts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\SelectEmployeePopUp.aspx.cs">
+      <DependentUpon>SelectEmployeePopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\SelectEmployeePopUp.aspx.designer.cs">
+      <DependentUpon>SelectEmployeePopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\SelectPopUp.aspx.designer.cs">
+      <DependentUpon>SelectPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\sendBrochuresAndForms.aspx.designer.cs">
+      <DependentUpon>sendBrochuresAndForms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\SendBrochuresAndFormsByMailPopUp.aspx.cs">
+      <DependentUpon>SendBrochuresAndFormsByMailPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\SendBrochuresAndFormsByMailPopUp.aspx.designer.cs">
+      <DependentUpon>SendBrochuresAndFormsByMailPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ServiceHoursPopUp.aspx.designer.cs">
+      <DependentUpon>ServiceHoursPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ZoomClinic.aspx.designer.cs">
+      <DependentUpon>ZoomClinic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\zoomDoctor.aspx.designer.cs">
+      <DependentUpon>zoomDoctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ZoomSalService.aspx.designer.cs">
+      <DependentUpon>ZoomSalService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsForDeveloper\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ReportsParametersForSearchResult.aspx.cs">
+      <DependentUpon>ReportsParametersForSearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ReportsParametersForSearchResult.aspx.designer.cs">
+      <DependentUpon>ReportsParametersForSearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportsParameters.aspx.designer.cs">
+      <DependentUpon>ReportsParameters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports_CreateExcel.aspx.cs">
+      <DependentUpon>Reports_CreateExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports_CreateExcel.aspx.designer.cs">
+      <DependentUpon>Reports_CreateExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RS_ReportResult.aspx.designer.cs">
+      <DependentUpon>RS_ReportResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchClinics.aspx.designer.cs">
+      <DependentUpon>SearchClinics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchDoctors.aspx.designer.cs">
+      <DependentUpon>SearchDoctors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchMasterPage.master.designer.cs">
+      <DependentUpon>SearchMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="SearchSalServices.aspx.designer.cs">
+      <DependentUpon>SearchSalServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeferMasterPage.master.designer.cs">
+      <DependentUpon>SeferMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="SeferMasterPageIE.Master.cs">
+      <DependentUpon>SeferMasterPageIE.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeferMasterPageIE.Master.designer.cs">
+      <DependentUpon>SeferMasterPageIE.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SeferMasterPageIEwide.Master.cs">
+      <DependentUpon>SeferMasterPageIEwide.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeferMasterPageIEwide.Master.designer.cs">
+      <DependentUpon>SeferMasterPageIEwide.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BakaratKnisotService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CentralLogRegularService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GetEmployeeDetailes\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\FrmSelectTemplate.aspx.designer.cs">
+      <DependentUpon>FrmSelectTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\PrintingParameters.aspx.designer.cs">
+      <DependentUpon>PrintingParameters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\PrintingParameters_ZoomSalService.aspx.cs">
+      <DependentUpon>PrintingParameters_ZoomSalService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\PrintingParameters_ZoomSalService.aspx.designer.cs">
+      <DependentUpon>PrintingParameters_ZoomSalService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\PrintZoomClinic.aspx.designer.cs">
+      <DependentUpon>PrintZoomClinic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\ZoomSalService_PrintOptions.aspx.cs">
+      <DependentUpon>ZoomSalService_PrintOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\ZoomSalService_PrintOptions.aspx.designer.cs">
+      <DependentUpon>ZoomSalService_PrintOptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Default2.aspx.designer.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\DefaultMultDDl.aspx.designer.cs">
+      <DependentUpon>DefaultMultDDl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\DefaultPhones.aspx.designer.cs">
+      <DependentUpon>DefaultPhones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TestJS.aspx.designer.cs">
+      <DependentUpon>TestJS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TestRemarksPopUp.aspx.designer.cs">
+      <DependentUpon>TestRemarksPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Test_with_master.aspx.cs">
+      <DependentUpon>Test_with_master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\Test_with_master.aspx.designer.cs">
+      <DependentUpon>Test_with_master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TryAjax.aspx.designer.cs">
+      <DependentUpon>TryAjax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\CorrectGeneralRemarksText.aspx.cs">
+      <DependentUpon>CorrectGeneralRemarksText.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\CorrectGeneralRemarksText.aspx.designer.cs">
+      <DependentUpon>CorrectGeneralRemarksText.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\SelectServiceFromMFtables.aspx.designer.cs">
+      <DependentUpon>SelectServiceFromMFtables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateBrochuresAndForms.aspx.designer.cs">
+      <DependentUpon>UpdateBrochuresAndForms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateDays.aspx.designer.cs">
+      <DependentUpon>UpdateDays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateDIC_PhonePrefix.aspx.designer.cs">
+      <DependentUpon>UpdateDIC_PhonePrefix.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateEvents.aspx.designer.cs">
+      <DependentUpon>UpdateEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateMushlamProfessionsMapping.aspx.designer.cs">
+      <DependentUpon>UpdateMushlamProfessionsMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdatePositions.aspx.designer.cs">
+      <DependentUpon>UpdatePositions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateProfessionsForInternet.aspx.designer.cs">
+      <DependentUpon>UpdateProfessionsForInternet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateProfessionsNew.aspx.designer.cs">
+      <DependentUpon>UpdateProfessionsNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateSalCategories.aspx.designer.cs">
+      <DependentUpon>UpdateSalCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateSalCategoryProfessions.aspx.designer.cs">
+      <DependentUpon>UpdateSalCategoryProfessions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateSalServicesAdminComments.aspx.designer.cs">
+      <DependentUpon>UpdateSalServicesAdminComments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateServiceExtensions.aspx.cs">
+      <DependentUpon>UpdateServiceExtensions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateServiceExtensions.aspx.designer.cs">
+      <DependentUpon>UpdateServiceExtensions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateServices.aspx.designer.cs">
+      <DependentUpon>UpdateServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateServiceSynonym.aspx.designer.cs">
+      <DependentUpon>UpdateServiceSynonym.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateSpecificService.aspx.designer.cs">
+      <DependentUpon>UpdateSpecificService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateUnitTypeConversion.aspx.designer.cs">
+      <DependentUpon>UpdateUnitTypeConversion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateUnitTypes.aspx.designer.cs">
+      <DependentUpon>UpdateUnitTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CustomPopUp.ascx.designer.cs">
+      <DependentUpon>CustomPopUp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DeptMapUC.ascx.designer.cs">
+      <DependentUpon>DeptMapUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DeptReceptionAndRemarks.ascx.designer.cs">
+      <DependentUpon>DeptReceptionAndRemarks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GetClinicByName.ascx.cs">
+      <DependentUpon>GetClinicByName.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GetClinicByName.ascx.designer.cs">
+      <DependentUpon>GetClinicByName.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GridDeptReceptionHoursByType.ascx.designer.cs">
+      <DependentUpon>GridDeptReceptionHoursByType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GridDeptReceptionHoursUC.ascx.designer.cs">
+      <DependentUpon>GridDeptReceptionHoursUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GridReceptionHoursUC.ascx.designer.cs">
+      <DependentUpon>GridReceptionHoursUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GridTreeView.ascx.designer.cs">
+      <DependentUpon>GridTreeView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GridTreeViewTableList.ascx.designer.cs">
+      <DependentUpon>GridTreeViewTableList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GridUnitTypes.ascx.designer.cs">
+      <DependentUpon>GridUnitTypes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HourControl.ascx.cs">
+      <DependentUpon>HourControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\HourControl.ascx.designer.cs">
+      <DependentUpon>HourControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MapSearchControl.ascx.designer.cs">
+      <DependentUpon>MapSearchControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MultiDDlSelect.ascx.designer.cs">
+      <DependentUpon>MultiDDlSelect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MultiDDlSelectUC.ascx.designer.cs">
+      <DependentUpon>MultiDDlSelectUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MultiSelectAndUpdate.ascx.designer.cs">
+      <DependentUpon>MultiSelectAndUpdate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PhonesGridUC.ascx.designer.cs">
+      <DependentUpon>PhonesGridUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QueueOrderHoursUC.ascx.designer.cs">
+      <DependentUpon>QueueOrderHoursUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RemarkClientHandler.ascx.designer.cs">
+      <DependentUpon>RemarkClientHandler.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RemarkControl.ascx.cs">
+      <DependentUpon>RemarkControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RemarkControl.ascx.designer.cs">
+      <DependentUpon>RemarkControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SearchModeSelector.ascx.designer.cs">
+      <DependentUpon>SearchModeSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\selectDays.ascx.designer.cs">
+      <DependentUpon>selectDays.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SelectLetter.ascx.designer.cs">
+      <DependentUpon>SelectLetter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ServicesControl.ascx.cs">
+      <DependentUpon>ServicesControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ServicesControl.ascx.designer.cs">
+      <DependentUpon>ServicesControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SortableColumnHeader.ascx.designer.cs">
+      <DependentUpon>SortableColumnHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WCFWebServices\WCFCacheService.cs">
+      <DependentUpon>WCFCacheService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\RSWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\AsyncCallbackHelper.cs" />
+    <Compile Include="AppCode\CReportViewerCustomMessages.cs" />
+    <Compile Include="AppCode\Dept.cs" />
+    <Compile Include="AppCode\Dictionary.cs" />
+    <Compile Include="AppCode\enums.cs" />
+    <Compile Include="AppCode\EnvironmentInformationController.cs" />
+    <Compile Include="AppCode\GlobalConst.cs" />
+    <Compile Include="AppCode\IHierarchicalDataSet.cs" />
+    <Compile Include="AppCode\ILoadBalancerService.cs" />
+    <Compile Include="AppCode\Item.cs" />
+    <Compile Include="AppCode\LogHelper.cs" />
+    <Compile Include="AppCode\ManagingServicesProfessionsHelper.cs" />
+    <Compile Include="AppCode\Map\MapCoordinatesClientManager.cs" />
+    <Compile Include="AppCode\Map\MapHelper.cs" />
+    <Compile Include="AppCode\MasterPageModule.cs" />
+    <Compile Include="AppCode\MultiSelectEventArgs.cs" />
+    <Compile Include="AppCode\PageHelper.cs" />
+    <Compile Include="AppCode\SearchPages\ISearchMasterPage.cs" />
+    <Compile Include="AppCode\SearchPages\ISearchPageController.cs" />
+    <Compile Include="AppCode\SearchPages\PagingControlsController.cs" />
+    <Compile Include="AppCode\SearchPages\SearchPageHelper.cs" />
+    <Compile Include="AppCode\UI\UIHelper.cs" />
+    <Compile Include="App_GlobalResources\ApplicResources.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ApplicResources.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicResources.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ApplicResources.he-il.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicResources.he-il.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ErrorResource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ErrorResource.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorResource.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ErrorResource.he-il.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorResource.he-il.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ValidationErrorMessages.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationErrorMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="HelpFiles\ShowHelp.aspx.cs">
+      <DependentUpon>ShowHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Public\DeptEventPopUp.aspx.cs">
+      <DependentUpon>DeptEventPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\DeptMap.aspx.cs">
+      <DependentUpon>DeptMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\DeptReceptionPopUp.aspx.cs">
+      <DependentUpon>DeptReceptionPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\DeptServices.aspx.cs">
+      <DependentUpon>DeptServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\DeptSubClinics.aspx.cs">
+      <DependentUpon>DeptSubClinics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\DoctorReceptionPopUp.aspx.cs">
+      <DependentUpon>DoctorReceptionPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\DocumentsOpener.aspx.cs">
+      <DependentUpon>DocumentsOpener.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\EmployeeReceptionExpirationPopUp.aspx.cs">
+      <DependentUpon>EmployeeReceptionExpirationPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\MedicalAspects.aspx.cs">
+      <DependentUpon>MedicalAspects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\MushlamServices.aspx.cs">
+      <DependentUpon>MushlamServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\OrganizationTree.aspx.cs">
+      <DependentUpon>OrganizationTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\PopulationDetails.aspx.cs">
+      <DependentUpon>PopulationDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\PopUpLogin.aspx.cs">
+      <DependentUpon>PopUpLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\PrintPopUp.aspx.cs">
+      <DependentUpon>PrintPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ReportOnIncorrectData.aspx.cs">
+      <DependentUpon>ReportOnIncorrectData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\SelectDepts.aspx.cs">
+      <DependentUpon>SelectDepts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\SelectPopUp.aspx.cs">
+      <DependentUpon>SelectPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\sendBrochuresAndForms.aspx.cs">
+      <DependentUpon>sendBrochuresAndForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ServiceHoursPopUp.aspx.cs">
+      <DependentUpon>ServiceHoursPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ZoomClinic.aspx.cs">
+      <DependentUpon>ZoomClinic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\zoomDoctor.aspx.cs">
+      <DependentUpon>zoomDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ZoomSalService.aspx.cs">
+      <DependentUpon>ZoomSalService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportsForDeveloper\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportsParameters.aspx.cs">
+      <DependentUpon>ReportsParameters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RS_ReportResult.aspx.cs">
+      <DependentUpon>RS_ReportResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchClinics.aspx.cs">
+      <DependentUpon>SearchClinics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchDoctors.aspx.cs">
+      <DependentUpon>SearchDoctors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchMasterPage.master.cs">
+      <DependentUpon>SearchMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchSalServices.aspx.cs">
+      <DependentUpon>SearchSalServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeferMasterPage.master.cs">
+      <DependentUpon>SeferMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\FrmSelectTemplate.aspx.cs">
+      <DependentUpon>FrmSelectTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\PrintingParameters.aspx.cs">
+      <DependentUpon>PrintingParameters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\PrintZoomClinic.aspx.cs">
+      <DependentUpon>PrintZoomClinic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\Default2.aspx.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\DefaultMultDDl.aspx.cs">
+      <DependentUpon>DefaultMultDDl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\DefaultPhones.aspx.cs">
+      <DependentUpon>DefaultPhones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\TestJS.aspx.cs">
+      <DependentUpon>TestJS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\TestRemarksPopUp.aspx.cs">
+      <DependentUpon>TestRemarksPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests\TryAjax.aspx.cs">
+      <DependentUpon>TryAjax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\SelectServiceFromMFtables.aspx.cs">
+      <DependentUpon>SelectServiceFromMFtables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateBrochuresAndForms.aspx.cs">
+      <DependentUpon>UpdateBrochuresAndForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateDays.aspx.cs">
+      <DependentUpon>UpdateDays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateDIC_PhonePrefix.aspx.cs">
+      <DependentUpon>UpdateDIC_PhonePrefix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateEvents.aspx.cs">
+      <DependentUpon>UpdateEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateMushlamProfessionsMapping.aspx.cs">
+      <DependentUpon>UpdateMushlamProfessionsMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdatePositions.aspx.cs">
+      <DependentUpon>UpdatePositions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateProfessionsForInternet.aspx.cs">
+      <DependentUpon>UpdateProfessionsForInternet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateProfessionsNew.aspx.cs">
+      <DependentUpon>UpdateProfessionsNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateSalCategories.aspx.cs">
+      <DependentUpon>UpdateSalCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateSalCategoryProfessions.aspx.cs">
+      <DependentUpon>UpdateSalCategoryProfessions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateSalServicesAdminComments.aspx.cs">
+      <DependentUpon>UpdateSalServicesAdminComments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateServices.aspx.cs">
+      <DependentUpon>UpdateServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateServiceSynonym.aspx.cs">
+      <DependentUpon>UpdateServiceSynonym.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateSpecificService.aspx.cs">
+      <DependentUpon>UpdateSpecificService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateUnitTypeConversion.aspx.cs">
+      <DependentUpon>UpdateUnitTypeConversion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateTables\UpdateUnitTypes.aspx.cs">
+      <DependentUpon>UpdateUnitTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CustomPopUp.ascx.cs">
+      <DependentUpon>CustomPopUp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DeptMapUC.ascx.cs">
+      <DependentUpon>DeptMapUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DeptReceptionAndRemarks.ascx.cs">
+      <DependentUpon>DeptReceptionAndRemarks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GridDeptReceptionHoursByType.ascx.cs">
+      <DependentUpon>GridDeptReceptionHoursByType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GridDeptReceptionHoursUC.ascx.cs">
+      <DependentUpon>GridDeptReceptionHoursUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GridReceptionHoursUC.ascx.cs">
+      <DependentUpon>GridReceptionHoursUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GridTreeView.ascx.cs">
+      <DependentUpon>GridTreeView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GridTreeViewTableList.ascx.cs">
+      <DependentUpon>GridTreeViewTableList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\GridUnitTypes.ascx.cs">
+      <DependentUpon>GridUnitTypes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MapSearchControl.ascx.cs">
+      <DependentUpon>MapSearchControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MultiDDlSelect.ascx.cs">
+      <DependentUpon>MultiDDlSelect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MultiDDlSelectUC.ascx.cs">
+      <DependentUpon>MultiDDlSelectUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MultiSelectAndUpdate.ascx.cs">
+      <DependentUpon>MultiSelectAndUpdate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PhonesGridUC.ascx.cs">
+      <DependentUpon>PhonesGridUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\QueueOrderHoursUC.ascx.cs">
+      <DependentUpon>QueueOrderHoursUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RemarkClientHandler.ascx.cs">
+      <DependentUpon>RemarkClientHandler.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SearchModeSelector.ascx.cs">
+      <DependentUpon>SearchModeSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\selectDays.ascx.cs">
+      <DependentUpon>selectDays.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectLetter.ascx.cs">
+      <DependentUpon>SelectLetter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SortableColumnHeader.ascx.cs">
+      <DependentUpon>SortableColumnHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Admin\RemarksMenu.aspx.cs.exclude" />
+    <None Include="Admin\RemarksMenu.aspx.exclude" />
+    <Content Include="App_Themes\SeferGeneral\general.skin" />
+    <None Include="AppWebReferences\DoctorSrv\DoctorService.discomap" />
+    <None Include="AppWebReferences\DoctorSrv\DoctorService.wsdl" />
+    <None Include="AppWebReferences\MapService\CoordsFinder.discomap" />
+    <None Include="AppWebReferences\MapService\CoordsFinder.wsdl" />
+    <Content Include="Handlers\KeepSessionAlive.ashx" />
+    <Content Include="Handlers\SendFax.ashx" />
+    <Content Include="Handlers\SendMail.ashx" />
+    <Content Include="HelpFiles\BasketServicesUpdate.pdf" />
+    <None Include="HelpFiles\BriefingForUser.pdf" />
+    <None Include="HelpFiles\BriefingToUpdate.pdf" />
+    <None Include="HelpFiles\GuideForUser.pdf" />
+    <None Include="HelpFiles\GuideToUpdate.pdf" />
+    <Content Include="HelpFiles\QuickReferenceGuide.pdf" />
+    <None Include="HelpFiles\SetResolution.pdf" />
+    <None Include="Images\Applic\time_Internet_new.psd" />
+    <None Include="Images\Applic\time_new.psd" />
+    <None Include="Properties\PublishProfiles\Regular.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\menu_datamain.js.exclude" />
+    <None Include="Scripts\searchEvents.js.exclude" />
+    <Content Include="SearchMasterPage.master" />
+    <Content Include="SeferMasterPage.master" />
+    <None Include="Service References\GetEmployeeDetailes\GetEmployeeDetailsByID.wsdl" />
+    <None Include="Service References\GetEmployeeDetailes\GetEmployeeDetailsByID.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GetEmployeeDetailes\GetEmployeeDetailsByID1.wsdl" />
+    <None Include="Service References\GetEmployeeDetailes\GetEmployeeDetailsByID1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GetEmployeeDetailes\GetEmployeeDetailsByID2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\GetEmployeeDetailes\SeferNet.UI.Apps.GetEmployeeDetailes.GetEmployeeDetailsByID_Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="UpdateTables\UpdateProfessionItem.aspx.cs.exclude" />
+    <None Include="UpdateTables\UpdateProfessionItem.aspx.exclude" />
+    <None Include="UserControls\QueueOrderHoursUC.ascx.bak" />
+    <None Include="UserControls\TopMenu.ascx.cs.exclude" />
+    <None Include="UserControls\TopMenu.ascx.exclude" />
+    <None Include="Web References\RSWS\DocumentMapNode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\RSWS\ExecutionInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\RSWS\ExecutionInfo2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\RSWS\Extension.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\RSWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RSWS\ReportExecution2005.wsdl" />
+    <None Include="Web References\RSWS\Warning.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\App_LocalResources\EditItem.aspx.he-il.resx" />
+    <Content Include="Admin\App_LocalResources\EditItem.aspx.resx" />
+    <Content Include="Admin\App_LocalResources\FathersList.aspx.he-il.resx" />
+    <Content Include="Admin\App_LocalResources\FathersList.aspx.resx" />
+    <Content Include="Admin\App_LocalResources\ListMFCodes.aspx.he-il.resx" />
+    <Content Include="Admin\App_LocalResources\ListMFCodes.aspx.resx" />
+    <Content Include="Admin\App_LocalResources\ListOldOperations.aspx.he-il.resx" />
+    <Content Include="Admin\App_LocalResources\ListOldOperations.aspx.resx" />
+    <Content Include="Admin\App_LocalResources\ManagingServicesProfessions.aspx.he-il.resx" />
+    <Content Include="Admin\App_LocalResources\ManagingServicesProfessions.aspx.resx" />
+    <Content Include="Admin\App_LocalResources\RemarksPopUp.aspx.he-il.resx" />
+    <Content Include="Admin\App_LocalResources\RemarksPopUp.aspx.resx" />
+    <Content Include="Admin\App_LocalResources\UpdateDeptHours.aspx.en-us.resx" />
+    <Content Include="Admin\App_LocalResources\UpdateDeptHours.aspx.he-il.resx" />
+    <Content Include="Admin\App_LocalResources\UpdateDeptHours.aspx.resx" />
+    <Content Include="Admin\App_LocalResources\updateServices.aspx.en-us.resx" />
+    <Content Include="Admin\App_LocalResources\updateServices.aspx.he-il.resx" />
+    <Content Include="Admin\App_LocalResources\updateServices.aspx.resx" />
+    <Content Include="App_GlobalResources\ApplicResources.en-us.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ApplicResources.en-us.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ApplicResources.he-il.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ApplicResources.he-il.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ApplicResources.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ApplicResources.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ErrorResource.en-us.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ErrorResource.en-us.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ErrorResource.he-il.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ErrorResource.he-il.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ErrorResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ErrorResource.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ValidationErrorMessages.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ValidationErrorMessages.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_LocalResources\EditItem.aspx.he-il.resx" />
+    <Content Include="App_LocalResources\EditItem.aspx.resx" />
+    <Content Include="App_LocalResources\FathersList.aspx.he-il.resx" />
+    <Content Include="App_LocalResources\FathersList.aspx.resx" />
+    <Content Include="App_LocalResources\ListOldOperations.aspx.he-il.resx" />
+    <Content Include="App_LocalResources\ListOldOperations.aspx.resx" />
+    <Content Include="App_LocalResources\ManagingServicesProfessions.aspx.he-il.resx" />
+    <Content Include="App_LocalResources\ManagingServicesProfessions.aspx.resx" />
+    <Content Include="Public\App_LocalResources\HomeSefer.aspx.en-us.resx" />
+    <Content Include="Public\App_LocalResources\HomeSefer.aspx.he-il.resx" />
+    <Content Include="Public\App_LocalResources\HomeSefer.aspx.resx" />
+    <Content Include="Public\App_LocalResources\SearchClinics.aspx.resx" />
+    <Content Include="Public\App_LocalResources\ZoomClinic.aspx.resx" />
+    <Content Include="UpdateTables\App_LocalResources\UpdatePositions.aspx.he-il.resx" />
+    <Content Include="UpdateTables\App_LocalResources\UpdatePositions.aspx.resx" />
+    <Content Include="UpdateTables\App_LocalResources\UpdateProfessionItem.aspx.he-il.resx" />
+    <Content Include="UpdateTables\App_LocalResources\UpdateProfessionItem.aspx.resx" />
+    <Content Include="UpdateTables\App_LocalResources\UpdateProfessionsNew.aspx.he-il.resx" />
+    <Content Include="UpdateTables\App_LocalResources\UpdateProfessionsNew.aspx.resx" />
+    <Content Include="UserControls\App_LocalResources\GridDeptReceptionHoursUC.ascx.he-il.resx" />
+    <Content Include="UserControls\App_LocalResources\GridDeptReceptionHoursUC.ascx.resx" />
+    <Content Include="UserControls\App_LocalResources\GridReceptionHoursUC.ascx.he-il.resx" />
+    <Content Include="UserControls\App_LocalResources\GridReceptionHoursUC.ascx.resx" />
+    <Content Include="UserControls\App_LocalResources\GridTreeView.ascx.resx" />
+    <Content Include="UserControls\App_LocalResources\QueueOrderHoursUC.ascx.he-il.resx" />
+    <Content Include="UserControls\App_LocalResources\QueueOrderHoursUC.ascx.resx" />
+    <Content Include="UserControls\App_LocalResources\TopMenu.ascx.en-us.resx" />
+    <Content Include="UserControls\App_LocalResources\TopMenu.ascx.he-il.resx" />
+    <Content Include="UserControls\App_LocalResources\TopMenu.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HelpFiles\CSS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{71EE7EF8-F57B-4A9F-AA27-586DBE592ACF}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clalit.SeferNet.EntitiesBL\Clalit.SeferNet.EntitiesBL.csproj">
+      <Project>{55796E41-A395-4158-BC16-F8B4A675196B}</Project>
+      <Name>Clalit.SeferNet.EntitiesBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clalit.SeferNet.EntitiesDal\Clalit.SeferNet.EntitiesDal.csproj">
+      <Project>{8616B5AC-9F11-4C8B-ABD0-C0D09BE13F47}</Project>
+      <Name>Clalit.SeferNet.EntitiesDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clalit.SeferNet.Entities\Clalit.SeferNet.Entities.csproj">
+      <Project>{055798E6-844A-40C5-A6DE-901FA2E976FF}</Project>
+      <Name>Clalit.SeferNet.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clalit.SeferNet.Services\Clalit.SeferNet.Services.csproj">
+      <Project>{BE43799C-1EF3-4363-8854-85FD30806049}</Project>
+      <Name>Clalit.SeferNet.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{FAD76F8A-B277-4726-BEE2-040AC4E48E92}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacadeLayer\FacadeLayer.csproj">
+      <Project>{8C5DD73E-18F0-4AFE-9225-C0C54F686DEA}</Project>
+      <Name>FacadeLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Globals\Globals.csproj">
+      <Project>{CD3F3209-91EB-4C82-817D-AEF0A0D6874C}</Project>
+      <Name>Globals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Matrix.Infrastructure.GenericDal\Matrix.Infrastructure.GenericDal.csproj">
+      <Project>{D15CBACB-A83A-4DBD-99FA-29985178B371}</Project>
+      <Name>Matrix.Infrastructure.GenericDal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://mksql044/ReportServer/ReportExecution2005.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\RSWS\</RelPath>
+      <UpdateFromURL>http://mksql044/ReportServer/ReportExecution2005.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SeferNet_UI_Apps_RSWS_ReportExecutionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BakaratKnisotService\" />
+    <WCFMetadataStorage Include="Service References\CentralLogRegularService\" />
+    <WCFMetadataStorage Include="Service References\GetEmployeeDetailes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>11001</DevelopmentServerPort>
+          <DevelopmentServerVPath>/SeferNet/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,268 @@
+body
+{
+}
+
+.RightMenuLink
+{
+	color:#ffffff;
+	font-family:Arial (Hebrew),Tahoma;
+	font-size:13px;
+	text-decoration:none;
+	width:150px;
+}
+
+.RightMenuLink:Hover
+{
+	color:#000000;
+	font-family:Arial (Hebrew),Tahoma;
+	font-size:13px;
+	text-decoration:none;
+	width:150px;
+}
+
+.headerMenu_MainTable
+{
+	height : 20px;
+}
+.headerMenu_RightMenuItem
+{
+	FONT-SIZE: 16px;
+    HEIGHT: 16px;
+    BACKGROUND-COLOR: #00a9ec
+
+}
+.headerMenu_MenuItem
+{
+    FONT-WEIGHT: bold;
+    TEXT-JUSTIFY: inter-word;
+    FONT-SIZE: 13px;
+    COLOR: red;
+    background-color:#00a9ec; 
+    DIRECTION: rtl;
+    TEXT-DECORATION: none;
+	cursor : hand;
+	HEIGHT: 16px;
+
+}
+.headerMenu_MenuItem :hover
+{
+    FONT-WEIGHT: bold;
+    TEXT-JUSTIFY: inter-word;
+    FONT-SIZE: 13px;
+    COLOR: #ffffff;
+    background-color:#9fd5f9; 
+    DIRECTION: rtl;
+    TEXT-DECORATION: none
+    
+}
+.headerMenu_LeftMenuItem
+{
+	FONT-SIZE: 16px;
+    HEIGHT: 16px;
+    BACKGROUND-COLOR: #00a9ec
+
+}
+
+.headerMenuItemText
+{
+    FONT-WEIGHT: bold;
+    TEXT-JUSTIFY: inter-word;
+    FONT-SIZE: 13px;
+    COLOR: #ffffff;
+    DIRECTION: rtl;
+    TEXT-DECORATION: none
+}
+.headerMenuItemText:hover
+{
+    FONT-WEIGHT: bold;
+    TEXT-JUSTIFY: inter-word;
+    FONT-SIZE: 13px;
+    COLOR: #ffffff;
+    DIRECTION: rtl;
+    TEXT-DECORATION: none
+}
+
+.header2Menu_MainTable
+{
+	height : 40px;
+}
+
+.Header2Menu_MenuItem
+{
+	width : 100px;
+	background-color : #E89801;
+	FONT-WEIGHT: bold;
+    TEXT-JUSTIFY: inter-word;
+    FONT-SIZE: 13px;
+    COLOR: #ffffff;
+    DIRECTION: rtl;
+    TEXT-DECORATION: none
+}
+
+
+.Header2Menu_RightMenuItem
+{
+	background-color :#00a9ec;
+	width : 70px;
+}
+
+
+.Header2Menu_LeftMenuItem
+{
+	width : 70px;
+	background-color :#E89801; 
+}
+
+
+.logoMenu_MainTable
+{
+	height : 50px;
+}
+.logoMenu_RightPicMenuItem
+{
+	background-image : url(..\Images\headerTxtPrefix.gif);
+	width : 150px;
+}
+.logoMenu_CenterPicMenuItem
+{
+	background-image : url(..\Images\headerLogo.gif);
+	width : 200px;
+}
+.logoMenu_SecondToTheLeftPicMenuItem
+{
+	width : 50px;
+}
+.logoMenu_BtnPic
+{
+	background-image : url(..\Images\logoClalit.jpg); 
+	height : 50px;
+	width : 200px;
+	cursor : hand;
+	border : none;
+}
+
+
+.middleMenu_MenuItem0
+{
+	width : 100px;
+	background-color : Yellow;
+}
+.middleMenu_MenuItem1
+{
+	width : 100px;
+	background-color : Fuchsia;
+}
+.middleMenu_MenuItem2
+{
+	width : 100px;
+	background-color : Navy;
+}
+.middleMenu_MenuItem3
+{
+	width : 100px;
+	background-color : Black;
+}
+.middleMenu_MenuItem4
+{
+	width : 100px;
+	background-color : Aqua;
+}
+.middleMenu_MenuItem5
+{
+	width : 100px;
+	background-color :Teal;
+}
+.middleMenu_MenuItem6
+{
+	width : 100px;
+	background-color :Lime;
+}
+
+
+.rightMenu_MainTable
+{
+	padding:1px 1px 1px 1px;
+}
+	
+
+
+.rightMenu_MenuItem
+{
+	font-size:13px;
+	width : 85px;
+	height : 5px;
+	font-family: Arial;
+	color: #ffffff;
+	background-color : #9fd5f9;	
+	cursor:hand;
+	text-decoration:none;
+}
+#rightMenuTable
+{
+	background-color :#00a9ec;
+}
+.rightMenuTableCell
+{
+	background-color :#00a9ec;
+	border-bottom:1px solid #ffffff;
+}
+/*.rightMenu_MenuItem
+{
+	font-size:13px;
+	width : 85px;
+	height : 5px;
+	font-family: Arial;
+	font: #ffffff;
+	background-color : #9fd5f9;
+	cursor:hand;
+}
+*/
+.ClickMenu
+{
+	FONT-WEIGHT: bolder;
+	TEXT-JUSTIFY: inter-word;
+	FONT-SIZE: 13px;
+	color:#ffffff;
+	FONT-FAMILY: Arial;
+	TEXT-DECORATION: none;
+	background-color :#00a9ec;
+	cursor:hand;
+	width:100%;
+	text-align:right;
+	border-top:1px solid #ffffff;
+}
+	
+.footerMenu_MenuItem
+{
+	BORDER-RIGHT: white 1px solid;
+    FONT-SIZE: 16px;
+    HEIGHT: 16px;
+    BACKGROUND-COLOR: #13b232;
+	color:#ffffff;
+	font-weight: normal;	
+	text-decoration:none;
+	border-bottom:1px dotted blue;
+	direction : inherit;
+}
+
+/* 
+MenuFont='Arial';
+MenuFontSize=2; //1 to 7 only!
+MenuFontColor='#ffffff'; //Should match link colour!
+MenuBgColor='#f5ba6c';
+MenuBgColorS='#f5ba6c';  //ubral top bez niza
+MenuBgColorS1='#E89801';
+
+MenuBgColorv='#f5ba6c';
+MenuBgColorv1='#E89801';
+
+MenuBgColor1='#9fd5f9';  // color na focuse tat tafrit #00a9ec
+MenuBgColor2='#00a9ec'
+
+HighLight='#f5ba6c';    //menu level 2
+HighLight1='#9fd5f9';  // color na focuse verx sprava
+
+HighLightf='#9fd5f9';    //menu level 2
+HighLightf1='#00a9ec';  // color na focuse verx sprava
+
+*/ 

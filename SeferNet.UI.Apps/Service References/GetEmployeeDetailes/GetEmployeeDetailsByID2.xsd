@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.clalit.org.il/GetEmployeeDetailsByID/1.0" elementFormDefault="qualified" targetNamespace="http://www.clalit.org.il/GetEmployeeDetailsByID/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetEmployeeDetailsByIDAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="requestEmp" nillable="true" type="tns:GetEmployeeDetailsByID_Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetEmployeeDetailsByID_Request">
+    <xs:sequence>
+      <xs:element name="MessageInfo" nillable="true" type="tns:GetEmployeeDetailsByID.MessageInfo">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Parameters" nillable="true" type="tns:GetEmployeeDetailsByID.Parameters">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID_Request" nillable="true" type="tns:GetEmployeeDetailsByID_Request" />
+  <xs:complexType name="GetEmployeeDetailsByID.MessageInfo">
+    <xs:sequence>
+      <xs:element name="RequestID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RequestDatetime" type="xs:dateTime" />
+      <xs:element name="RequestingApplication" type="xs:int" />
+      <xs:element name="ServingApplication" type="xs:int" />
+      <xs:element name="RequestingSite" type="xs:int" />
+      <xs:element name="ServingSite" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.MessageInfo" nillable="true" type="tns:GetEmployeeDetailsByID.MessageInfo" />
+  <xs:complexType name="GetEmployeeDetailsByID.Parameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Parameters" nillable="true" type="tns:GetEmployeeDetailsByID.Parameters" />
+  <xs:element name="GetEmployeeDetailsByIDActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetEmployeeDetailsByIDActionResult" nillable="true" type="tns:GetEmployeeDetailsByID_Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetEmployeeDetailsByID_Response">
+    <xs:sequence>
+      <xs:element name="StatusCode" type="xs:int" />
+      <xs:element name="StatusDescription" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MessageInfo" nillable="true" type="tns:GetEmployeeDetailsByID.MessageInfo">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Results" nillable="true" type="tns:GetEmployeeDetailsByID.Results">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID_Response" nillable="true" type="tns:GetEmployeeDetailsByID_Response" />
+  <xs:complexType name="GetEmployeeDetailsByID.Results">
+    <xs:sequence>
+      <xs:element name="SupplierStatusCode" type="xs:int" />
+      <xs:element minOccurs="0" name="SupplierStatusDescription" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PersonalDetails" nillable="true" type="tns:GetEmployeeDetailsByID.PersonalDetails">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EmploymnetDetails" nillable="true" type="tns:GetEmployeeDetailsByID.EmploymentDetails">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Communications" nillable="true" type="tns:GetEmployeeDetailsByID.Communications">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:GetEmployeeDetailsByID.Addresses">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProfessionalLicenses" nillable="true" type="tns:GetEmployeeDetailsByID.ProfessionalLicenses">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EducationLevels" nillable="true" type="tns:GetEmployeeDetailsByID.EducationLevels">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Specializations" nillable="true" type="tns:GetEmployeeDetailsByID.Specializations">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Interns" nillable="true" type="tns:GetEmployeeDetailsByID.Interns">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Assignations" nillable="true" type="tns:GetEmployeeDetailsByID.Assignations">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Results" nillable="true" type="tns:GetEmployeeDetailsByID.Results" />
+  <xs:complexType name="GetEmployeeDetailsByID.PersonalDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeIDCheckDigit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GivenName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="FamilyName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TitleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TitleDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenderDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthCountryDisplayName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.PersonalDetails" nillable="true" type="tns:GetEmployeeDetailsByID.PersonalDetails" />
+  <xs:complexType name="GetEmployeeDetailsByID.EmploymentDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PreviousEmployeeNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartWorkDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmploymentStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmploymentStatusDisplayName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.EmploymentDetails" nillable="true" type="tns:GetEmployeeDetailsByID.EmploymentDetails" />
+  <xs:complexType name="GetEmployeeDetailsByID.Communications">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Communication" nillable="true" type="tns:GetEmployeeDetailsByID.Communication" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Communications" nillable="true" type="tns:GetEmployeeDetailsByID.Communications" />
+  <xs:complexType name="GetEmployeeDetailsByID.Communication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeDisplayName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Communication" nillable="true" type="tns:GetEmployeeDetailsByID.Communication" />
+  <xs:complexType name="GetEmployeeDetailsByID.Addresses">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:GetEmployeeDetailsByID.Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Addresses" nillable="true" type="tns:GetEmployeeDetailsByID.Addresses" />
+  <xs:complexType name="GetEmployeeDetailsByID.Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressTypeCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="AddressTypeDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SettlementCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SettlementDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Address" nillable="true" type="tns:GetEmployeeDetailsByID.Address" />
+  <xs:complexType name="GetEmployeeDetailsByID.ProfessionalLicenses">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProfessionalLicense" nillable="true" type="tns:GetEmployeeDetailsByID.ProfessionalLicense" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.ProfessionalLicenses" nillable="true" type="tns:GetEmployeeDetailsByID.ProfessionalLicenses" />
+  <xs:complexType name="GetEmployeeDetailsByID.ProfessionalLicense">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LicenseNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="StatusDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TypeDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ExpiredDate" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.ProfessionalLicense" nillable="true" type="tns:GetEmployeeDetailsByID.ProfessionalLicense" />
+  <xs:complexType name="GetEmployeeDetailsByID.EducationLevels">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EducationLevel" nillable="true" type="tns:GetEmployeeDetailsByID.EducationLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.EducationLevels" nillable="true" type="tns:GetEmployeeDetailsByID.EducationLevels" />
+  <xs:complexType name="GetEmployeeDetailsByID.EducationLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DegreeCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DegreeDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CountryDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="InstituteCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="InstituteDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.EducationLevel" nillable="true" type="tns:GetEmployeeDetailsByID.EducationLevel" />
+  <xs:complexType name="GetEmployeeDetailsByID.Specializations">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Specialization" nillable="true" type="tns:GetEmployeeDetailsByID.Specialization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Specializations" nillable="true" type="tns:GetEmployeeDetailsByID.Specializations" />
+  <xs:complexType name="GetEmployeeDetailsByID.Specialization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SpecializationCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SpecializationDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="StatusDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ExpiredDate" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LicenseNo" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Specialization" nillable="true" type="tns:GetEmployeeDetailsByID.Specialization" />
+  <xs:complexType name="GetEmployeeDetailsByID.Interns">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Intern" nillable="true" type="tns:GetEmployeeDetailsByID.Intern" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Interns" nillable="true" type="tns:GetEmployeeDetailsByID.Interns" />
+  <xs:complexType name="GetEmployeeDetailsByID.Intern">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TypeDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="InternCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="InternDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="AStepBeyond" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="BStepBeyond" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Intern" nillable="true" type="tns:GetEmployeeDetailsByID.Intern" />
+  <xs:complexType name="GetEmployeeDetailsByID.Assignations">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Assignation" nillable="true" type="tns:GetEmployeeDetailsByID.Assignation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Assignations" nillable="true" type="tns:GetEmployeeDetailsByID.Assignations" />
+  <xs:complexType name="GetEmployeeDetailsByID.Assignation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmployeeNoPernr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstituteID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstituteDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstituteAddressStreet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstituteAddressHouseNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstituteSettlementCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstituteSettlementDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstituteAddressZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdminID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdminDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdminAddressStreet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdminAddressHouseNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdminSettlementCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdminSettlementDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdminAddressZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgUnitID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgUnitDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgUnitAddressStreet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgUnitAddressHouseNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgUnitSettlementCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgUnitSettlementDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgUnitAddressZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CostCenterID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PracticeCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PracticeDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="JobCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="JobDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EmploymentCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EmploymentDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PercentageJob" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectorCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SectorDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerEmployeeID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerEmployeeIDCheckDigit" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerEmployeeNoPernr" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerUsername" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerGivenName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerFamilyName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerTitleCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerTitleDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerGenderCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerGenderDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerBirthDate" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerBirthCountryCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ManagerBirthCountryDisplayName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LastUpdateDate" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEmployeeDetailsByID.Assignation" nillable="true" type="tns:GetEmployeeDetailsByID.Assignation" />
+</xs:schema>

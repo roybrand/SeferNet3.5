@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fb1843d5-7d38-4531-b1e7-f0a64b2263f8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/HandshakeService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HandshakeService.xsd" MetadataType="Schema" ID="f75b13c3-4f62-4e08-b3de-3079ebf4616c" SourceId="1" SourceUrl="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/HandshakeService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HandshakeService.wsdl" MetadataType="Wsdl" ID="eb670083-aed3-4938-aa77-7d03b9e4a5fc" SourceId="1" SourceUrl="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/HandshakeService.svc?wsdl" />
+    <MetadataFile FileName="HandshakeService1.xsd" MetadataType="Schema" ID="afdee5de-fce8-4aa8-b939-f0a9abbcd159" SourceId="1" SourceUrl="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/HandshakeService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HandshakeService2.xsd" MetadataType="Schema" ID="e13ed43e-83f5-486f-8bb8-8f36f2bd873b" SourceId="1" SourceUrl="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/HandshakeService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HandshakeService.disco" MetadataType="Disco" ID="4fb17e2d-c191-435f-a726-116df2b9e421" SourceId="1" SourceUrl="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/HandshakeService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

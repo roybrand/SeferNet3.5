@@ -1,0 +1,400 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1255" />
+    <title>דוח תוצאות חיפוש יחידות</title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 12px;
+        }
+
+        td {
+            vertical-align: top;
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        .tdNorm {
+            font-weight: normal;
+            border-bottom: dotted 1px Black;
+        }
+
+        .tdBold {
+            font-weight: bold;
+            border-bottom: dotted 1px Black;
+        }
+
+        .tdLable {
+            padding-right: 5px;
+            padding-left: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-top: solid 1px #aaaaaa;
+            border-left: solid 1px #aaaaaa;
+        }
+
+        .tdLable_b {
+            padding-right: 5px;
+            padding-left: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-top: solid 1px Black;
+            border-left: solid 1px Black;
+        }
+
+        .tdLable_b_bottom {
+            padding-right: 5px;
+            padding-left: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-top: solid 1px Black;
+            border-bottom: solid 1px Black;
+            border-left: solid 1px Black;
+        }
+
+        .tdLable_b_bottom_np {
+            border-top: solid 1px Black;
+            border-bottom: solid 1px Black;
+            border-left: solid 1px Black;
+        }
+
+        .tdLable_b_rem {
+            padding-right: 5px;
+            padding-left: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-left: dotted 1px Black;
+            font-weight: normal;
+        }
+
+        .tdLable_b_rem_first {
+            padding-right: 5px;
+            padding-left: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-left: dotted 1px Black;
+            border-top: dotted 1px Black;
+            font-weight: normal;
+        }
+
+        .tdLable_b_rem_end {
+            padding-right: 5px;
+            padding-left: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-left: solid 1px Black;
+            font-weight: normal;
+        }
+
+        .tdLable_b_rem_end_first {
+            padding-right: 5px;
+            padding-left: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-left: solid 1px Black;
+            border-top: dotted 1px Black;
+            font-weight: normal;
+        }
+
+        .tdLable_b_dotted {
+            padding-right: 5px;
+            padding-left: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-top: dotted 1px Black;
+            border-left: solid 1px Black;
+            border-left-style: solid;
+        }
+
+        .tdLable_b_np {
+            border-top: solid 1px Black;
+            border-left: solid 1px Black;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            font-size: 11px;
+        }
+
+        .tdValue {
+            font-weight: bold;
+            padding-right: 5px;
+            padding-left: 5px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-top: solid 1px #aaaaaa;
+            border-left: solid 1px #aaaaaa;
+        }
+
+        .tdValue_b {
+            font-weight: bold;
+            padding-right: 2px;
+            padding-left: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-top: solid 1px Black;
+            border-left: solid 1px Black;
+        }
+
+        .tdHeader_b {
+            background-color: #dbe5f1;
+            border-top: solid 1px Black;
+            border-left: solid 1px Black;
+        }
+
+        .tdSubHeader_b {
+            padding-right: 5px;
+            background-color: #e9eff7;
+            border-top: solid 1px Black;
+            border-left: solid 1px Black;
+        }
+
+        .tdBorderBottom_6 {
+            font-size: 5px;
+            border-bottom: double 1px Black;
+        }
+
+        .tdRemBorderTopLeftDotted {
+            border-top: dotted 1px Black;
+            border-left: dotted 1px Black;
+        }
+
+        .tdRemBorderLeftDotted {
+            border-left: dotted 1px Black;
+        }
+
+        .tdRemBorderTopDotted {
+            border-top: dotted 1px Black;
+        }
+
+        .tdBorderBottom_2 {
+            font-size: 2px;
+            border-bottom: double 1px Black;
+        }
+
+        .tblOuter_1 {
+            border-bottom: solid 1px #aaaaaa;
+            border-right: solid 1px #aaaaaa;
+        }
+
+        .tblOuter_2 {
+            border-bottom: solid 1px Black;
+            border-right: solid 1px Black;
+        }
+
+        .tblInner_1 {
+            border: 1px;
+        }
+
+        .TitleNormal_14 {
+            font-size: 16px;
+        }
+
+        .SubTitle {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" style="width:100%" dir="rtl">
+        <tr>
+            <td style="width:100%">
+                <table cellpadding="0" cellspacing="0" style="width:100%">
+                    <tr>
+                        <td align="right" style="padding-bottom:5px; width:50%">
+                            clalitLogo
+                        </td>
+                        <td align="left" style="padding-bottom:5px; width:50%">
+                            clalitAndMushlamLogo
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:100%">
+                <table cellpadding="0" cellspacing="0" style="width:100%">
+                    <tr>
+                        <td align="right" style="padding-bottom:5px">
+                            <span class="SubTitle">תוצאות חיפוש ל:</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" style="width:100%; border-top:dotted 1px Black;">
+                    SearchParameters
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" valign="bottom" style="height:25px; padding-top:5px">
+                PagingInfo
+            </td>
+        </tr>
+        <!-- ##removeifemptycontainerbegin--Depts## -->
+        <!-- ##blockbegin--Depts## -->
+        <!-- Clinics -->
+        <tr>
+            <td style="padding:0px 0px 30px 0px; margin:0px; width:100%">
+                <table cellpadding="0" cellspacing="0" class="tblOuter_2" style="width:100%;margin-top:15px;border-collapse:collapse;border:solid 1px Black;">
+                    <tr>
+                        <td class="tdHeader_b" align="center" style="width:100%"><span class="SubTitle">##Depts.DeptName##</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0px; margin:0px; width:100%">
+                            <table cellpadding="0" cellspacing="0" style="width:100%">
+                                <tr>
+                                    <td align="right" class="tdSubHeader_b" style="width:12%">סוג יחידה</td>
+                                    <td align="center" class="tdSubHeader_b" style="width:11.5%">טלפון</td>
+                                    <td align="right" class="tdSubHeader_b" style="width:11.5%">פקס</td>
+                                    <td align="right" class="tdSubHeader_b" style="width:43%">כתובת</td>
+                                </tr>
+                                <tr>
+                                    <td align="right" class="tdLable_b">##Depts.UnitTypeName##</td>
+                                    <td align="right" class="tdLable_b">&nbsp;##Depts.phone## ##Depts.phoneRemark##</td>
+                                    <td align="right" class="tdLable_b">&nbsp;##Depts.fax##</td>
+                                    <td align="right" class="tdLable_b">##Depts.simpleAddress##&nbsp;##Depts.CityName##</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ClinicReceptionHours -->
+                    <tr>
+                        <td style="padding:0px; margin:0px; width:100%;">
+                            <table cellpadding="0" cellspacing="0" style="width:100%">
+                                <tr style="display:##Depts.HasReceptionHours##">
+                                    <td align="center" class="tdLable_b">שעות קבלה</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0px; margin:0px; width:100%">
+                            <table cellpadding="0" cellspacing="0" style="width:100%">
+                                <tr style="display:##Depts.HasReceptionHours##">
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplaySunday## " class="tdSubHeader_b">א'</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayMonday##" class="tdSubHeader_b">ב'</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayTuesday##" class="tdSubHeader_b">ג'</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayWednesday##" class="tdSubHeader_b">ד'</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayThursday##" class="tdSubHeader_b">ה'</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayFriday##" class="tdSubHeader_b">ו'</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplaySaturday##" class="tdSubHeader_b">ש'</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayHolHamoeed##" class="tdSubHeader_b">חוה"מ</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayHolidayEvening## " class="tdSubHeader_b">ערב חג</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayHoliday## " class="tdSubHeader_b">חג</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayRamadan## " class="tdSubHeader_b">חודש הרמדאן</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayOptionalHoliday## " class="tdSubHeader_b">יום בחירות</td>
+                                    <td align="center" style="width: ##Depts.CellWidth##%; ##Depts.DisplayStrike## " class="tdSubHeader_b">שביתה</td>
+
+                                </tr>
+                                <tr style="display:##Depts.HasReceptionHours##">
+                                    <td align="center" style="##Depts.DisplaySunday##;" class="tdLable_b_bottom_np">&nbsp;##Depts.Sunday##</td>
+                                    <td align="center" style="##Depts.DisplayMonday##;" class="tdLable_b_bottom_np">&nbsp;##Depts.Monday##</td>
+                                    <td align="center" style="##Depts.DisplayTuesday##;" class="tdLable_b_bottom_np">&nbsp;##Depts.Tuesday##</td>
+                                    <td align="center" style="##Depts.DisplayWednesday##;" class="tdLable_b_bottom_np">&nbsp;##Depts.Wednesday##</td>
+                                    <td align="center" style="##Depts.DisplayThursday##;" class="tdLable_b_bottom_np">&nbsp;##Depts.Thursday##</td>
+                                    <td align="center" style="##Depts.DisplayFriday##;" class="tdLable_b_bottom_np">&nbsp;##Depts.Friday##</td>
+                                    <td align="center" style="##Depts.DisplaySaturday##;" class="tdLable_b_bottom_np">&nbsp;##Depts.Saturday##</td>
+                                    <td align="center" style="##Depts.DisplayHolHamoeed##;" class="tdLable_b_bottom_np">&nbsp;##Depts.HolHamoeed##</td>
+                                    <td align="center" style="##Depts.DisplayHolidayEvening##;" class="tdLable_b_bottom_np">&nbsp;##Depts.HolidayEvening##</td>
+                                    <td align="center" style="##Depts.DisplayHoliday##;" class="tdLable_b_bottom_np">&nbsp;##Depts.Holiday##</td>
+                                    <td align="center" style="##Depts.DisplayRamadan##;" class="tdLable_b_bottom_np">&nbsp;##Depts.Ramadan##</td>
+                                    <td align="center" style="##Depts.DisplayOptionalHoliday##;" class="tdLable_b_bottom_np">&nbsp;##Depts.OptionalHoliday##</td>
+                                    <td align="center" style="##Depts.DisplayStrike##;" class="tdLable_b_bottom_np">&nbsp;##Depts.Strike##</td>
+
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--End of ClinicReceptionHours -->
+                    <tr>
+                        <td style="padding:0px; margin:0px; width:100%">
+                            <table cellpadding="0" cellspacing="0" style="width:100%">
+                                ##Depts.ClinicRemarks##
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- values to be replaced in inner block header  -->
+                    <tr style="display:none">
+                        <td>
+                            ##Depts.CellWidthDoc## ##Depts.DisplaySaturdayDoc## ##Depts.DisplayHolHamoeedDoc## ##Depts.DisplayHolidayEveningDoc##
+                            ##Depts.DisplayHolidayDoc## ##Depts.DisplayRamadanDoc## ##Depts.DisplayOptionalHolidayDoc## ##Depts.DisplayStrikeDoc##
+                        </td>
+                    </tr>
+                    <!-- ##removeifemptycontainerbegin--ServiceSuppliers## -->
+                    <!-- doctors & reception hours & remarks-->
+                    <tr>
+                        <td id="tdDoctorReceptionHours">
+                            <br />
+                            <table cellpadding="0" cellspacing="0" class="tblOuter_2" style="width:100%">
+                                <tr>
+                                    <td class="tdHeader_b" align="right" style="padding-right: 8px;"><span class="TitleNormal_14">נותני שירות</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0px; margin:0px; width:100%">
+                                        <table cellpadding="0" cellspacing="0" style="width:100%">
+                                            <tr>
+                                                <td align="right" style="width:12%; padding-right:8px" class="tdSubHeader_b">תחום שירות</td>
+                                                <td align="right" style="width:17%" class="tdSubHeader_b">שם</td>
+                                                <td align="right" style="width:11%" class="tdSubHeader_b">אופן זימון</td>
+                                                <td align="center" class="tdSubHeader_b">א'</td>
+                                                <td align="center" class="tdSubHeader_b">ב'</td>
+                                                <td align="center" class="tdSubHeader_b">ג'</td>
+                                                <td align="center" class="tdSubHeader_b">ד'</td>
+                                                <td align="center" class="tdSubHeader_b">ה'</td>
+                                                <td align="center" class="tdSubHeader_b">ו'</td>
+                                                <td align="center" style="##Depts.DisplaySaturdayDoc##;" class="tdSubHeader_b">ש'</td>
+                                                <td align="center" style="##Depts.DisplayHolHamoeedDoc##;" class="tdSubHeader_b">חוה"מ</td>
+                                                <td align="center" style="##Depts.DisplayHolidayEveningDoc##; " class="tdSubHeader_b">ערב חג</td>
+                                                <td align="center" style="##Depts.DisplayHolidayDoc##;" class="tdSubHeader_b">חג</td>
+                                                <td align="center" style="##Depts.DisplayRamadanDoc##;" class="tdSubHeader_b">חודש הרמדאן</td>
+                                                <td align="center" style="##Depts.DisplayOptionalHolidayDoc##;" class="tdSubHeader_b">יום בחירות</td>
+                                                <td align="center" style="##Depts.DisplayStrikeDoc##;" class="tdSubHeader_b">שביתה</td>
+                                            </tr>
+                                            <!-- ##blockbegin--ServiceSuppliers## -->
+                                            <tr>
+                                                <td align="right" class="tdValue_b">&nbsp;&nbsp;##ServiceSuppliers.ServiceDescription##</td>
+                                                <td align="right" class="tdValue_b" style="padding-right: 5px;">##ServiceSuppliers.Name## ##Doctors.Experties##</td>
+                                                <td align="right" class="tdLable_b">&nbsp;##ServiceSuppliers.QueueOrderDescriptions##</td>
+                                                <td align="center" class="tdLable_b_np">&nbsp;##ServiceSuppliers.Sunday##</td>
+                                                <td align="center" class="tdLable_b_np">&nbsp;##ServiceSuppliers.Monday##</td>
+                                                <td align="center" class="tdLable_b_np">&nbsp;##ServiceSuppliers.Tuesday##</td>
+                                                <td align="center" class="tdLable_b_np">&nbsp;##ServiceSuppliers.Wednesday##</td>
+                                                <td align="center" class="tdLable_b_np">&nbsp;##ServiceSuppliers.Thursday##</td>
+                                                <td align="center" class="tdLable_b_np">&nbsp;##ServiceSuppliers.Friday##</td>
+                                                <td align="center" style="##ServiceSuppliers.DisplaySaturdayDoc##;" class="tdLable_b_np">&nbsp;##ServiceSuppliers.Saturday##</td>
+                                                <td align="center" style="##ServiceSuppliers.DisplayHolHamoeed##;" class="tdLable_b_np">&nbsp;##ServiceSuppliers.HolHamoeed##</td>
+                                                <td align="center" style="##ServiceSuppliers.DisplayHolidayEvening##;" class="tdLable_b_np">&nbsp;##ServiceSuppliers.HolidayEvening##</td>
+                                                <td align="center" style="##ServiceSuppliers.DisplayHoliday##;" class="tdLable_b_np">&nbsp;##ServiceSuppliers.Holiday##</td>
+                                                <td align="center" style="##ServiceSuppliers.DisplayRamadan##;" class="tdLable_b_np">&nbsp;##ServiceSuppliers.Ramadan##</td>
+                                                <td align="center" style="##ServiceSuppliers.DisplayOptionalHoliday##;" class="tdLable_b_np">&nbsp;##ServiceSuppliers.OptionalHoliday##</td>
+                                                <td align="center" style="##ServiceSuppliers.DisplayStrike##;" class="tdLable_b_np">&nbsp;##ServiceSuppliers.Strike##</td>
+                                            </tr>
+                                            <tr style="##ServiceSuppliers.ShowRemarks## ">
+                                                <td style="padding:0px; margin:0px;" class="tdLable_b_rem_first"></td>
+                                                <td colspan="15" style="padding:0px; margin:0px;" class="tdLable_b_rem_first">
+                                                    ##ServiceSuppliers.Remarks##
+                                                </td>
+                                            </tr>
+                                            <!-- ##blockend--ServiceSuppliers## -->
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ##removeifemptycontainerend--ServiceSuppliers## -->
+                </table>
+            </td>
+        </tr>
+        <!-- ##blockend--Depts## -->
+        <!-- ##removeifemptycontainerend--Depts## -->
+    </table>
+</body>
+</html>

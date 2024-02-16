@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SeferNet" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=mksql023;Initial Catalog=SeferNet;Integrated Security=True" SettingsObjectName="SeferNet.DataLayer.Properties.Settings" SettingsPropertyName="SeferNetConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.rpc_GetMushlamModelsForService" Method="rpc_GetMushlamModelsForService">
+    <Parameter Name="serviceCode" Type="System.Int32" DbType="Int" />
+    <ElementType Name="rpc_GetMushlamModelsForServiceResult">
+      <Column Name="GroupCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubGroupCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModelDescription" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ParticipationAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WaitingPeriod" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rpc_GetMushlamServiceByCode" Method="rpc_GetMushlamServiceByCode">
+    <Parameter Name="serviceCode" Type="System.Int32" DbType="Int" />
+    <ElementType Name="rpc_GetMushlamServiceByCodeResult">
+      <Column Name="ServiceCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceDescription" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneralRemark" Type="System.String" DbType="VarChar(1200)" CanBeNull="true" />
+      <Column Name="AgreementRemark" Type="System.String" DbType="VarChar(1200)" CanBeNull="true" />
+      <Column Name="PrivateRemark" Type="System.String" DbType="VarChar(1200)" CanBeNull="true" />
+      <Column Name="LinkedSalServices" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RepRemark" Type="System.String" DbType="VarChar(1200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rpc_GetMushlamServicesByCodesSearch" Method="rpc_GetMushlamServicesByCodesSearch">
+    <Parameter Name="serviceCodes" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="deptName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cityCode" Type="System.Int32" DbType="Int" />
+    <Parameter Name="districtCodes" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="openAtHour" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="openFromHour" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="openToHour" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="receptionDays" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="rpc_GetMushlamServicesByCodesSearchResult">
+      <Column Name="ServiceCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MushlamServiceName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NumOfSuppliers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.rpc_GetMushlamServiceExtendedSearch" Method="rpc_GetMushlamServiceExtendedSearch">
+    <Parameter Name="searchText" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="deptName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cityCode" Type="System.Int32" DbType="Int" />
+    <Parameter Name="districtCodes" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="openAtHour" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="openFromHour" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="openToHour" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="receptionDays" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="deptCode" Type="System.Int32" DbType="Int" />
+    <ElementType Name="rpc_GetMushlamServiceExtendedSearchResult">
+      <Column Name="ServiceCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MushlamServiceName" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="NumOfSuppliers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExceptionHandlingConfig>
+  <!--HandlerInfoMainList contains all the exception handlers - 
+  their dlls and classes 
+  (AssemblyName - supposed to be changed   whenever I know how to load the assembly just by their name
+  -->
+  <HandlerInfoMainList>
+    <!--previous way of loading<HandlerInfo Name ="ClientExceptionHandlers.MBoxToScreenHandler" Type="ClientExceptionHandlers.MBoxToScreenHandler, ClientExceptionHandlers" AssemblyName="ClientExceptionHandlers.dll"/>-->
+    <!--<HandlerInfo Key ="ClientExceptionHandlers.MessageBoxHandler"  Name ="Atlas.Infrastructure.Client.ExceptionHandlers.ClientExceptionHandlers.ErrorMessageBoxHandler"  Type="Atlas.Infrastructure.Client.ExceptionHandlers.ClientExceptionHandlers, Version=4.3.41.0, Culture=neutral, PublicKeyToken=be67645edec01391"/>-->
+    <HandlerInfo Key ="Matrix.ExceptionHandling.EventViewerHanlder" Name ="Matrix.ExceptionHandling.EventViewerHanlder" Type="Matrix.ExceptionHandling"/>
+    <HandlerInfo Key ="SendEmailExceptionHandler"  Name ="Clalit.Exceptions.SharedExceptionHandlers.SendEmailExceptionHandler"  Type="Clalit.Exceptions.SharedExceptionHandlers"/>
+    <HandlerInfo Key ="MessageBoxHandler"  Name ="Clalit.Exceptions.SharedExceptionHandlers.MessageBoxHandler"  Type="Clalit.Exceptions.SharedExceptionHandlers"/>
+    <HandlerInfo Key ="SaveToDBHandler"  Name ="Clalit.Exceptions.SharedExceptionHandlers.SaveToDBHandler"  Type="Clalit.Exceptions.SharedExceptionHandlers"/>
+  </HandlerInfoMainList>
+  <ExceptionInfoMainList>
+    <ExceptionInfo Name="System.Exception">
+      <HandlerInfoKeys>
+        <HandlerInfoKey Name = "Matrix.ExceptionHandling.EventViewerHanlder"/>
+        <HandlerInfoKey Name = "MessageBoxHandler"/>
+        <HandlerInfoKey Name = "SendEmailExceptionHandler"/>
+        <HandlerInfoKey Name = "SaveToDBHandler"/>
+      </HandlerInfoKeys>    
+      </ExceptionInfo>
+    <ExceptionInfo Name="SeferNet.Globals.DalException">
+      <HandlerInfoKeys>
+        <HandlerInfoKey Name = "MessageBoxHandler"/>
+        <HandlerInfoKey Name = "SaveToDBHandler"/>
+      </HandlerInfoKeys>
+    </ExceptionInfo>
+  </ExceptionInfoMainList>
+</ExceptionHandlingConfig>

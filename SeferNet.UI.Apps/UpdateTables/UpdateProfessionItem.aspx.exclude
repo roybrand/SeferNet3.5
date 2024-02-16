@@ -1,0 +1,269 @@
+﻿
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="UpdateProfessionItem.aspx.cs" 
+    Inherits="UpdateTables_UpdateProfessionItem" UICulture="he-il" meta:resourcekey="PageResource1" %>
+       
+<%@ MasterType  VirtualPath="~/SeferMasterPage.master" %>
+<%@ Register TagPrefix="GridTreeView" TagName="TreeViewItem" Src="~/UserControls/GridTreeView.ascx" %>
+<%@ PreviousPageType VirtualPath="~/UpdateTables/UpdateProfessionsNew.aspx" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Src="../UserControls/MultiDDlSelect.ascx" TagName="MultiDDlSelect" TagPrefix="uc1" %>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>עדכון מקצוע</title>
+    <link rel="STYLESHEET" href="../CSS/General/general.css" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server" onprerender="form_PreRender">
+    <div>
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 10%">
+                    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="True">
+                        <Scripts>
+                            <asp:ScriptReference Path="~/Admin/scripts/EditItem.js" />
+                        </Scripts>
+                    </asp:ScriptManager>
+                </td>
+                <td style="width: 10%" align="center">
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <table id="tblMain" align="center">
+                                <tr>
+                                    <td colspan="3">
+                                        <asp:Panel ID="pnlMain" runat="server" BorderStyle="Solid" BorderWidth="1px" Width="700px"
+                                            meta:resourcekey="pnlMainResource1">
+                                            <table style="width: 100%;">
+                                                <tr>
+                                                    <td align="center">
+                                                        <asp:Label ID="lblMain" runat="server" Text="מסך עריכה " CssClass="LabelLarger" EnableTheming="false"
+                                                            meta:resourcekey="lblMainResource1"></asp:Label><hr />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <asp:Panel ID="pnlTablesDetails" runat="server" BorderStyle="Dotted" BorderWidth="1px"
+                                                            meta:resourcekey="pnlTablesDetailsResource1">
+                                                            <table style="width: 100%;" dir="rtl">
+                                                                <tr>
+                                                                    <td colspan="3">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td colspan="3" align="center">
+                                                                        <img alt="" src="../Images/table_multiple.jpg" height="16px" width="16px" />
+                                                                        <asp:Label ID="lblTablesDetails" runat="server" Text="נתונים מטבלאות 601/606" meta:resourcekey="lblTablesDetailsResource1"></asp:Label><hr />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left" style="width: 30%">
+                                                                        <asp:Label ID="lblTableCode" runat="server" Text="TableCode" meta:resourcekey="lblTableCodeResource1"></asp:Label>
+                                                                    </td>
+                                                                    <td colspan="2" align="right">
+                                                                        <asp:DropDownList ID="ddlTableCode" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlTableCode_SelectedIndexChanged"
+                                                                            meta:resourcekey="ddlTableCodeResource1">
+                                                                        </asp:DropDownList>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left">
+                                                                        <asp:Label ID="lblTblCode" runat="server" Text="TblCode" meta:resourcekey="lblTblCodeResource1"></asp:Label>
+                                                                    </td>
+                                                                    <td colspan="2" align="right">
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <asp:TextBox ID="txtTblCode" runat="server" ReadOnly="True" OnPreRender="txtTblCode_PreRender"
+                                                                                        Width="70px" meta:resourcekey="txtTblCodeResource1"></asp:TextBox>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblTblDesc" runat="server" Text="TblDesc" meta:resourcekey="lblTblDescResource1"></asp:Label>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:TextBox ID="txtTblDesc" runat="server" meta:resourcekey="txtTblDescResource1"></asp:TextBox>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left">
+                                                                    </td>
+                                                                    <td colspan="2" align="right">
+                                                                        <asp:Button ID="btnTblSearch" runat="server" CommandArgument="table" OnClientClick="javascript:searchTableCode()"
+                                                                            Text="Find" meta:resourcekey="btnTblSearchResource1" />
+                                                                        <asp:Button ID="btnDeleteTable" runat="server" OnClick="btnDeleteTable_Click" Text="Delete"
+                                                                            meta:resourcekey="btnDeleteTableResource1" />
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </asp:Panel>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <asp:Panel ID="pnlRetraining" runat="server" BorderStyle="Dotted" BorderWidth="1px"
+                                                            meta:resourcekey="pnlRetrainingResource1">
+                                                            <table style="width: 100%;" dir="rtl">
+                                                                <tr>
+                                                                    <td colspan="3" align="center">
+                                                                        <asp:Label ID="lblRetraining" runat="server" Text="Label" meta:resourcekey="lblRetrainingResource1"></asp:Label><hr />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 30%" align="left">
+                                                                        <asp:Label ID="lblRetrainingCode" runat="server" Text="RetrainingCode" meta:resourcekey="lblRetrainingCodeResource1"></asp:Label>
+                                                                    </td>
+                                                                    <td colspan="2" align="right">
+                                                                        <asp:TextBox ID="txtRetrainingCode" runat="server" ReadOnly="True" meta:resourcekey="txtRetrainingCodeResource1"></asp:TextBox>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 30%" align="left">
+                                                                        <asp:Label ID="lblRetrainingCategory" runat="server" Text="Category" meta:resourcekey="lblRetrainingCategoryResource1"></asp:Label>
+                                                                    </td>
+                                                                    <td colspan="2" align="right">
+                                                                        <asp:DropDownList ID="ddlRetrainingCategory" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlRetrainingCategory_SelectedIndexChanged"
+                                                                            meta:resourcekey="ddlRetrainingCategoryResource1" Enabled="False">
+                                                                        </asp:DropDownList>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 30%" align="left">
+                                                                        <asp:Label ID="lblNewDesc" runat="server" Text="NewDesc" meta:resourcekey="lblNewDescResource1"></asp:Label>
+                                                                    </td>
+                                                                    <td colspan="2" align="right">
+                                                                        <asp:TextBox ID="txtNewDesc" runat="server" ValidationGroup="UpdateChanges" Width="128px"
+                                                                            meta:resourcekey="txtNewDescResource1"></asp:TextBox>
+                                                                        <asp:RequiredFieldValidator ID="rfv_txtNewDesc" ControlToValidate="txtNewDesc" runat="server"
+                                                                            ValidationGroup="UpdateChanges" Text="*" meta:resourcekey="rfv_txtNewDescResource1"></asp:RequiredFieldValidator>
+                                                                        <asp:CheckBox ID="chk601_606" runat="server" AutoPostBack="True" OnCheckedChanged="chk601_606_CheckedChanged"
+                                                                            CssClass=" RegularLabel" meta:resourcekey="chk601_606Resource1" 
+                                                                            Checked="True" />
+                                                                        <asp:Button ID="btnClear" runat="server" OnClick="btnClear_Click" Text="Clear" meta:resourcekey="btnClearResource1" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 30%" dir="rtl" align="left">
+                                                                        <asp:Label ID="lblParentCode" runat="server" Text="ParentCode" meta:resourcekey="lblParentCodeResource1"></asp:Label>
+                                                                    </td>
+                                                                    <td colspan="2" align="right">
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <asp:TextBox ID="txtParentCode" runat="server" ReadOnly="True" Width="70px" meta:resourcekey="txtParentCodeResource1"></asp:TextBox>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblParentDesc" runat="server" Text="ParentDesc" meta:resourcekey="lblParentDescResource1"></asp:Label>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:TextBox ID="txtParentDesc" runat="server" meta:resourcekey="txtParentDescResource1"></asp:TextBox>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 33%" dir="rtl" align="left">
+                                                                    </td>
+                                                                    <td colspan="2" align="right">
+                                                                        <asp:Button ID="btnParentCode" runat="server" OnClientClick="javascript:searchParentCode()"
+                                                                            Text="Find" meta:resourcekey="btnParentCodeResource1" />
+                                                                        <asp:Button ID="btnParentDelete" runat="server" OnClick="btnParentDelete_Click" meta:resourcekey="btnParentDeleteResource1" />
+                                                                        <asp:Button ID="btnRelations" runat="server" Text="Relationships" OnClick="btnRelations_Click"
+                                                                            meta:resourcekey="btnRelationsResource1" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 33%" dir="rtl" align="left">
+                                                                        <asp:Label ID="lblSector" runat="server" Text="Sector" meta:resourcekey="lblSectorResource1"></asp:Label>
+                                                                    </td>
+                                                                    <td colspan="2" align="right" valign="bottom">
+                                                                        <uc1:MultiDDlSelect ID="ddlSectors" runat="server" Width="150px" CssClass="multiDropDown" />
+                                                                    </td>
+                                                                    <td>
+                                                                        &nbsp;
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td colspan="3">
+                                                                        <asp:Panel ID="pnlProficiency" runat="server" CssClass="pnlProficiency" meta:resourcekey="pnlProficiencyResource1">
+                                                                            <table style="width: 100%;" border="0px">
+                                                                                <tr>
+                                                                                    <td>
+                                                                                    </td>
+                                                                                    <td align="right">
+                                                                                        <asp:Label ID="lblProficiency" runat="server" meta:resourcekey="lblProficiencyResource1"></asp:Label>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="width: 33%" dir="rtl" align="left">
+                                                                                        <img alt="" src="../Images/user.jpg" width="16" height="16" dir="ltr" />
+                                                                                        <asp:Label ID="lblProficiencyMale" runat="server" meta:resourcekey="lblProficiencyMaleResource1"></asp:Label>
+                                                                                    </td>
+                                                                                    <td colspan="2" align="right">
+                                                                                        <asp:TextBox ID="txtProficiencyMale" runat="server" onkeypress="javascript:setFemaleProficiency()"
+                                                                                            meta:resourcekey="txtProficiencyMaleResource1"></asp:TextBox>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="width: 33%" dir="rtl" align="left">
+                                                                                        <img alt="" src="../Images/user_female.jpg" width="16" height="16" dir="ltr" />
+                                                                                        <asp:Label ID="lblProficiencyFemale" runat="server" meta:resourcekey="lblProficiencyFemaleResource1"></asp:Label>
+                                                                                    </td>
+                                                                                    <td colspan="2" align="right">
+                                                                                        <asp:TextBox ID="txtProficiencyFemale" runat="server" ReadOnly="True" meta:resourcekey="txtProficiencyFemaleResource1"></asp:TextBox>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </asp:Panel>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </asp:Panel>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </asp:Panel>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" dir="rtl">
+                                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="UpdateChanges"
+                                            meta:resourcekey="ValidationSummary1Resource1" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 33%" dir="rtl">
+                                    </td>
+                                    <td style="width: 33%" align="center">
+                                        <asp:Button ID="btnReturn" runat="server" Text="Return" OnClick="btnReturn_Click"
+                                            meta:resourcekey="btnReturnResource1" />
+                                        <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click1" ValidationGroup="UpdateChanges"
+                                            meta:resourcekey="btnSaveResource1" />
+                                        <asp:Label ID="lblMessage" runat="server" Text="Message" meta:resourcekey="lblMessageResource1"></asp:Label>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </table>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </td>
+                <td style="width: 10%">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="hdnDv">
+        <asp:HiddenField runat="server" ID="hdnChoice" />
+    </div>
+    </form>
+</body>
+</html>

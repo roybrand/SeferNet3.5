@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.clalit.org.il/ClalitCustomers/1.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.clalit.org.il/ClalitCustomers/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.clalit.org.il/ClalitCustomers/1.0">
+      <s:element name="ClalitCustomersRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MessageInfo" type="tns:Demog.MessageInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Demog.Parameters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Demog.MessageInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MessageID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateSent" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstituteCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Application" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Demog.Parameters">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PatientId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateEligibility" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="TemporaryCardNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Decentralization" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Translation" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ClalitCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FullExceptionText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExceptionCode" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageInfo" type="tns:Demog.MessageInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:Demog.Results" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Demog.Results">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PatientId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastNameAdapted" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastNameEng" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastNameEng_TranslationType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstNameEng" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstNameEng_TranslationType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FatherName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FatherNameEng" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FatherNameEng_TranslationType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotherName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotherNameEng" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotherNameEng_TranslationType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BirthDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BirthCountry" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BirthCountryDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateImmigration" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="FlatNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Entrance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TownCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TownDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AreaCodeTelephone" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelephoneNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelephoneUpdatingDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="EligibilityCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EligibilityUpdate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistrictCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistrictCodeNew" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistrictDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicCodeNew" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicPhone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicPhone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicFax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicCityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicStreet" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicHouseNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicEmail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClinicAlTor" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobDoctor" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccidentDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseCloseDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseStatus" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseStatusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReasonCaseClose" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReasonCaseCloseDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccidentDateUpdating" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="FactorUpdatingAccident" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FactorUpdatingAccidentDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PatientIdPrevious" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreviousCheckNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastNamePrevious" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Identification" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdentificationDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeathDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Personnel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorSex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrganizationCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrganizationDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceTypeDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Elderly" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BabyGrowthExemption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressUpdatingDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClalitJoiningDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicJoinDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorJoiningDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdChiefFamily" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="AreaCodeFax" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FaxNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeavingDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceJoiningDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpecialAgreement" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientTypeDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClinicExemption" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorSelfEmployed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressBlocking" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccidentType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccidentTypeDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Eligible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PoliceCertificateExist" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Abroad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DrugExemption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subscriber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChronicPatient" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="InternetPasswordSwitch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FactorUpdatingDeath" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MedicationApproval" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultPermission" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherPermission" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PermissionNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MethodOfPayment" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefundPossibility" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddAreaCodeTelephone" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddTelephoneNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OfekConfident" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShemMisra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorClinicCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorClinicCodeNew" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorClinicDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorClinicStreet" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorClinicHouseNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorClinicCityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorClinicPhone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorClinicPhone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoctorClinicFax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PermanentCardNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImmigrationArea" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sector" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrainingPlatinExemption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrainingMoshExemption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardTarget" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MilitaryServiceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartServiceTo58Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MisraAlTor" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndMedicRegion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RepeatHospitalization" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SocialStatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsFictitiousIdentification" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MailDistributionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastDateEntry" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastDateDeparture" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlatinumJoinDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoverageTypeCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoverageTypeDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ClalitCustomersQuerySoapIn">
+    <wsdl:part name="ClalitCustomersQueryRequest" element="tns:ClalitCustomersRequest" />
+  </wsdl:message>
+  <wsdl:message name="ClalitCustomersQuerySoapOut">
+    <wsdl:part name="ClalitCustomersQueryResult" element="tns:ClalitCustomersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClalitCustomersService">
+    <wsdl:operation name="ClalitCustomersQuery">
+      <wsdl:input message="tns:ClalitCustomersQuerySoapIn" />
+      <wsdl:output message="tns:ClalitCustomersQuerySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClalitCustomersService1" />
+  <wsdl:binding name="ClalitCustomersService" type="tns:ClalitCustomersService">
+    <wsdl:documentation>
+      <wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" />
+    </wsdl:documentation>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ClalitCustomersQuery">
+      <soap:operation soapAction="http://www.clalit.org.il/ClalitCustomers/1.0/ClalitCustomersQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClalitCustomersService1" type="tns:ClalitCustomersService1">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="ClalitCustomersService">
+    <wsdl:port name="ClalitCustomersService" binding="tns:ClalitCustomersService">
+      <soap:address location="http://onlinedemog.clalit.org.il:8199/Clalit.ClalitCustomers/ClalitCustomersService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClalitCustomersService1" binding="tns:ClalitCustomersService1">
+      <http:address location="http://onlinedemog.clalit.org.il:8199/Clalit.ClalitCustomers/ClalitCustomersService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

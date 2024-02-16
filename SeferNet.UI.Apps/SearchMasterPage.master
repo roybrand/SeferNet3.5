@@ -1,0 +1,797 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    Inherits="SearchMasterPage" MasterPageFile="~/SeferMasterPageIEwide.master" Codebehind="SearchMasterPage.master.cs" %>
+
+<%@ MasterType VirtualPath="~/seferMasterPageIEwide.master" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Src="UserControls/DeptMapUC.ascx" TagName="DeptMapUC" TagPrefix="uc2" %>
+<%@ Register Src="~/UserControls/SortableColumnHeader.ascx" TagName="sortableColumnHeader" TagPrefix="uc1" %>
+<%@ Register Src="~/UserControls/SearchModeSelector.ascx" TagName="ModeSelector" TagPrefix="uc1" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="phHead" ID="phHeadCurrent">
+    <%-- we can put here any script for the current master page
+    any other script that will be in the using page will be overrideb inside the phScriptHead 
+    --%>    
+
+
+    <asp:ContentPlaceHolder runat="server" ID="phScriptHead">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="pageContent">
+ 
+ <script type="text/javascript" src="Scripts/SearchPages.js" defer="defer"></script> 
+  
+ <script type="text/javascript" defer="defer">
+
+     var btnPostUpdatePanelTopClientID = '<%=btnPostUpdatePanelTop.ClientID %>';
+     var btnShowSearchResultClientID = '<%=btnShowSearchResult.ClientID %>';
+     var cbNotShowSearchParametersClientID = '<%=cbNotShowSearchParameters.ClientID %>';
+     var divSearchParametersClientID = '<%=divSearchParameters.ClientID %>';
+     var cbIsClosestPointsSearchModeClientID = '<%=cbIsClosestPointsSearchMode.ClientID %>';
+     var cbShowHideMapClientID = '<%=cbShowHideMap.ClientID %>';
+     var txtDistrictListClientID = '<%=txtDistrictList.ClientID %>';
+     var txtDistrictCodesClientID = '<%=txtDistrictCodes.ClientID %>';
+     var txtCityCodeClientID = '<%=txtCityCode.ClientID %>';
+     var txtCityNameClientID = '<%=txtCityName.ClientID %>';
+     var txtCityNameOnlyClientID = '<%=txtCityNameOnly.ClientID %>';
+     var btnShowMapSearchControlsClientID = '<%=btnShowMapSearchControls.ClientID %>';
+     var txtCityNameClientID = '<%= txtCityName.ClientID %>';
+     var autoCompleteNeighborhoodClientID = '<%= autoCompleteNeighborhood.ClientID %>';
+     var autoCompleteStreetsClientID = '<%= autoCompleteStreets.ClientID %>';
+
+
+     var lstSearchModesID = '<%=lstSearchModes.ClientID %>';
+     var txtStreetClientID = '<%=txtStreet.ClientID %>';
+     var txtHouseClientID = '<%=txtHouse.ClientID %>';
+     var txtFromHourClientID = '<%=txtFromHour.ClientID %>';
+     var txtToHourClientID = '<%=txtToHour.ClientID %>';
+     var txtAtHourClientID = '<%=txtAtHour.ClientID %>';
+     var pnlDeptMapControlClientID = "<%=pnlDeptMapControl.ClientID %>";
+     var cbAllowShowMap_PageConditionClientID = '<%=cbAllowShowMap_PageCondition.ClientID %>';
+     var cbShowHideMapClientID = "<%=cbShowHideMap.ClientID %>";
+     var divButtonsShowHideMapClientID = '<%=divButtonsShowHideMap.ClientID %>';
+     var btnShowMapClientID = '<%=btnShowMap.ClientID %>';
+     var btnHideMapClientID = '<%=btnHideMap.ClientID %>';
+     var btnSubmitClientID = '<%=btnSubmit.ClientID %>';
+     var chkShowMapClientID = "<%=chkShowMap.ClientID %>";
+     var DeptMapControlhdnClinicJsonClientId = '<%=DeptMapControl.hdnClinicJsonClientId %>';
+     var txtIsSiteID = '<%=txtIsSite.ClientID %>';
+     var txtNeighborhoodAndSiteCodeID = '<%=txtNeighborhoodAndSiteCode.ClientID %>';
+     var txtNeighborhoodAndSiteID = '<%=txtNeighborhoodAndSite.ClientID %>';
+     var txtInputSearchModeValuesID = '<%=txtInputSearchModeValues.ClientID %>';
+
+     var trMapSearch_CityClientID = '<%=trMapSearch_City.ClientID %>';
+
+     function MoveValue(myAgreementTypeList) {
+         var txtInputSearchModeValues = document.getElementById(txtInputSearchModeValuesID);
+         txtInputSearchModeValues.value = myAgreementTypeList;
+     }
+
+     function SaveSearchModeValues() {
+         var txtInputSearchModeValues = document.getElementById(txtInputSearchModeValuesID);
+     }
+
+     function refreshPage() {
+         var loc = document.location.href.split("?")[0];
+         document.location.href = loc;
+     }
+
+     window.onbeforeunload = SaveSearchModeValues;
+  </script>
+  <script type="text/javascript" language="javascript">
+    function RaiseClickSubmit() {
+        __doPostBack('<%=btnSubmit.ClientID%>', '');
+    }
+  </script>
+  <script type="text/javascript" language="javascript">
+
+      function theFocus(clientID) {
+          var tooltip = document.getElementById("tooltip");
+          var textBox = document.getElementById(clientID);
+
+          var element = document.getElementById(clientID); //replace elementId with your element's Id.
+          var rect = element.getBoundingClientRect();
+          var elementLeft, elementTop; //x and y
+          var scrollTop = document.documentElement.scrollTop ?
+              document.documentElement.scrollTop : document.body.scrollTop;
+          var scrollLeft = document.documentElement.scrollLeft ?
+              document.documentElement.scrollLeft : document.body.scrollLeft;
+          elementTop = rect.top + scrollTop;
+          elementLeft = rect.left + scrollLeft;
+
+          var text = "שים לב, יופיעו גם יחידות/רופאים הפעילים רק בחלק מטווח הזמן שהוזן. חובה למלא את שני השדות";
+          tooltip.innerHTML =
+              "<table cellpadding='0' cellspacing='0' style='background-color:#eeeeee; border:solid 1px #555555;'>" +
+              "<tr><td class='RegularLabel' style='padding-left:5px; padding-right:5px'>" + text +
+              "</td></tr>" +
+              "</table>";
+
+          tooltip.style.display = "block";
+          tooltip.style.top = (elementTop + 21) + "px";
+          tooltip.style.left = elementLeft + "px";
+      }
+
+      function theBlur(obj) {
+          var tooltip = document.getElementById("tooltip");
+          tooltip.style.display = "none";
+      }
+
+      function validateTime(event, element) {
+          const button = document.getElementById("ctl00_ctl00_pageContent_btnSubmit");
+
+          const elementNameArray = element.id.split('_');
+          const elementName = elementNameArray[elementNameArray.length - 1];
+
+          const fromElementNameArray = [...elementNameArray.slice(0, elementNameArray.length - 1), 'txtFromHour'];
+          const fromElementName = fromElementNameArray.join("_");
+          const fromElement = document.getElementById(fromElementName);
+          const fromElementErrorLabelID = fromElementNameArray[fromElementNameArray.length - 1].replace('txt', 'label') + 'Error';
+          const fromErrorElement = document.getElementById(fromElementErrorLabelID);
+
+          const toElementNameArray = [...elementNameArray.slice(0, elementNameArray.length - 1), 'txtToHour'];
+          const toElementName = toElementNameArray.join("_");
+          const toElement = document.getElementById(toElementName);
+          const toElementErrorLabelID = toElementNameArray[toElementNameArray.length - 1].replace('txt', 'label') + 'Error';
+          const toErrorElement = document.getElementById(toElementErrorLabelID);
+
+          const atElementNameArray = [...elementNameArray.slice(0, elementNameArray.length - 1), 'txtAtHour'];
+          const atElementName = atElementNameArray.join("_");
+          const atElement = document.getElementById(atElementName);
+          const atElementErrorLabelID = atElementNameArray[atElementNameArray.length - 1].replace('txt', 'label') + 'Error';
+          const atErrorElement = document.getElementById(atElementErrorLabelID);
+
+          const isFromValid = validateTimeElement(event, fromElement, fromErrorElement);
+          const isToValid = validateTimeElement(event, toElement, toErrorElement);
+          const isAtValid = validateTimeElement(event, atElement, atErrorElement);
+
+          setButton(button, false);
+
+          if (isFromValid == false) {
+              setError(fromErrorElement, "*");
+              return false;
+          }
+          else {
+              setError(fromErrorElement, "");
+          }
+
+          if (isToValid == false) {
+              setError(toErrorElement, "*");
+              return false;
+          }
+          else {
+              setError(toErrorElement, "");
+          }
+
+          if (isAtValid == false) {
+              setError(atErrorElement, "*");
+              return false;
+          }
+          else {
+              setError(atErrorElement, "");
+          }
+          
+          const fromTime = fromElement.value;
+
+          const toTime = toElement.value;
+
+          var fromDate = new Date(2000, 1, 1, fromTime.substring(0, 2), fromTime.substring(3, 5));
+          var toDate = new Date(2000, 1, 1, toTime.substring(0, 2), toTime.substring(3, 5));
+
+          var fromMinutes = fromTime.substring(3, 5);
+          var toMinutes = toTime.substring(3, 5);
+
+          if (fromTime.length > 0 && toTime.length > 0 && fromDate >= toDate) {
+
+              setError(fromErrorElement, "*");
+              setError(toErrorElement, "*");
+              return false;
+          }
+          
+          const atTime = atElement.value;
+
+          if (atTime.length > 0) {
+
+              if (atTime.length != 5) {
+                  setError(atErrorElement, "*");
+                  return false;
+              }
+
+              var atDate = new Date(2000, 1, 1, atTime.substring(0, 2), atTime.substring(3, 5));
+
+              if (fromMinutes.length == 2) {
+                  if (atDate < fromDate) {
+                      setError(atErrorElement, "*");
+                      return false;
+                  }
+              }
+
+              if (toMinutes.length == 2) {
+                  if (atDate > toDate) {
+                      setError(atErrorElement, "*");
+                      return false;
+                  }
+              }
+          }
+
+          if (elementName.includes("FromHour") && fromElement.value.length == 5) {
+              toElement.focus();
+          }
+
+          setButton(button, true);
+      }
+
+      function validateTimeElement(event, element, errorElement) {
+
+          setError(errorElement, "");
+
+          let timeValue = element.value;
+
+          if (timeValue.length == 0) {
+              return true;
+          }
+
+          if (timeValue.length > 1 && parseInt(timeValue[0] + timeValue[1]) > 24) {
+              setError(errorElement, "*")
+              return false;
+          }
+
+          if ((timeValue.length == 2) && event.key != "Backspace" && !timeValue.includes(':')) {
+              element.value += ':';
+          }
+
+          if (timeValue.length < 5) {
+              setError(errorElement, "*")
+              return false;
+          }
+
+          if (timeValue.indexOf(":") < 0) {
+              setError(errorElement, "*")
+              return false;
+          }
+
+          var hours = timeValue.split(':')[0];
+          var minutes = timeValue.split(':')[1];
+
+          if (hours == "" || isNaN(hours) || parseInt(hours) > 23) {
+              setError(errorElement, "*")
+              return false;
+          }
+
+          if (minutes == "" || isNaN(minutes) || parseInt(minutes) > 59) {
+              setError(errorElement, "*");
+              return false;
+          }
+          else if (parseInt(minutes) == 0) {
+              minutes = "00";
+          }
+          else if (minutes < 10) {
+              minutes = "0" + minutes;
+          }
+
+          timeValue.value = hours + ":" + minutes;
+
+          setError(errorElement, "");
+
+          return true;
+      }
+
+      function setButton(button, isEnable) {
+          if (isEnable) {
+              button.style.opacity = '1';
+              button.style.cursor = 'pointer';
+              button.removeAttribute('disabled');
+          }
+          else {
+              button.style.opacity = '0.5';
+              button.style.cursor = 'unset';
+              button.setAttribute("disabled", "disabled");
+          }
+      }
+
+      function setError(element, error) {
+          element.innerText = error;
+      }
+
+      function checkKeyPressed(event, element) {
+
+          if (event.key == 'ArrowLeft' || event.key == 'ArrowRight') {
+              //Allow right and left key
+          }
+          else if (event.which == 32 || isNaN(event.key) && event.which != 8 && event.key != ':') {
+              event.preventDefault();
+          }
+          else if (event.key == ':' && element.value.includes(':')) {
+              event.preventDefault();
+          }
+
+          return true;
+      }
+  </script>
+
+    <%-- BEGIN all  Search buttons clinic,doctors,events and buttons to show hide parts in the page --%>
+    <cc1:ModalPopupExtender ID="modalPopupGrayScreen" runat="server" TargetControlID="btnOpenModalPopup"
+        PopupControlID="divGrayScreen" BackgroundCssClass="divPopup">
+    </cc1:ModalPopupExtender>
+    <div style="display: none;">
+        <asp:Button ID="btnOpenModalPopup" runat="server" />
+    </div>
+    <div id="divGrayScreen" runat="server" style="position: absolute; display: none;
+        width: 100%; height: 100%; z-index: 15000">
+    </div>
+    <div id="tooltip" style="position: absolute; width:300px; display: none; z-index: 10;
+        background-color: White;">
+    </div>
+    
+    <%-- BEGIN all  Search buttons clinic,doctors,events and buttons to show hide parts in the page --%>
+    <asp:Panel ID="pnlMain" runat="server" DefaultButton="btnSubmit">
+      
+        <table dir="rtl" cellpadding="0" cellspacing="0" style="background-image: url('Images/GradientVerticalBlueAndWhite.jpg');
+            background-repeat: repeat-x;">
+            <%-- BEGIN all  Search buttons clinic,doctors,events and buttons to show hide parts in the page --%>
+            <tr>
+                <td style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px">
+                    <table cellpadding="0" cellspacing="0" width="1200px">
+                        <tr>
+                            <td style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; background-image: url('Images/GradientVerticalWhiteBlueBottomBorder.jpg');
+                                background-position: bottom; background-repeat: repeat-x;">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td style="width: 10px; height: 25px; background-image: url('Images/GradientVerticalWhiteBlueBottomBorder.jpg');
+                                            background-position: bottom; background-repeat: repeat-x;">
+                                        </td>
+                                        <td id="tdClinicTab" runat="server" valign="bottom" align="center">
+                                            <table cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td runat="server" id="tdClinicInnerTdRight">
+                                                    </td>
+                                                    <td valign="top" runat="server" id="tdClinicInnerTdMiddle">
+                                                        <a id="aSearchClinics" runat="server" target="_parent" href="SearchClinics.aspx">חיפוש יחידות ושירותים</a>
+                                                        
+                                                    </td>
+                                                    <td runat="server" id="tdClinicInnerTdLeft">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td id="tdDoctorTab" runat="server" valign="bottom" align="center">
+                                            <table cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td runat="server" id="tdDoctorInnerTdRight">
+                                                    </td>
+                                                    <td valign="top" runat="server" id="tdDoctorInnerTdMiddle">
+                                                        <a id="aSearchDoctors" runat="server" href="SearchDoctors.aspx" target="_parent">חיפוש נותני שירות</a>
+                                                        
+                                                    </td>
+                                                    <td runat="server" id="tdDoctorInnerTdLeft">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td id="tdSalServiceTab" runat="server" valign="bottom" align="center">
+                                            <table cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td runat="server" id="tdSalServiceInnerTdRight">
+                                                    </td>
+                                                    <td valign="top" runat="server" id="tdSalServiceInnerTdMiddle">
+                                                        <a id="aSearchSalServices" runat="server" href="SearchSalServices.aspx" target="_parent">חיפוש לפי סל שירותים</a>
+                                                    </td>
+                                                    <td runat="server" id="tdSalServiceInnerTdLeft">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <uc1:ModeSelector ID="lstSearchModes" runat="server" />
+                                        </td>
+                                        <td><input ID="txtInputSearchModeValues" style="width:50px" runat="server" class="DisplayNone" /></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td id="tdShowSearchResultButton" runat="server" align="left" style="background-image: url('Images/GradientVerticalWhiteBlueBottomBorder.jpg');
+                                background-position: bottom; background-repeat: repeat-x;">
+                                <asp:Image ID="btnShowSearchResult" runat="server" Style="cursor: pointer;" onclick="ShowSearchParameters();  return false;"
+                                    src="Images/btn_ShowSearchResultOpened.png" />
+                                <asp:CheckBox ID="cbNotShowSearchParameters" runat="server" CssClass="DisplayNone"
+                                    EnableTheming="false" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <%-- END all  Search buttons clinic,doctors,events and buttons to show hide parts in the page --%>
+            <%-- BEGIN  parameters panel - contains the parameter place holder and the reception time area --%>
+            <tr>
+                <td style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px">
+                    <table cellpadding="0" cellspacing="0" style="width: 1200px;">
+                        <tr>
+                            <td style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px">
+                                <asp:UpdatePanel ID="UpdatePanelTop" UpdateMode="Conditional" runat="server">
+                                    <ContentTemplate>
+                                        <asp:Button ID="btnPostUpdatePanelTop" runat="server" Text="Button" CssClass="DisplayNone" />
+                                        <div id="divSearchParameters" runat="server" style="padding-top: 6px">
+                                            <table id="tblSearchParameters" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px" valign="top">
+                                                        <%-- BEGIN phSearchParameter  Parameters first and second columns  --%>
+                                                        <asp:ContentPlaceHolder runat="server" ID="phSearchParameterFirstAndSecondColumns">
+                                                            <div style="width: 100%; height: 100%;">
+                                                                Parameters first and second columns go here
+                                                            </div>
+                                                        </asp:ContentPlaceHolder>
+                                                        <%-- END phSearchParameter  Parameters first and second columns  --%>
+                                                        <asp:ContentPlaceHolder runat="server" ID="phMapSearchControls">
+                                                            <table dir="rtl" id="tblMapSearchControls" runat="server" cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td id="tdMapSearchControls" valign="top" style="background-repeat: no-repeat; background-position: right;
+                                                                        padding: 0px; margin: 0px;">
+                                                                                <table id="tblBottomRight" cellpadding="0" cellspacing="0">
+                                                                                    <tr id="trDistricts">
+                                                                                        <td valign="top" style="width:50%">
+                                                                                            <table cellpadding="0" cellspacing="0">
+                                                                                                <tr>
+                                                                                                    <td valign="top">
+                                                                                                        <div style="width: 60px;">
+                                                                                                            <asp:Label ID="lblDistrict" runat="server" Text="מחוז/בי''ח"></asp:Label>
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                        <asp:TextBox ID="txtDistrictList" runat="server" onfocus="setAutoCompleteDistricts();" onchange="ClearDistricts();" Width="190px"
+                                                                                                            TextMode="MultiLine" Height="20px" CssClass="TextBoxMultiLine" EnableTheming="false"></asp:TextBox>
+                                                                                                        <cc1:AutoCompleteExtender runat="server" BehaviorID="autoCompleteDistricts" ID="autoCompleteDistricts" TargetControlID="txtDistrictList"
+                                                                                                            ServicePath="~/AjaxWebServices/AutoComplete.asmx" ServiceMethod="getDistricts"
+                                                                                                            MinimumPrefixLength="1" CompletionInterval="500" CompletionListItemCssClass="CompletionListItemStyle"
+                                                                                                            UseContextKey="True" CompletionListHighlightedItemCssClass="CompletionListHighlightedItemStyle"
+                                                                                                            EnableCaching="false" CompletionSetCount="12" DelimiterCharacters="" Enabled="True"
+                                                                                                            CompletionListCssClass="CopmletionListStyleWidth" OnClientItemSelected="getDistrictCode" />
+                                                                                                    </td>
+                                                                                                    <td valign="top">
+                                                                                                        <div style="width: 37px;margin-top:2px;">
+                                                                                                            <input type="image" id="btnDistrictsPopUp" style="cursor: pointer;" src="Images/Applic/icon_magnify.gif"
+                                                                                                                onclick="SelectDistricts(); return false;" />
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                </tr>
+
+                                                                                            </table>
+                                                                                        </td>
+                                                                                        <td valign="top" align="right" style="width:50%">
+                                                                                            <div id="divphMapSearchControls_HoleRow1">
+                                                                                                <asp:ContentPlaceHolder runat="server" ID="phMapSearchControls_HoleRow1">
+                                                                                                </asp:ContentPlaceHolder>
+                                                                                            </div>
+                                                                                            <div id="divphMapSearchControls_HoleRow2">
+                                                                                                <asp:ContentPlaceHolder runat="server" ID="phMapSearchControls_HoleRow2">
+                                                                                                </asp:ContentPlaceHolder>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="padding:0px 0px 0px 0px; margin:0px 0px 0px 0px;">
+                                                                                            <table cellpadding="0" cellspacing="0">
+                                                                                                <tr id="trMapSearch_City" runat="server">
+                                                                                                    <td style="vertical-align:top;">
+                                                                                                        <div style="width: 60px;">
+                                                                                                            <asp:Label ID="lblCityName" runat="server" Text="ישוב"></asp:Label>
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    <td style="vertical-align:top;">
+                                                                                                        <asp:TextBox ID="txtCityName" Width="190px" runat="server" onchange="ClearCityCode();" />
+                                                                                                        <asp:TextBox ID="txtCityNameOnly" Width="100px" runat="server" EnableTheming="false"
+                                                                                                            CssClass="DisplayNone"></asp:TextBox>
+                                                                                                        <asp:TextBox runat="server" ID="txtCityCode" EnableTheming="false" CssClass="DisplayNone"></asp:TextBox>
+                                                                                                        <cc1:AutoCompleteExtender runat="server" ID="autoCompleteCities" TargetControlID="txtCityName"
+                                                                                                            BehaviorID="acCities" ServicePath="~/AjaxWebServices/AutoComplete.asmx" ServiceMethod="GetCitiesAndDistricts_MultipleDistricts"
+                                                                                                            MinimumPrefixLength="1" CompletionInterval="1000" CompletionListItemCssClass="CompletionListItemStyle"
+                                                                                                            UseContextKey="True" OnClientItemSelected="OnDDCityCodeSelected" CompletionListHighlightedItemCssClass="CompletionListHighlightedItemStyle"
+                                                                                                            EnableCaching="false" CompletionSetCount="12" DelimiterCharacters="" Enabled="True"
+                                                                                                            CompletionListCssClass="CopmletionListStyle" />
+                                                                                                    </td>
+                                                                                                    <td style="vertical-align:top;">
+                                                                                                        <div style="width:40px">
+                                                                                                            <asp:Image type="image" ID="btnShowMapSearchControls" runat="server" Style="cursor: pointer;
+                                                                                                                display: none;" src="Images/Applic/btn_Plus_Green.jpg" onclick="btnShowMapSearchControlsClicked(); return false;" />
+                                                                                                            <asp:CheckBox ID="cbIsClosestPointsSearchMode" runat="server" EnableTheming="false" CssClass="DisplayNone" />
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr id="trMapSearch_2" style="display: none">
+                                                                                                    <td>
+                                                                                                        <asp:Label ID="lblStreet" runat="server" Text="רחוב"></asp:Label>
+                                                                                                    </td>
+                                                                                                    <td colspan="2" >
+                                                                                                        <div style="width: 190px">
+                                                                                                            <asp:TextBox ID="txtStreet" runat="server" Width="150px"></asp:TextBox>
+                                                                                                            <cc1:AutoCompleteExtender runat="server" ID="autoCompleteStreets" TargetControlID="txtStreet"
+                                                                                                                ServicePath="~/AjaxWebServices/AutoComplete.asmx" ServiceMethod="GetStreetsByCityCode"
+                                                                                                                MinimumPrefixLength="1" CompletionInterval="1000" CompletionListItemCssClass="CompletionListItemStyle"
+                                                                                                                UseContextKey="True" CompletionListHighlightedItemCssClass="CompletionListHighlightedItemStyle"
+                                                                                                                EnableCaching="false" CompletionSetCount="12" DelimiterCharacters="" Enabled="True"
+                                                                                                                CompletionListCssClass="CopmletionListStyle" />
+                                                                                                            <asp:RegularExpressionValidator ID="VldRegexStreet" runat="server" ControlToValidate="txtStreet"
+                                                                                                                ValidationGroup="vldGrSearch" Text="!"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </asp:RegularExpressionValidator>
+                                                                                                            <asp:CustomValidator ID="VldPreservedWordsStreet" runat="server" ClientValidationFunction="CheckPreservedWords"
+                                                                                                                ValidationGroup="vldGrSearch" ControlToValidate="txtStreet" Text="!"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </asp:CustomValidator>
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                        <td style="padding:0px 0px 0px 0px; margin:0px 0px 0px 0px;">
+                                                                                            <table cellpadding="0" cellspacing="0" width="100%">
+                                                                                                <tr id="trMapSearch_1" style="display: none">
+                                                                                                    <td><div style="overflow: hidden; width:60px" >
+                                                                                                        <asp:Label ID="lblNeighborhood" runat="server" Text="שכונה/אתר"></asp:Label>
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                        <asp:TextBox ID="txtNeighborhoodAndSite" runat="server" Width="150px" onchange="CleanNeighborhoodAndSiteCode()"></asp:TextBox>
+                                                                                                        <cc1:AutoCompleteExtender runat="server" ID="autoCompleteNeighborhood" TargetControlID="txtNeighborhoodAndSite"
+                                                                                                            ServicePath="~/AjaxWebServices/AutoComplete.asmx" ServiceMethod="GetNeighbourhoodsAndSitesByCityCode"
+                                                                                                            MinimumPrefixLength="1" CompletionInterval="1000" CompletionListItemCssClass="CompletionListItemStyle"
+                                                                                                            UseContextKey="True" CompletionListHighlightedItemCssClass="CompletionListHighlightedItemStyle"
+                                                                                                            EnableCaching="false" CompletionSetCount="12" DelimiterCharacters="" Enabled="True"
+                                                                                                            CompletionListCssClass="CopmletionListStyle" OnClientItemSelected="getSelectedNeighborhoodAndSiteCode" />
+                                                                                                        <asp:TextBox id="txtNeighborhoodAndSiteCode" runat="server" Width="90px" EnableTheming="false" CssClass="DisplayNone"></asp:TextBox>
+                                                                                                        <asp:TextBox id="txtIsSite" runat="server" Width="10px" EnableTheming="false" CssClass="DisplayNone"></asp:TextBox>
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                        <div>
+                                                                                                            <asp:RegularExpressionValidator ID="VldRegexNeighborhood" runat="server" ControlToValidate="txtNeighborhoodAndSite"
+                                                                                                                    ValidationGroup="vldGrSearch" Text="!"> </asp:RegularExpressionValidator>
+                                                                                                            <asp:CustomValidator ID="VldPreservedWordsNeighborhood" runat="server" ControlToValidate="txtNeighborhoodAndSite"
+                                                                                                                ClientValidationFunction="CheckPreservedWords" ValidationGroup="vldGrSearch"
+                                                                                                                Text="!"> </asp:CustomValidator>
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr id="trMapSearch_3" style="display: none">
+                                                                                                    <td>
+                                                                                                        <asp:Label ID="lblHome" runat="server" Text="בית"></asp:Label>
+                                                                                                    </td>
+                                                                                                    <td colspan="2" align="right">
+                                                                                                        <asp:TextBox ID="txtHouse" runat="server" Width="150px"></asp:TextBox>
+                                                                                                            <asp:RegularExpressionValidator ID="vldRegexHouse" runat="server" ControlToValidate="txtHouse"
+                                                                                                                ValidationGroup="vldGrSearch" Text="!"> </asp:RegularExpressionValidator>
+                                                                                                            <asp:CustomValidator ID="vldPreservedWordsHouse" runat="server" ClientValidationFunction="CheckPreservedWords"
+                                                                                                                ValidationGroup="vldGrSearch" ControlToValidate="txtHouse" Text="!"> </asp:CustomValidator>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr id="trMapSearch_4" style="display: none;">
+                                                                                        <td colspan="2" style="padding:0px 0px 0px 0px; margin:0px 0px 0px 0px">
+                                                                                            <div style="float: right">
+                                                                                                
+                                                                                                <asp:Label ID="Label1" runat="server" Width="60px">יוצגו</asp:Label>
+                                                                                                <asp:DropDownList ID="ddlNumberOfRecordsToShow" runat="server" Width="60px">
+                                                                                                    <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                                                                                                    <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                                                                                                    <asp:ListItem Text="15" Value="15"></asp:ListItem>
+                                                                                                </asp:DropDownList>
+                                                                                                <asp:Label ID="Label2" runat="server">היחידות הקרובות ביותר לכתובת שהזנת</asp:Label>
+                                                                                            </div>
+                                                                                            <div style="float: left">
+                                                                                                <asp:CheckBox ID="chkShowMap" runat="server" Text="הצג תוצאות במפה" EnableTheming="true"
+                                                                                                    CssClass="RegularLabel" onclick="chkShowMap_Master_Clicked(this);" />
+                                                                                                &nbsp;&nbsp;&nbsp;
+                                                                                            </div>
+                                                                                            
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                                <div style="display: none;">
+                                                                                    <asp:TextBox ID="txtDistrictCodes" runat="server" TextMode="MultiLine"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </asp:TextBox>
+                                                                                </div>
+                                                                            
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </asp:ContentPlaceHolder>
+                                                    </td>
+                                                    <td style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;" valign="top">
+                                                        <asp:ContentPlaceHolder runat="server" ID="phSearchParameterThirdColumn">
+                                                            <div style="width: 100%; height: 100%;">
+                                                                Parameters third column goes here
+                                                            </div>
+                                                        </asp:ContentPlaceHolder>
+                                                    </td>
+                                                    <td valign="top" style="padding-right:10px;">
+                                                        <table cellpadding="0" cellspacing="0" border="0">
+                                                            <%-- BEGIN Reception time controls --%>
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:ContentPlaceHolder runat="server" ID="phReceptionTimeControls">
+                                                                        <table cellpadding="0" cellspacing="0">
+                                                                            <tr>
+                                                                                <td valign="top">
+                                                                                    <div style="width: 70px">
+                                                                                        <asp:Label ID="lblReceptionDays" runat="server" Text="ימי פעילות"></asp:Label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td align="right" colspan="2">
+                                                                                    <asp:CheckBoxList ID="cblReceptionDays" runat="server" DataTextField="receptionDayName"
+                                                                                        DataValueField="receptionDayCode" RepeatDirection="Horizontal" CssClass="FixedTdCheckBoxList"
+                                                                                        EnableTheming="false" RepeatColumns="3">
+                                                                                    </asp:CheckBoxList>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div style="width: 70px">
+                                                                                        <asp:Label ID="lblreceptionFromCaption" runat="server" Text="פעיל מ"></asp:Label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td style="width: 65px; padding-left: 0px;">
+                                                                                    <asp:TextBox ID="txtFromHour" runat="server" dir="ltr" Width="36px" onkeydown="return checkKeyPressed(event, this);" onkeyup="return validateTime(event, this)" onfocus="theFocus(txtFromHourClientID);" onblur="theBlur(this);"  MaxLength="5" autocomplete="off"></asp:TextBox>
+                                                                                    <label id="labelFromHourError" style="color: red"></label>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <asp:Label ID="lblReceptionToCaption" runat="server" Text="עד"></asp:Label>
+                                                                                    <asp:TextBox ID="txtToHour" runat="server" dir="ltr" Width="36px" onkeydown="return checkKeyPressed(event, this);" onkeyup="return validateTime(event, this)" onfocus="theFocus(txtFromHourClientID);" onblur="theBlur(this);"  MaxLength="5" autocomplete="off"></asp:TextBox>
+                                                                                    <label id="labelToHourError" style="color: red"></label>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td valign="top">
+                                                                                    <asp:Label ID="lblOpenInHour" runat="server" Text="פעיל בשעה"></asp:Label>
+                                                                                </td>
+                                                                                <td style="padding-top:5px">
+                                                                                   
+                                                                                    <asp:TextBox ID="txtAtHour" runat="server" dir="ltr" Width="36px" onkeydown="return checkKeyPressed(event, this);" onkeyup="return validateTime(event, this)" MaxLength="5" autocomplete="off"></asp:TextBox>
+                                                                                    <label id="labelAtHourError" style="color: red"></label>
+                                                                                </td>
+                                                                                <td valign="top">
+                                                                                    <div style="width:100px; padding-top:4px">
+                                                                                        <asp:CheckBox runat="server" ID="cbOpenNow" Text="פעיל כעת" CssClass="RegularCheckBoxList" EnableTheming="false" />
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </asp:ContentPlaceHolder>
+                                                                </td>
+                                                            </tr>
+                                                            <%-- END Reception time controls --%>
+                                                            <tr>
+                                                                <td align="left" valign="bottom">
+                                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                                        <tr>
+                                                                            <td style="background-image: url(Images/Applic/regButtonBG_Right.gif); background-repeat: no-repeat;
+                                                                                background-position: bottom left;">
+                                                                                &nbsp;
+                                                                            </td>
+                                                                            <td style="vertical-align: bottom; background-image: url(Images/Applic/regButtonBG_Middle.gif);
+                                                                                background-repeat: repeat-x; background-position: bottom;">
+                                                                                <asp:Button ID="btnSubmit" Width="45px" CssClass="RegularUpdateButton" Text="חיפוש" 
+                                                                                    runat="server" OnClick="btnSubmit_Click" ValidationGroup="vldGrSearch" OnClientClick="showProgressBar('vldGrSearch');Clear_Street_Nbd_Site_House_SearchControls_IfRequired();">
+                                                                                </asp:Button>
+                                                                            </td>
+                                                                            <td style="background-position: right bottom; background-image: url(Images/Applic/regButtonBG_Left.gif);
+                                                                                background-repeat: no-repeat;">
+                                                                                &nbsp;
+                                                                            </td>
+                                                                            <td style="background-image: url(Images/Applic/regButtonBG_Right.gif); background-repeat: no-repeat;
+                                                                                background-position: bottom left;">
+                                                                                &nbsp;
+                                                                            </td>
+                                                                            <td style="vertical-align: bottom; background-image: url(Images/Applic/regButtonBG_Middle.gif);
+                                                                                background-repeat: repeat-x; background-position: bottom;">
+                                                                                <input type="button" value="ניקוי" onclick="refreshPage();"
+                                                                                    style="width:45px;" class="RegularUpdateButton" />
+                                                                                
+                                                                            </td>
+                                                                            <td style="background-position: right bottom; background-image: url(Images/Applic/regButtonBG_Left.gif);
+                                                                                background-repeat: no-repeat;">
+                                                                                &nbsp;
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <%-- END  parameters panel - contains the parameter place holder and the reception time area --%>
+            <%-- BEGIN content between the parameters panel and the result panel (the grid panel) --%>
+            <tr>
+                <td id="tdphBetweenParamsToResults">
+                    <asp:ContentPlaceHolder runat="server" ID="phBetweenParamsToResults">
+                        
+
+                        
+                    </asp:ContentPlaceHolder>
+                    <div id="divQueueOrderPhonesAndHours" style="position: absolute; display: none; z-index: 10; background-color: White;">
+                    </div>
+                    <div id="divButtonsShowHideMapContainer" runat="server" style="display: none; border: 1px solid red;">
+                        <div style="width: 63px; display:none;" id="divButtonsShowHideMap" runat="server">
+                            
+                              <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="background-image: url(Images/Applic/regButtonBG_Right.gif); background-repeat: no-repeat;
+                                        background-position: bottom left;">
+                                        &nbsp;
+                                    </td>
+                                    <td style="vertical-align: bottom; background-image: url(Images/Applic/regButtonBG_Middle.gif);
+                                        background-repeat: repeat-x; background-position: bottom;">
+                                        <asp:Button ID="btnShowMap" CssClass="RegularUpdateButton" Text="הצג מפה" Width="63px"
+                                            runat="server" OnClientClick="btnShowHideMap_Clicked(); return false;"></asp:Button>
+                                        <asp:Button ID="btnHideMap" ToolTip="הסתר מפה" CssClass="RegularUpdateButton" Text="הסתר מפה" Width="63px"
+                                            runat="server" OnClientClick="btnShowHideMap_Clicked(); return false;"></asp:Button>
+                                        <asp:CheckBox ID="cbShowHideMap" runat="server" CssClass="DisplayNone" EnableTheming="false"
+                                            Checked="false" />
+                                     
+                                    </td>
+                                    <td style="background-position: right bottom; background-image: url(Images/Applic/regButtonBG_Left.gif);
+                                        background-repeat: no-repeat;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                          
+                        </div>
+                    </div>
+                    <%-- BEGIN divExtraUpdatedFlags--%>
+                    <%--  this div is for update panel that contains controls which are used as flags that 
+                    are updated everytime there is a postback, these flags are supposed to be updated from
+                    the pages that are using this master page, it's the pages responsibilty to update the flags
+                    otherwise they are ignored,it's basically an extra conditions to take into account :
+                    example for such a flag is for showing/hiding the map - the master has its own conditions
+                    whether to show the map but the using page can also have conditions for it, so the page can decide
+                    that it doesn't want to show the map in some condition\s --%>
+                    <div id="divExtraPageFlags" style="display: none">
+                        <asp:UpdatePanel ID="updExtraPageFlags" UpdateMode="Always" runat="server">
+                            <ContentTemplate>
+                                <asp:CheckBox ID="cbAllowShowMap_PageCondition" runat="server" Checked="true" />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                    <%-- END divExtraUpdatedFlags--%>
+                </td>
+            </tr>
+            <%-- END content between the parameters panel and the result panel (the grid panel) --%>
+            <%-- BEGIN  result panel (the grid panel with the paging and sorting stuff) --%>
+            <tr>
+                <td style="vertical-align:top;text-align:center;">
+                    <div id="divProgressBar" style="margin-top:5px;visibility:hidden;position:fixed;background:url('Images/Applic/progressBar.gif') center no-repeat;width:100%;height:32px;"></div>
+                    <table id="tblGridAndMap" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="vertical-align: top;">
+                                <div style="width: 1200px;">
+                                    <asp:UpdatePanel ID="UpdatePanelGrd" UpdateMode="Conditional" runat="server">
+                                        <ContentTemplate>
+                                            <asp:ContentPlaceHolder runat="server" ID="phGrid">
+                                            
+                                                this is the grid area</asp:ContentPlaceHolder>
+                                        </ContentTemplate>
+                                        <Triggers>
+                                            <asp:AsyncPostBackTrigger ControlID="btnSubmit" EventName="Click" />
+                                        </Triggers>
+                                    </asp:UpdatePanel>
+                                </div>
+                            </td>
+                            <td id="tdMap" valign="top" dir="ltr">
+                               <div id="pnlDeptMapControl" runat="server" style="position: absolute; width: 0px;
+                                    overflow: hidden; z-index: 2;">
+                                    <uc2:DeptMapUC ID="DeptMapControl" runat="server" IsRequiredAddClinicsOnMapLoaded="false" ControlIdsUpdatingControl="btnSubmit" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <%-- END  result panel (the grid panel with the paging and sorting stuff) --%>
+        </table>
+        
+    </asp:Panel>
+    
+    <asp:HiddenField runat="server" ID="hiddenClientNotifications" Value="my hidden value" />
+</asp:Content>

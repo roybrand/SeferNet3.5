@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ServerInfoList>
+  <!-- this is the structure-->
+  <!--<ServerInfo>
+    <Name></Name>
+    <URL>http://'computerName'/'ApplicationPathName'/WCFWebServices/WCFCacheService.svc</URL>
+  </ServerInfo>-->
+  <!-- end structure-->
+  <!--<ServerInfo>
+    <Name></Name>
+    <URL>http://mariari/SeferNet/WCFWebServices/WCFCacheService.svc</URL>
+  </ServerInfo>-->
+  <ServerInfo>
+    <Name></Name>
+    <URL>http://localhost:11001/SeferNet/WCFWebServices/WCFCacheService.svc</URL>
+  </ServerInfo>
+  <!--<ServerInfo>
+    <Name></Name>
+    <URL>http://arikto.clalit.org.il/SeferNet/WCFWebServices/WCFCacheService.svc</URL>
+  </ServerInfo>-->
+  <!--<ServerInfo>
+    <Name></Name>
+    <URL>http://arikto/SeferNet/WCFWebServices/WCFCacheService.svc</URL>
+  </ServerInfo>-->
+</ServerInfoList>

@@ -1,0 +1,113 @@
+.login {
+    position: fixed;
+    border-radius: 3px;
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    z-index: 2;
+
+    visibility: visible;
+}
+
+.login::before {
+    background-color: black;
+    opacity: 0.5;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.login_open {
+    visibility: hidden;
+}
+
+.login__container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: white;
+    border: 2px solid #20b8ed;
+    border-radius: 3px;
+    width: 300px;
+    transform: translate(0, 50%);
+}
+
+.login__container-header {
+    background-color: #20b8ed;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login__container-header:hover {
+    /*background-image: url(../images/logo.svg);*/
+    
+}
+
+.login__close {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: transparent;
+    background-image: url(../images/close-black.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+    background-position-x: 5px;
+    transition: opacity 0.3s linear;
+}
+
+.login__close:hover {
+    opacity: 0.5;
+}
+
+.login__container-header-image:hover {
+    opacity: 0.7;
+}
+
+.login__input {
+    background-color: transparent;
+    margin-bottom: 20px;
+    color: black;
+    border: 1px solid #3abc79;
+    border-radius: 3px;
+    font-size: 26px;
+    direction: ltr;
+    padding: 2px 8px;
+    margin: 10px 30px;
+    transition: border-color 0.3s linear;
+}
+
+.login__input:hover {
+    border: 1px solid #06a555;
+}
+
+.login__dropdown {
+    padding: 2px 0px;
+    margin: 10px 30px;
+    border: 1px solid #3abc79;
+    font-size: 26px;
+    text-align: left;
+}
+
+.login__button {
+    background-color: #20b8ed;
+    border: 0;
+    border-radius: 3px;
+    font-size: 26px;
+    color: white;
+    font-weight: 550;
+    margin: 10px 30px;
+    padding: 6px 0;
+    transition: background-color 0.3s linear;
+}
+
+.login__button:hover {
+    /*opacity: 0.7;*/
+    background-color: #048dbe;
+    
+}

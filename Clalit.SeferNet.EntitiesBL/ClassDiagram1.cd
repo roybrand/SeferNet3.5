@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Clalit.SeferNet.EntitiesBL.MessageInfoBL" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>EntitiesBL\MessageInfoBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.PositionBL" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAggAAAAAAAAA=</HashCode>
+      <FileName>EntitiesBL\positionBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.TemplateFieldsBL" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgBAAAAAAEAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>EntitiesBL\TemplateFieldsBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.View_CacheTablesRefreshingSPBL" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>EntitiesBL\View_CacheTablesRefreshingSPBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.View_DeptAddressAndPhonesBL" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAIAAAAgBAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>EntitiesBL\View_DeptAddressAndPhonesBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.View_DeptDetailsBL" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAEAAEIAAAAAAAAAACABAAAAgAAAAAAAAA=</HashCode>
+      <FileName>EntitiesBL\View_DeptDetailsBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.VMessageInfoLanguagesBL" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAIAAAAAAAAAAAAAAAAAAAAAAAAIgAAAAAAA=</HashCode>
+      <FileName>EntitiesBL\VMessageInfoLanguagesBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.EntityLoadHelper" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>EntityLoadHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.DeptReceptionTimeInfo" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAQAA=</HashCode>
+      <FileName>EntityWrappers\DeptReceptionTimeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.EmployeeReceptionTimeInfoExtended" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EEAIAAAgAAAEAAAAAAAAIAEAAAQAAIAAAAAAAAACDAA=</HashCode>
+      <FileName>EntityWrappers\EmployeeReceptionTimeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.ReceptionDayInfo" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAACACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityWrappers\ReceptionDayInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.ReceptionHoursInfo" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAIAAAACQAAAAAAAAAgAAAAAAAIAAAAA=</HashCode>
+      <FileName>EntityWrappers\ReceptionHoursInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.ReceptionTimeInfo" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAQQAIgACAAAAAAAAAAACAQMACACAMBAgAACAEQAAA=</HashCode>
+      <FileName>EntityWrappers\ReceptionTimeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.ServiceReceptionTimeInfoExtended" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAhAAAAwAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>EntityWrappers\ServiceReceptionTimeInfoExtended.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.DeptReceptionTimeInfoExtended" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAIAQAAABAIABAIAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>EntityWrappers\DeptReceptionTimeInfoExtended.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.ClalitEntitiesFactory" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAhAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>HelperClasses\ClalitEntitiesFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.Consts" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HelperClasses\Consts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.SeferNetEntitiesFactory" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAEAAAAAAAAABAA=</HashCode>
+      <FileName>HelperClasses\SeferNetEntitiesFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clalit.SeferNet.EntitiesBL.AllDeptDetailsDataTemplateInfo" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICCAAABQIIAAAAAQAAQAAAUAAAAgEQAAABCQAgIAAEA=</HashCode>
+      <FileName>TemplatesData\AllDeptDetailsDataTemplateInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

@@ -1,0 +1,1416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SeferNetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="position">
+          <Key>
+            <PropertyRef Name="positionCode" />
+            <PropertyRef Name="gender" />
+          </Key>
+          <Property Name="positionCode" Type="int" Nullable="false" />
+          <Property Name="gender" Type="int" Nullable="false" />
+          <Property Name="positionDescription" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="relevantSector" Type="int" />
+          <Property Name="UpdateDate" Type="smalldatetime" />
+          <Property Name="UpdateUser" Type="varchar" MaxLength="50" />
+          <Property Name="useInSearches" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vAllDeptDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vAllDeptDetails">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="UnitTypeName" />
+            <PropertyRef Name="addressComment" />
+            <PropertyRef Name="AdministrationName" />
+            <PropertyRef Name="subAdministrationName" />
+            <PropertyRef Name="deptLevelDescription" />
+          </Key>
+          <Property Name="deptCode" Type="int" Nullable="false" />
+          <Property Name="deptName" Type="varchar" MaxLength="100" />
+          <Property Name="UnitTypeName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="subUnitTypeName" Type="varchar" MaxLength="100" />
+          <Property Name="managerName" Type="varchar" MaxLength="500" />
+          <Property Name="administrativeManagerName" Type="varchar" MaxLength="500" />
+          <Property Name="geriatricsManagerName" Type="varchar" MaxLength="100" />
+          <Property Name="pharmacologyManagerName" Type="varchar" MaxLength="100" />
+          <Property Name="districtName" Type="varchar" MaxLength="100" />
+          <Property Name="cityName" Type="varchar" MaxLength="50" />
+          <Property Name="addressComment" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="phones" Type="varchar" MaxLength="500" />
+          <Property Name="faxes" Type="varchar" MaxLength="500" />
+          <Property Name="simpleAddress" Type="varchar" MaxLength="55" />
+          <Property Name="parking" Type="varchar" MaxLength="50" />
+          <Property Name="PopulationSectorDescription" Type="varchar" MaxLength="50" />
+          <Property Name="statusDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="transportation" Type="varchar" MaxLength="50" />
+          <Property Name="AdministrationName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="subAdministrationName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Simul228" Type="int" />
+          <Property Name="deptLevelDescription" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="handicappedFacilities" Type="varchar" MaxLength="500" />
+          <Property Name="showEmailInInternet" Type="tinyint" />
+          <Property Name="deptAttribution" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vDeptEvents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDeptEvents">
+          <Key>
+            <PropertyRef Name="DeptEventID" />
+            <PropertyRef Name="EventCode" />
+            <PropertyRef Name="EventName" />
+            <PropertyRef Name="registrationStatusDescription" />
+            <PropertyRef Name="MeetingsNumber" />
+            <PropertyRef Name="fromDate" />
+            <PropertyRef Name="toDate" />
+            <PropertyRef Name="deptCode" />
+          </Key>
+          <Property Name="DeptEventID" Type="int" Nullable="false" />
+          <Property Name="EventCode" Type="int" Nullable="false" />
+          <Property Name="EventName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="registrationStatusDescription" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MeetingsNumber" Type="int" Nullable="false" />
+          <Property Name="fromDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="toDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="FirstEventDate" Type="smalldatetime" />
+          <Property Name="deptCode" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vDeptReceptionHours' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDeptReceptionHours">
+          <Key>
+            <PropertyRef Name="receptionID" />
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="receptionDay" />
+            <PropertyRef Name="openingHour" />
+            <PropertyRef Name="closingHour" />
+          </Key>
+          <Property Name="receptionID" Type="int" Nullable="false" />
+          <Property Name="deptCode" Type="int" Nullable="false" />
+          <Property Name="receptionDay" Type="int" Nullable="false" />
+          <Property Name="openingHour" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="closingHour" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="RemarkText" Type="varchar" MaxLength="1000" />
+          <Property Name="openingHourText" Type="varchar" MaxLength="1015" />
+          <Property Name="ReceptionHoursTypeID" Type="tinyint" />
+          <Property Name="ReceptionTypeDescription" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vDeptServices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDeptServices">
+          <Key>
+            <PropertyRef Name="DeptCode" />
+            <PropertyRef Name="serviceCode" />
+            <PropertyRef Name="serviceDescription" />
+            <PropertyRef Name="IsService" />
+            <PropertyRef Name="ServiceStatus" />
+          </Key>
+          <Property Name="DeptCode" Type="int" Nullable="false" />
+          <Property Name="serviceCode" Type="int" Nullable="false" />
+          <Property Name="serviceDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsService" Type="bit" Nullable="false" />
+          <Property Name="ServiceStatus" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vDeptServicesRemarks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDeptServicesRemarks">
+          <Key>
+            <PropertyRef Name="DeptEmployeeServiceRemarkID" />
+            <PropertyRef Name="DeptCode" />
+            <PropertyRef Name="ServiceCode" />
+            <PropertyRef Name="IsMedicalTeam" />
+          </Key>
+          <Property Name="DeptEmployeeServiceRemarkID" Type="bigint" Nullable="false" />
+          <Property Name="DeptCode" Type="int" Nullable="false" />
+          <Property Name="ServiceCode" Type="int" Nullable="false" />
+          <Property Name="RemarkID" Type="int" />
+          <Property Name="RemarkText" Type="varchar" MaxLength="8000" />
+          <Property Name="displayInInternet" Type="bit" />
+          <Property Name="ValidFrom" Type="datetime" />
+          <Property Name="ValidTo" Type="datetime" />
+          <Property Name="IsMedicalTeam" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vDummy_LastUpdateDateOfRemarks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDummy_LastUpdateDateOfRemarks">
+          <Key>
+            <PropertyRef Name="LastUpdateDateOfDept" />
+          </Key>
+          <Property Name="LastUpdateDateOfDept" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vEmployeeDeptRemarks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vEmployeeDeptRemarks">
+          <Key>
+            <PropertyRef Name="EmployeeRemarkID" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="RemarkText" />
+            <PropertyRef Name="displayInInternet" />
+            <PropertyRef Name="AttributedToAllClinics" />
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="EmployeeSectorCode" />
+          </Key>
+          <Property Name="EmployeeRemarkID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+          <Property Name="DicRemarkID" Type="int" />
+          <Property Name="RemarkText" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="displayInInternet" Type="tinyint" Nullable="false" />
+          <Property Name="AttributedToAllClinics" Type="tinyint" Nullable="false" />
+          <Property Name="ValidFrom" Type="smalldatetime" />
+          <Property Name="ValidTo" Type="smalldatetime" />
+          <Property Name="deptCode" Type="int" Nullable="false" />
+          <Property Name="EmployeeSectorCode" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vEmployeeProfessionalDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vEmployeeProfessionalDetails">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="employeeID" />
+            <PropertyRef Name="EmployeeSectorCode" />
+            <PropertyRef Name="IsMedicalTeam" />
+            <PropertyRef Name="IsVirtualDoctor" />
+          </Key>
+          <Property Name="deptCode" Type="int" Nullable="false" />
+          <Property Name="EmployeeRemark" Type="varchar" MaxLength="500" />
+          <Property Name="employeeID" Type="bigint" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="152" />
+          <Property Name="Experties" Type="varchar" MaxLength="500" />
+          <Property Name="ProfessionDescriptions" Type="varchar" MaxLength="500" />
+          <Property Name="ServiceDescriptions" Type="varchar" MaxLength="500" />
+          <Property Name="QueueOrderDescriptions" Type="varchar" MaxLength="500" />
+          <Property Name="HTMLRemarks" Type="varchar" MaxLength="500" />
+          <Property Name="EmployeeSectorCode" Type="int" Nullable="false" />
+          <Property Name="orderNumber" Type="int" />
+          <Property Name="Phones" Type="varchar" MaxLength="500" />
+          <Property Name="IsMedicalTeam" Type="tinyint" Nullable="false" />
+          <Property Name="IsVirtualDoctor" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vEmployeeReceptionHours' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vEmployeeReceptionHours">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="receptionID" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="receptionDay" />
+            <PropertyRef Name="openingHour" />
+            <PropertyRef Name="closingHour" />
+            <PropertyRef Name="ReceptionDayName" />
+            <PropertyRef Name="EmployeeSectorCode" />
+            <PropertyRef Name="ServiceDescription" />
+            <PropertyRef Name="ServiceCode" />
+          </Key>
+          <Property Name="deptCode" Type="int" Nullable="false" />
+          <Property Name="receptionID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+          <Property Name="receptionDay" Type="int" Nullable="false" />
+          <Property Name="openingHour" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="closingHour" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="ReceptionDayName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpeningHourText" Type="varchar" MaxLength="1015" />
+          <Property Name="EmployeeSectorCode" Type="int" Nullable="false" />
+          <Property Name="ServiceDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ServiceCode" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vEmployeeReceptionRemarks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vEmployeeReceptionRemarks">
+          <Key>
+            <PropertyRef Name="RemarkText" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="EmployeeSectorCode" />
+            <PropertyRef Name="receptionID" />
+            <PropertyRef Name="deptCode" />
+          </Key>
+          <Property Name="RemarkText" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+          <Property Name="EmployeeSectorCode" Type="int" Nullable="false" />
+          <Property Name="receptionID" Type="int" Nullable="false" />
+          <Property Name="deptCode" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.View_AllDeptAddressAndPhone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_AllDeptAddressAndPhone">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="UnitTypeName" />
+          </Key>
+          <Property Name="deptCode" Type="int" Nullable="false" />
+          <Property Name="deptName" Type="varchar" MaxLength="100" />
+          <Property Name="UnitTypeName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="101" />
+          <Property Name="cityName" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="100" />
+          <Property Name="typeUnitCode" Type="int" />
+          <Property Name="status" Type="smallint" />
+          <Property Name="districtCode" Type="int" />
+          <Property Name="administrationCode" Type="int" />
+          <Property Name="deptType" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.View_CacheTablesRefreshingSP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_CacheTablesRefreshingSP">
+          <Key>
+            <PropertyRef Name="CacheTablesRefreshingSPCode" />
+            <PropertyRef Name="TableCode" />
+            <PropertyRef Name="SPName" />
+          </Key>
+          <Property Name="CacheTablesRefreshingSPCode" Type="int" Nullable="false" />
+          <Property Name="TableCode" Type="int" Nullable="false" />
+          <Property Name="TableName" Type="varchar" MaxLength="255" />
+          <Property Name="SPName" Type="varchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.View_DeptDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_DeptDetails">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="subUnitTypeCode" />
+            <PropertyRef Name="UnitTypeName" />
+            <PropertyRef Name="cityCode" />
+          </Key>
+          <Property Name="deptCode" Type="int" Nullable="false" />
+          <Property Name="deptName" Type="varchar" MaxLength="100" />
+          <Property Name="deptType" Type="int" />
+          <Property Name="deptLevel" Type="int" />
+          <Property Name="deptTypeDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="typeUnitCode" Type="int" />
+          <Property Name="subUnitTypeCode" Type="int" Nullable="false" />
+          <Property Name="UnitTypeName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cityCode" Type="int" Nullable="false" />
+          <Property Name="cityName" Type="varchar" MaxLength="50" />
+          <Property Name="street" Type="varchar" MaxLength="50" />
+          <Property Name="house" Type="varchar" MaxLength="50" />
+          <Property Name="flat" Type="varchar" MaxLength="50" />
+          <Property Name="addressComment" Type="varchar" MaxLength="500" />
+          <Property Name="address" Type="varchar" MaxLength="600" />
+          <Property Name="phone" Type="varchar" MaxLength="100" />
+          <Property Name="xcoord" Type="float" />
+          <Property Name="ycoord" Type="float" />
+          <Property Name="XLongitude" Type="float" />
+          <Property Name="YLatitude" Type="float" />
+          <Property Name="districtCode" Type="int" />
+          <Property Name="Simul228" Type="int" />
+          <Property Name="status" Type="smallint" />
+          <Property Name="populationSectorCode" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.View_DeptRemarks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_DeptRemarks">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="RemarkID" />
+            <PropertyRef Name="RemarkText" />
+            <PropertyRef Name="RelatedRemarkID" />
+            <PropertyRef Name="districtCode" />
+            <PropertyRef Name="administrationCode" />
+            <PropertyRef Name="RemarkDeptCode" />
+            <PropertyRef Name="IsSharedRemark" />
+            <PropertyRef Name="UnitTypeCode" />
+            <PropertyRef Name="populationSector" />
+            <PropertyRef Name="displayInInternet" />
+            <PropertyRef Name="updateDate" />
+            <PropertyRef Name="updateUser" />
+            <PropertyRef Name="SubUnitTypeCode" />
+            <PropertyRef Name="ShowOrder" />
+          </Key>
+          <Property Name="deptCode" Type="int" Nullable="false" />
+          <Property Name="RemarkID" Type="int" Nullable="false" />
+          <Property Name="DicRemarkID" Type="int" />
+          <Property Name="RemarkText" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="RelatedRemarkID" Type="int" Nullable="false" />
+          <Property Name="districtCode" Type="int" Nullable="false" />
+          <Property Name="administrationCode" Type="int" Nullable="false" />
+          <Property Name="RemarkDeptCode" Type="int" Nullable="false" />
+          <Property Name="IsSharedRemark" Type="int" Nullable="false" />
+          <Property Name="UnitTypeCode" Type="int" Nullable="false" />
+          <Property Name="populationSector" Type="int" Nullable="false" />
+          <Property Name="validFrom" Type="datetime" />
+          <Property Name="validTo" Type="datetime" />
+          <Property Name="displayInInternet" Type="tinyint" Nullable="false" />
+          <Property Name="updateDate" Type="datetime" Nullable="false" />
+          <Property Name="updateUser" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubUnitTypeCode" Type="int" Nullable="false" />
+          <Property Name="ShowOrder" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.View_Events' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Events">
+          <Key>
+            <PropertyRef Name="EventCode" />
+            <PropertyRef Name="EventName" />
+          </Key>
+          <Property Name="EventCode" Type="int" Nullable="false" />
+          <Property Name="EventName" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.VMessageInfoLanguages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VMessageInfoLanguages">
+          <Key>
+            <PropertyRef Name="MessageInfoApplicationLanguageId" />
+            <PropertyRef Name="MessageInfoId" />
+            <PropertyRef Name="ApplicationLanguageId" />
+            <PropertyRef Name="LanguageDescription" />
+          </Key>
+          <Property Name="MessageInfoApplicationLanguageId" Type="int" Nullable="false" />
+          <Property Name="MessageInfoId" Type="int" Nullable="false" />
+          <Property Name="LanguageMessageText" Type="nvarchar(max)" />
+          <Property Name="ApplicationLanguageId" Type="int" Nullable="false" />
+          <Property Name="UserMessageText" Type="varchar" MaxLength="2000" />
+          <Property Name="SystemMessageText" Type="varchar" MaxLength="2000" />
+          <Property Name="MessageCategoryId" Type="int" />
+          <Property Name="MessageCategoryDescription" Type="varchar" MaxLength="200" />
+          <Property Name="LanguageDescription" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vReceptionDaysForDisplay' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vReceptionDaysForDisplay">
+          <Key>
+            <PropertyRef Name="ReceptionDayCode" />
+            <PropertyRef Name="ReceptionDayName" />
+          </Key>
+          <Property Name="ReceptionDayCode" Type="int" Nullable="false" />
+          <Property Name="ReceptionDayName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UseInSearch" Type="tinyint" />
+          <Property Name="Display" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vServicesAndQueueOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vServicesAndQueueOrder">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="serviceCode" />
+            <PropertyRef Name="ServiceDescription" />
+            <PropertyRef Name="IsMedicalTeam" />
+          </Key>
+          <Property Name="deptCode" Type="int" Nullable="false" />
+          <Property Name="serviceCode" Type="int" Nullable="false" />
+          <Property Name="ServiceDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="QueueOrder" Type="varchar" MaxLength="500" />
+          <Property Name="IsMedicalTeam" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SeferNetQA.dbo.vServicesReceptionWithRemarks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vServicesReceptionWithRemarks">
+          <Key>
+            <PropertyRef Name="receptionID" />
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="serviceCode" />
+            <PropertyRef Name="receptionDay" />
+            <PropertyRef Name="openingHour" />
+            <PropertyRef Name="closingHour" />
+            <PropertyRef Name="IsMedicalTeam" />
+          </Key>
+          <Property Name="receptionID" Type="int" Nullable="false" />
+          <Property Name="deptCode" Type="int" Nullable="false" />
+          <Property Name="serviceCode" Type="int" Nullable="false" />
+          <Property Name="receptionDay" Type="int" Nullable="false" />
+          <Property Name="openingHour" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="closingHour" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="OpeningHourText" Type="varchar" MaxLength="1015" />
+          <Property Name="IsMedicalTeam" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <Function Name="rpc_GetZoomClinicTemplate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DeptCode" Type="int" Mode="In" />
+          <Parameter Name="IsInternal" Type="bit" Mode="In" />
+          <Parameter Name="DeptCodesInArea" Type="varchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="SeferNetModelStoreContainer">
+          <EntitySet Name="position" EntityType="Self.position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vAllDeptDetails" EntityType="Self.vAllDeptDetails" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vAllDeptDetails].[deptCode] AS [deptCode], 
+[vAllDeptDetails].[deptName] AS [deptName], 
+[vAllDeptDetails].[UnitTypeName] AS [UnitTypeName], 
+[vAllDeptDetails].[subUnitTypeName] AS [subUnitTypeName], 
+[vAllDeptDetails].[managerName] AS [managerName], 
+[vAllDeptDetails].[administrativeManagerName] AS [administrativeManagerName], 
+[vAllDeptDetails].[geriatricsManagerName] AS [geriatricsManagerName], 
+[vAllDeptDetails].[pharmacologyManagerName] AS [pharmacologyManagerName], 
+[vAllDeptDetails].[districtName] AS [districtName], 
+[vAllDeptDetails].[cityName] AS [cityName], 
+[vAllDeptDetails].[addressComment] AS [addressComment], 
+[vAllDeptDetails].[email] AS [email], 
+[vAllDeptDetails].[phones] AS [phones], 
+[vAllDeptDetails].[faxes] AS [faxes], 
+[vAllDeptDetails].[simpleAddress] AS [simpleAddress], 
+[vAllDeptDetails].[parking] AS [parking], 
+[vAllDeptDetails].[PopulationSectorDescription] AS [PopulationSectorDescription], 
+[vAllDeptDetails].[statusDescription] AS [statusDescription], 
+[vAllDeptDetails].[transportation] AS [transportation], 
+[vAllDeptDetails].[AdministrationName] AS [AdministrationName], 
+[vAllDeptDetails].[subAdministrationName] AS [subAdministrationName], 
+[vAllDeptDetails].[Simul228] AS [Simul228], 
+[vAllDeptDetails].[deptLevelDescription] AS [deptLevelDescription], 
+[vAllDeptDetails].[handicappedFacilities] AS [handicappedFacilities], 
+[vAllDeptDetails].[showEmailInInternet] AS [showEmailInInternet], 
+[vAllDeptDetails].[deptAttribution] AS [deptAttribution]
+FROM [dbo].[vAllDeptDetails] AS [vAllDeptDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDeptEvents" EntityType="Self.vDeptEvents" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vDeptEvents].[DeptEventID] AS [DeptEventID], 
+[vDeptEvents].[EventCode] AS [EventCode], 
+[vDeptEvents].[EventName] AS [EventName], 
+[vDeptEvents].[registrationStatusDescription] AS [registrationStatusDescription], 
+[vDeptEvents].[MeetingsNumber] AS [MeetingsNumber], 
+[vDeptEvents].[fromDate] AS [fromDate], 
+[vDeptEvents].[toDate] AS [toDate], 
+[vDeptEvents].[FirstEventDate] AS [FirstEventDate], 
+[vDeptEvents].[deptCode] AS [deptCode]
+FROM [dbo].[vDeptEvents] AS [vDeptEvents]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDeptReceptionHours" EntityType="Self.vDeptReceptionHours" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vDeptReceptionHours].[receptionID] AS [receptionID], 
+[vDeptReceptionHours].[deptCode] AS [deptCode], 
+[vDeptReceptionHours].[receptionDay] AS [receptionDay], 
+[vDeptReceptionHours].[openingHour] AS [openingHour], 
+[vDeptReceptionHours].[closingHour] AS [closingHour], 
+[vDeptReceptionHours].[RemarkText] AS [RemarkText], 
+[vDeptReceptionHours].[openingHourText] AS [openingHourText], 
+[vDeptReceptionHours].[ReceptionHoursTypeID] AS [ReceptionHoursTypeID], 
+[vDeptReceptionHours].[ReceptionTypeDescription] AS [ReceptionTypeDescription]
+FROM [dbo].[vDeptReceptionHours] AS [vDeptReceptionHours]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDeptServices" EntityType="Self.vDeptServices" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vDeptServices].[DeptCode] AS [DeptCode], 
+[vDeptServices].[serviceCode] AS [serviceCode], 
+[vDeptServices].[serviceDescription] AS [serviceDescription], 
+[vDeptServices].[IsService] AS [IsService], 
+[vDeptServices].[ServiceStatus] AS [ServiceStatus]
+FROM [dbo].[vDeptServices] AS [vDeptServices]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDeptServicesRemarks" EntityType="Self.vDeptServicesRemarks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vDeptServicesRemarks].[DeptEmployeeServiceRemarkID] AS [DeptEmployeeServiceRemarkID], 
+[vDeptServicesRemarks].[DeptCode] AS [DeptCode], 
+[vDeptServicesRemarks].[ServiceCode] AS [ServiceCode], 
+[vDeptServicesRemarks].[RemarkID] AS [RemarkID], 
+[vDeptServicesRemarks].[RemarkText] AS [RemarkText], 
+[vDeptServicesRemarks].[displayInInternet] AS [displayInInternet], 
+[vDeptServicesRemarks].[ValidFrom] AS [ValidFrom], 
+[vDeptServicesRemarks].[ValidTo] AS [ValidTo], 
+[vDeptServicesRemarks].[IsMedicalTeam] AS [IsMedicalTeam]
+FROM [dbo].[vDeptServicesRemarks] AS [vDeptServicesRemarks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDummy_LastUpdateDateOfRemarks" EntityType="Self.vDummy_LastUpdateDateOfRemarks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vDummy_LastUpdateDateOfRemarks].[LastUpdateDateOfDept] AS [LastUpdateDateOfDept]
+FROM [dbo].[vDummy_LastUpdateDateOfRemarks] AS [vDummy_LastUpdateDateOfRemarks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vEmployeeDeptRemarks" EntityType="Self.vEmployeeDeptRemarks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vEmployeeDeptRemarks].[EmployeeRemarkID] AS [EmployeeRemarkID], 
+[vEmployeeDeptRemarks].[EmployeeID] AS [EmployeeID], 
+[vEmployeeDeptRemarks].[DicRemarkID] AS [DicRemarkID], 
+[vEmployeeDeptRemarks].[RemarkText] AS [RemarkText], 
+[vEmployeeDeptRemarks].[displayInInternet] AS [displayInInternet], 
+[vEmployeeDeptRemarks].[AttributedToAllClinics] AS [AttributedToAllClinics], 
+[vEmployeeDeptRemarks].[ValidFrom] AS [ValidFrom], 
+[vEmployeeDeptRemarks].[ValidTo] AS [ValidTo], 
+[vEmployeeDeptRemarks].[deptCode] AS [deptCode], 
+[vEmployeeDeptRemarks].[EmployeeSectorCode] AS [EmployeeSectorCode]
+FROM [dbo].[vEmployeeDeptRemarks] AS [vEmployeeDeptRemarks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vEmployeeProfessionalDetails" EntityType="Self.vEmployeeProfessionalDetails" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vEmployeeProfessionalDetails].[deptCode] AS [deptCode], 
+[vEmployeeProfessionalDetails].[EmployeeRemark] AS [EmployeeRemark], 
+[vEmployeeProfessionalDetails].[employeeID] AS [employeeID], 
+[vEmployeeProfessionalDetails].[EmployeeName] AS [EmployeeName], 
+[vEmployeeProfessionalDetails].[Experties] AS [Experties], 
+[vEmployeeProfessionalDetails].[ProfessionDescriptions] AS [ProfessionDescriptions], 
+[vEmployeeProfessionalDetails].[ServiceDescriptions] AS [ServiceDescriptions], 
+[vEmployeeProfessionalDetails].[QueueOrderDescriptions] AS [QueueOrderDescriptions], 
+[vEmployeeProfessionalDetails].[HTMLRemarks] AS [HTMLRemarks], 
+[vEmployeeProfessionalDetails].[EmployeeSectorCode] AS [EmployeeSectorCode], 
+[vEmployeeProfessionalDetails].[orderNumber] AS [orderNumber], 
+[vEmployeeProfessionalDetails].[Phones] AS [Phones], 
+[vEmployeeProfessionalDetails].[IsMedicalTeam] AS [IsMedicalTeam], 
+[vEmployeeProfessionalDetails].[IsVirtualDoctor] AS [IsVirtualDoctor]
+FROM [dbo].[vEmployeeProfessionalDetails] AS [vEmployeeProfessionalDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vEmployeeReceptionHours" EntityType="Self.vEmployeeReceptionHours" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vEmployeeReceptionHours].[deptCode] AS [deptCode], 
+[vEmployeeReceptionHours].[receptionID] AS [receptionID], 
+[vEmployeeReceptionHours].[EmployeeID] AS [EmployeeID], 
+[vEmployeeReceptionHours].[receptionDay] AS [receptionDay], 
+[vEmployeeReceptionHours].[openingHour] AS [openingHour], 
+[vEmployeeReceptionHours].[closingHour] AS [closingHour], 
+[vEmployeeReceptionHours].[ReceptionDayName] AS [ReceptionDayName], 
+[vEmployeeReceptionHours].[OpeningHourText] AS [OpeningHourText], 
+[vEmployeeReceptionHours].[EmployeeSectorCode] AS [EmployeeSectorCode], 
+[vEmployeeReceptionHours].[ServiceDescription] AS [ServiceDescription], 
+[vEmployeeReceptionHours].[ServiceCode] AS [ServiceCode]
+FROM [dbo].[vEmployeeReceptionHours] AS [vEmployeeReceptionHours]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vEmployeeReceptionRemarks" EntityType="Self.vEmployeeReceptionRemarks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vEmployeeReceptionRemarks].[RemarkText] AS [RemarkText], 
+[vEmployeeReceptionRemarks].[EmployeeID] AS [EmployeeID], 
+[vEmployeeReceptionRemarks].[EmployeeSectorCode] AS [EmployeeSectorCode], 
+[vEmployeeReceptionRemarks].[receptionID] AS [receptionID], 
+[vEmployeeReceptionRemarks].[deptCode] AS [deptCode]
+FROM [dbo].[vEmployeeReceptionRemarks] AS [vEmployeeReceptionRemarks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_AllDeptAddressAndPhone" EntityType="Self.View_AllDeptAddressAndPhone" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_AllDeptAddressAndPhone].[deptCode] AS [deptCode], 
+[View_AllDeptAddressAndPhone].[deptName] AS [deptName], 
+[View_AllDeptAddressAndPhone].[UnitTypeName] AS [UnitTypeName], 
+[View_AllDeptAddressAndPhone].[Address] AS [Address], 
+[View_AllDeptAddressAndPhone].[cityName] AS [cityName], 
+[View_AllDeptAddressAndPhone].[Phone] AS [Phone], 
+[View_AllDeptAddressAndPhone].[typeUnitCode] AS [typeUnitCode], 
+[View_AllDeptAddressAndPhone].[status] AS [status], 
+[View_AllDeptAddressAndPhone].[districtCode] AS [districtCode], 
+[View_AllDeptAddressAndPhone].[administrationCode] AS [administrationCode], 
+[View_AllDeptAddressAndPhone].[deptType] AS [deptType]
+FROM [dbo].[View_AllDeptAddressAndPhone] AS [View_AllDeptAddressAndPhone]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_CacheTablesRefreshingSP" EntityType="Self.View_CacheTablesRefreshingSP" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_CacheTablesRefreshingSP].[CacheTablesRefreshingSPCode] AS [CacheTablesRefreshingSPCode], 
+[View_CacheTablesRefreshingSP].[TableCode] AS [TableCode], 
+[View_CacheTablesRefreshingSP].[TableName] AS [TableName], 
+[View_CacheTablesRefreshingSP].[SPName] AS [SPName]
+FROM [dbo].[View_CacheTablesRefreshingSP] AS [View_CacheTablesRefreshingSP]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_DeptDetails" EntityType="Self.View_DeptDetails" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_DeptDetails].[deptCode] AS [deptCode], 
+[View_DeptDetails].[deptName] AS [deptName], 
+[View_DeptDetails].[deptType] AS [deptType], 
+[View_DeptDetails].[deptLevel] AS [deptLevel], 
+[View_DeptDetails].[deptTypeDescription] AS [deptTypeDescription], 
+[View_DeptDetails].[typeUnitCode] AS [typeUnitCode], 
+[View_DeptDetails].[subUnitTypeCode] AS [subUnitTypeCode], 
+[View_DeptDetails].[UnitTypeName] AS [UnitTypeName], 
+[View_DeptDetails].[cityCode] AS [cityCode], 
+[View_DeptDetails].[cityName] AS [cityName], 
+[View_DeptDetails].[street] AS [street], 
+[View_DeptDetails].[house] AS [house], 
+[View_DeptDetails].[flat] AS [flat], 
+[View_DeptDetails].[addressComment] AS [addressComment], 
+[View_DeptDetails].[address] AS [address], 
+[View_DeptDetails].[phone] AS [phone], 
+[View_DeptDetails].[xcoord] AS [xcoord], 
+[View_DeptDetails].[ycoord] AS [ycoord], 
+[View_DeptDetails].[XLongitude] AS [XLongitude], 
+[View_DeptDetails].[YLatitude] AS [YLatitude], 
+[View_DeptDetails].[districtCode] AS [districtCode], 
+[View_DeptDetails].[Simul228] AS [Simul228], 
+[View_DeptDetails].[status] AS [status], 
+[View_DeptDetails].[populationSectorCode] AS [populationSectorCode]
+FROM [dbo].[View_DeptDetails] AS [View_DeptDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_DeptRemarks" EntityType="Self.View_DeptRemarks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_DeptRemarks].[deptCode] AS [deptCode], 
+[View_DeptRemarks].[RemarkID] AS [RemarkID], 
+[View_DeptRemarks].[DicRemarkID] AS [DicRemarkID], 
+[View_DeptRemarks].[RemarkText] AS [RemarkText], 
+[View_DeptRemarks].[RelatedRemarkID] AS [RelatedRemarkID], 
+[View_DeptRemarks].[districtCode] AS [districtCode], 
+[View_DeptRemarks].[administrationCode] AS [administrationCode], 
+[View_DeptRemarks].[RemarkDeptCode] AS [RemarkDeptCode], 
+[View_DeptRemarks].[IsSharedRemark] AS [IsSharedRemark], 
+[View_DeptRemarks].[UnitTypeCode] AS [UnitTypeCode], 
+[View_DeptRemarks].[populationSector] AS [populationSector], 
+[View_DeptRemarks].[validFrom] AS [validFrom], 
+[View_DeptRemarks].[validTo] AS [validTo], 
+[View_DeptRemarks].[displayInInternet] AS [displayInInternet], 
+[View_DeptRemarks].[updateDate] AS [updateDate], 
+[View_DeptRemarks].[updateUser] AS [updateUser], 
+[View_DeptRemarks].[SubUnitTypeCode] AS [SubUnitTypeCode], 
+[View_DeptRemarks].[ShowOrder] AS [ShowOrder]
+FROM [dbo].[View_DeptRemarks] AS [View_DeptRemarks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Events" EntityType="Self.View_Events" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_Events].[EventCode] AS [EventCode], 
+[View_Events].[EventName] AS [EventName]
+FROM [dbo].[View_Events] AS [View_Events]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VMessageInfoLanguages" EntityType="Self.VMessageInfoLanguages" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VMessageInfoLanguages].[MessageInfoApplicationLanguageId] AS [MessageInfoApplicationLanguageId], 
+[VMessageInfoLanguages].[MessageInfoId] AS [MessageInfoId], 
+[VMessageInfoLanguages].[LanguageMessageText] AS [LanguageMessageText], 
+[VMessageInfoLanguages].[ApplicationLanguageId] AS [ApplicationLanguageId], 
+[VMessageInfoLanguages].[UserMessageText] AS [UserMessageText], 
+[VMessageInfoLanguages].[SystemMessageText] AS [SystemMessageText], 
+[VMessageInfoLanguages].[MessageCategoryId] AS [MessageCategoryId], 
+[VMessageInfoLanguages].[MessageCategoryDescription] AS [MessageCategoryDescription], 
+[VMessageInfoLanguages].[LanguageDescription] AS [LanguageDescription]
+FROM [dbo].[VMessageInfoLanguages] AS [VMessageInfoLanguages]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vReceptionDaysForDisplay" EntityType="Self.vReceptionDaysForDisplay" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vReceptionDaysForDisplay].[ReceptionDayCode] AS [ReceptionDayCode], 
+[vReceptionDaysForDisplay].[ReceptionDayName] AS [ReceptionDayName], 
+[vReceptionDaysForDisplay].[UseInSearch] AS [UseInSearch], 
+[vReceptionDaysForDisplay].[Display] AS [Display]
+FROM [dbo].[vReceptionDaysForDisplay] AS [vReceptionDaysForDisplay]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vServicesAndQueueOrder" EntityType="Self.vServicesAndQueueOrder" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vServicesAndQueueOrder].[deptCode] AS [deptCode], 
+[vServicesAndQueueOrder].[serviceCode] AS [serviceCode], 
+[vServicesAndQueueOrder].[ServiceDescription] AS [ServiceDescription], 
+[vServicesAndQueueOrder].[QueueOrder] AS [QueueOrder], 
+[vServicesAndQueueOrder].[IsMedicalTeam] AS [IsMedicalTeam]
+FROM [dbo].[vServicesAndQueueOrder] AS [vServicesAndQueueOrder]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vServicesReceptionWithRemarks" EntityType="Self.vServicesReceptionWithRemarks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vServicesReceptionWithRemarks].[receptionID] AS [receptionID], 
+[vServicesReceptionWithRemarks].[deptCode] AS [deptCode], 
+[vServicesReceptionWithRemarks].[serviceCode] AS [serviceCode], 
+[vServicesReceptionWithRemarks].[receptionDay] AS [receptionDay], 
+[vServicesReceptionWithRemarks].[openingHour] AS [openingHour], 
+[vServicesReceptionWithRemarks].[closingHour] AS [closingHour], 
+[vServicesReceptionWithRemarks].[OpeningHourText] AS [OpeningHourText], 
+[vServicesReceptionWithRemarks].[IsMedicalTeam] AS [IsMedicalTeam]
+FROM [dbo].[vServicesReceptionWithRemarks] AS [vServicesReceptionWithRemarks]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SeferNetModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SeferNetEntities">
+          <EntitySet Name="View_Events" EntityType="SeferNetModel.View_Events" />
+          <EntitySet Name="position" EntityType="SeferNetModel.position" />
+          <EntitySet Name="View_CacheTablesRefreshingSP" EntityType="SeferNetModel.View_CacheTablesRefreshingSP" />
+          <EntitySet Name="VMessageInfoLanguages" EntityType="SeferNetModel.VMessageInfoLanguages" />
+          <EntitySet Name="View_AllDeptAddressAndPhone" EntityType="SeferNetModel.View_AllDeptAddressAndPhone" />
+          <EntitySet Name="vAllDeptDetails" EntityType="SeferNetModel.vAllDeptDetails" />
+          <FunctionImport Name="GetZoomClinicTemplate" EntitySet="vAllDeptDetails" ReturnType="Collection(SeferNetModel.vAllDeptDetails)">
+            <Parameter Name="DeptCode" Mode="In" Type="Int32" />
+            <Parameter Name="IsInternal" Mode="In" Type="Boolean" />
+            <Parameter Name="DeptCodesInArea" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="vEmployeeReceptionHours" EntityType="SeferNetModel.vEmployeeReceptionHours" />
+          <EntitySet Name="View_DeptRemarks" EntityType="SeferNetModel.View_DeptRemarks" />
+          <EntitySet Name="vEmployeeReceptionRemarks" EntityType="SeferNetModel.vEmployeeReceptionRemarks" />
+          <EntitySet Name="vDeptReceptionHours" EntityType="SeferNetModel.vDeptReceptionHours" />
+          <EntitySet Name="vDeptEvents" EntityType="SeferNetModel.vDeptEvents" />
+          <EntitySet Name="vDummy_LastUpdateDateOfRemarks" EntityType="SeferNetModel.vDummy_LastUpdateDateOfRemarks" />
+          <EntitySet Name="vEmployeeDeptRemarks" EntityType="SeferNetModel.vEmployeeDeptRemarks" />
+          <EntitySet Name="vReceptionDaysForDisplay" EntityType="SeferNetModel.vReceptionDaysForDisplay" />
+          <EntitySet Name="vDeptServices" EntityType="SeferNetModel.vDeptServices" />
+          <EntitySet Name="vServicesAndQueueOrder" EntityType="SeferNetModel.vServicesAndQueueOrder" />
+          <EntitySet Name="vServicesReceptionWithRemarks" EntityType="SeferNetModel.vServicesReceptionWithRemarks" />
+          <EntitySet Name="vDeptServicesRemarks" EntityType="SeferNetModel.vDeptServicesRemarks" />
+          <EntitySet Name="vEmployeeProfessionalDetails" EntityType="SeferNetModel.vEmployeeProfessionalDetails" />
+          <EntitySet Name="View_DeptDetails" EntityType="SeferNetModel.View_DeptDetails" />
+          </EntityContainer>
+        <EntityType Name="View_Events">
+          <Key>
+            <PropertyRef Name="EventCode" />
+            <PropertyRef Name="EventName" /></Key>
+          <Property Name="EventCode" Type="Int32" Nullable="false" />
+          <Property Name="EventName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" /></EntityType>
+        <EntityType Name="position">
+          <Key>
+            <PropertyRef Name="positionCode" />
+            <PropertyRef Name="gender" /></Key>
+          <Property Name="positionCode" Type="Int32" Nullable="false" />
+          <Property Name="gender" Type="Int32" Nullable="false" />
+          <Property Name="positionDescription" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="relevantSector" Type="Int32" Nullable="true" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="true" Precision="0" />
+          <Property Name="UpdateUser" Type="String" Nullable="true" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="useInSearches" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Byte" Nullable="true" /></EntityType>
+        <EntityType Name="View_CacheTablesRefreshingSP">
+          <Key>
+            <PropertyRef Name="CacheTablesRefreshingSPCode" />
+            <PropertyRef Name="TableCode" />
+            <PropertyRef Name="SPName" /></Key>
+          <Property Name="CacheTablesRefreshingSPCode" Type="Int32" Nullable="false" />
+          <Property Name="TableCode" Type="Int32" Nullable="false" />
+          <Property Name="TableName" Type="String" Nullable="true" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SPName" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" /></EntityType>
+        <EntityType Name="VMessageInfoLanguages">
+          <Key>
+            <PropertyRef Name="MessageInfoApplicationLanguageId" />
+            <PropertyRef Name="MessageInfoId" />
+            <PropertyRef Name="ApplicationLanguageId" />
+            <PropertyRef Name="LanguageDescription" /></Key>
+          <Property Name="MessageInfoApplicationLanguageId" Type="Int32" Nullable="false" />
+          <Property Name="MessageInfoId" Type="Int32" Nullable="false" />
+          <Property Name="LanguageMessageText" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationLanguageId" Type="Int32" Nullable="false" />
+          <Property Name="UserMessageText" Type="String" Nullable="true" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="SystemMessageText" Type="String" Nullable="true" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="MessageCategoryId" Type="Int32" Nullable="true" />
+          <Property Name="MessageCategoryDescription" Type="String" Nullable="true" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="LanguageDescription" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" /></EntityType>
+        <EntityType Name="View_AllDeptAddressAndPhone">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="UnitTypeName" /></Key>
+          <Property Name="deptCode" Type="Int32" Nullable="false" />
+          <Property Name="deptName" Type="String" Nullable="true" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="UnitTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="true" MaxLength="101" Unicode="false" FixedLength="false" />
+          <Property Name="cityName" Type="String" Nullable="true" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" Nullable="true" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="typeUnitCode" Type="Int32" Nullable="true" />
+          <Property Name="status" Type="Int16" Nullable="true" />
+          <Property Name="districtCode" Type="Int32" Nullable="true" />
+          <Property Name="administrationCode" Type="Int32" Nullable="true" />
+          <Property Name="deptType" Type="Int32" Nullable="true" /></EntityType>
+        <EntityType Name="vAllDeptDetails">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="UnitTypeName" />
+            <PropertyRef Name="addressComment" />
+            <PropertyRef Name="AdministrationName" />
+            <PropertyRef Name="subAdministrationName" />
+            <PropertyRef Name="deptLevelDescription" /></Key>
+          <Property Name="deptCode" Type="Int32" Nullable="false" />
+          <Property Name="deptName" Type="String" Nullable="true" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="UnitTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="subUnitTypeName" Type="String" Nullable="true" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="managerName" Type="String" Nullable="true" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="administrativeManagerName" Type="String" Nullable="true" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="geriatricsManagerName" Type="String" Nullable="true" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="pharmacologyManagerName" Type="String" Nullable="true" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="districtName" Type="String" Nullable="true" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="cityName" Type="String" Nullable="true" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="addressComment" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="true" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="phones" Type="String" Nullable="true" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="faxes" Type="String" Nullable="true" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="simpleAddress" Type="String" Nullable="true" MaxLength="55" Unicode="false" FixedLength="false" />
+          <Property Name="parking" Type="String" Nullable="true" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PopulationSectorDescription" Type="String" Nullable="true" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="statusDescription" Type="String" Nullable="true" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="transportation" Type="String" Nullable="true" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AdministrationName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="subAdministrationName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Simul228" Type="Int32" Nullable="true" />
+          <Property Name="deptLevelDescription" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="handicappedFacilities" Type="String" Nullable="true" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Type="Byte" Name="showEmailInInternet" />
+          <Property Type="String" Name="deptAttribution" MaxLength="100" FixedLength="false" Unicode="false" /></EntityType>
+        <EntityType Name="vEmployeeReceptionHours">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="receptionID" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="receptionDay" />
+            <PropertyRef Name="openingHour" />
+            <PropertyRef Name="closingHour" />
+            <PropertyRef Name="ReceptionDayName" />
+            <PropertyRef Name="EmployeeSectorCode" />
+            <PropertyRef Name="ServiceDescription" />
+            <PropertyRef Name="ServiceCode" /></Key>
+          <Property Name="deptCode" Type="Int32" Nullable="false" />
+          <Property Name="receptionID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int64" Nullable="false" />
+          <Property Name="receptionDay" Type="Int32" Nullable="false" />
+          <Property Name="openingHour" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="closingHour" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="ReceptionDayName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OpeningHourText" Type="String" Nullable="true" MaxLength="1015" Unicode="false" FixedLength="false" />
+          <Property Name="EmployeeSectorCode" Type="Int32" Nullable="false" />
+          <Property Type="String" Name="ServiceDescription" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceCode" Type="Int32" Nullable="false" />
+          </EntityType>
+        <EntityType Name="View_DeptRemarks">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="RemarkID" />
+            <PropertyRef Name="RemarkText" />
+            <PropertyRef Name="RelatedRemarkID" />
+            <PropertyRef Name="districtCode" />
+            <PropertyRef Name="administrationCode" />
+            <PropertyRef Name="RemarkDeptCode" />
+            <PropertyRef Name="IsSharedRemark" />
+            <PropertyRef Name="UnitTypeCode" />
+            <PropertyRef Name="populationSector" />
+            <PropertyRef Name="displayInInternet" />
+            <PropertyRef Name="updateDate" />
+            <PropertyRef Name="updateUser" />
+            <PropertyRef Name="SubUnitTypeCode" />
+            <PropertyRef Name="ShowOrder" /></Key>
+          <Property Name="deptCode" Type="Int32" Nullable="false" />
+          <Property Name="RemarkID" Type="Int32" Nullable="false" />
+          <Property Name="DicRemarkID" Type="Int32" Nullable="true" />
+          <Property Name="RemarkText" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="RelatedRemarkID" Type="Int32" Nullable="false" />
+          <Property Name="districtCode" Type="Int32" Nullable="false" />
+          <Property Name="administrationCode" Type="Int32" Nullable="false" />
+          <Property Name="RemarkDeptCode" Type="Int32" Nullable="false" />
+          <Property Name="IsSharedRemark" Type="Int32" Nullable="false" />
+          <Property Name="UnitTypeCode" Type="Int32" Nullable="false" />
+          <Property Name="populationSector" Type="Int32" Nullable="false" />
+          <Property Name="validFrom" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="validTo" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="displayInInternet" Type="Byte" Nullable="false" />
+          <Property Name="updateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updateUser" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SubUnitTypeCode" Type="Int32" Nullable="false" />
+          <Property Name="ShowOrder" Type="Int32" Nullable="false" /></EntityType>
+        <EntityType Name="vEmployeeReceptionRemarks">
+          <Key>
+            <PropertyRef Name="RemarkText" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="EmployeeSectorCode" />
+            <PropertyRef Name="receptionID" />
+            <PropertyRef Name="deptCode" />
+          </Key>
+          <Property Type="String" Name="RemarkText" Nullable="false" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="EmployeeID" Nullable="false" />
+          <Property Type="Int32" Name="EmployeeSectorCode" Nullable="false" />
+          <Property Type="Int32" Name="receptionID" Nullable="false" />
+          <Property Type="Int32" Name="deptCode" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vDeptReceptionHours">
+          <Key>
+            <PropertyRef Name="receptionID" />
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="receptionDay" />
+            <PropertyRef Name="openingHour" />
+            <PropertyRef Name="closingHour" />
+          </Key>
+          <Property Type="Int32" Name="receptionID" Nullable="false" />
+          <Property Type="Int32" Name="deptCode" Nullable="false" />
+          <Property Type="Int32" Name="receptionDay" Nullable="false" />
+          <Property Type="String" Name="openingHour" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="closingHour" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RemarkText" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="openingHourText" MaxLength="1015" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="ReceptionHoursTypeID" />
+          <Property Type="String" Name="ReceptionTypeDescription" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vDeptEvents">
+          <Key>
+            <PropertyRef Name="EventCode" />
+            <PropertyRef Name="EventName" />
+            <PropertyRef Name="registrationStatusDescription" />
+            <PropertyRef Name="MeetingsNumber" />
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="DeptEventID" />
+            <PropertyRef Name="fromDate" />
+            <PropertyRef Name="toDate" />
+          </Key>
+          <Property Type="Int32" Name="EventCode" Nullable="false" />
+          <Property Type="String" Name="EventName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="registrationStatusDescription" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="MeetingsNumber" Nullable="false" />
+          <Property Type="DateTime" Name="FirstEventDate" Precision="0" />
+          <Property Type="Int32" Name="deptCode" Nullable="false" />
+          <Property Type="Int32" Name="DeptEventID" Nullable="false" />
+          <Property Type="DateTime" Name="fromDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="toDate" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="vDummy_LastUpdateDateOfRemarks">
+          <Key>
+            <PropertyRef Name="LastUpdateDateOfDept" />
+          </Key>
+          <Property Type="DateTime" Name="LastUpdateDateOfDept" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="vEmployeeDeptRemarks">
+          <Key>
+            <PropertyRef Name="EmployeeRemarkID" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="RemarkText" />
+            <PropertyRef Name="displayInInternet" />
+            <PropertyRef Name="AttributedToAllClinics" />
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="EmployeeSectorCode" />
+          </Key>
+          <Property Type="Int32" Name="EmployeeRemarkID" Nullable="false" />
+          <Property Type="Int64" Name="EmployeeID" Nullable="false" />
+          <Property Type="Int32" Name="DicRemarkID" />
+          <Property Type="String" Name="RemarkText" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="displayInInternet" Nullable="false" />
+          <Property Type="Byte" Name="AttributedToAllClinics" Nullable="false" />
+          <Property Type="DateTime" Name="ValidFrom" Precision="0" />
+          <Property Type="DateTime" Name="ValidTo" Precision="0" />
+          <Property Type="Int32" Name="deptCode" Nullable="false" />
+          <Property Type="Int32" Name="EmployeeSectorCode" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vReceptionDaysForDisplay">
+          <Key>
+            <PropertyRef Name="ReceptionDayCode" />
+            <PropertyRef Name="ReceptionDayName" />
+          </Key>
+          <Property Type="Int32" Name="ReceptionDayCode" Nullable="false" />
+          <Property Type="String" Name="ReceptionDayName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="UseInSearch" />
+          <Property Type="Byte" Name="Display" />
+        </EntityType>
+        <EntityType Name="vDeptServices">
+          <Key>
+            <PropertyRef Name="DeptCode" />
+            <PropertyRef Name="serviceCode" />
+            <PropertyRef Name="serviceDescription" />
+            <PropertyRef Name="IsService" />
+            <PropertyRef Name="ServiceStatus" />
+          </Key>
+          <Property Type="Int32" Name="DeptCode" Nullable="false" />
+          <Property Type="Int32" Name="serviceCode" Nullable="false" />
+          <Property Type="String" Name="serviceDescription" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsService" Nullable="false" />
+          <Property Type="Int16" Name="ServiceStatus" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vServicesAndQueueOrder">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="serviceCode" />
+            <PropertyRef Name="ServiceDescription" />
+            <PropertyRef Name="IsMedicalTeam" />
+          </Key>
+          <Property Type="Int32" Name="deptCode" Nullable="false" />
+          <Property Type="Int32" Name="serviceCode" Nullable="false" />
+          <Property Type="String" Name="ServiceDescription" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="QueueOrder" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="IsMedicalTeam" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vServicesReceptionWithRemarks">
+          <Key>
+            <PropertyRef Name="receptionID" />
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="serviceCode" />
+            <PropertyRef Name="receptionDay" />
+            <PropertyRef Name="openingHour" />
+            <PropertyRef Name="closingHour" />
+            <PropertyRef Name="IsMedicalTeam" />
+          </Key>
+          <Property Type="Int32" Name="receptionID" Nullable="false" />
+          <Property Type="Int32" Name="deptCode" Nullable="false" />
+          <Property Type="Int32" Name="serviceCode" Nullable="false" />
+          <Property Type="Int32" Name="receptionDay" Nullable="false" />
+          <Property Type="String" Name="openingHour" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="closingHour" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OpeningHourText" MaxLength="1015" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="IsMedicalTeam" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vDeptServicesRemarks">
+          <Key>
+            <PropertyRef Name="DeptEmployeeServiceRemarkID" />
+            <PropertyRef Name="DeptCode" />
+            <PropertyRef Name="ServiceCode" />
+            <PropertyRef Name="IsMedicalTeam" />
+          </Key>
+          <Property Type="Int64" Name="DeptEmployeeServiceRemarkID" Nullable="false" />
+          <Property Type="Int32" Name="DeptCode" Nullable="false" />
+          <Property Type="Int32" Name="ServiceCode" Nullable="false" />
+          <Property Type="Int32" Name="RemarkID" />
+          <Property Type="String" Name="RemarkText" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="displayInInternet" />
+          <Property Type="DateTime" Name="ValidFrom" Precision="3" />
+          <Property Type="DateTime" Name="ValidTo" Precision="3" />
+          <Property Type="Byte" Name="IsMedicalTeam" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vEmployeeProfessionalDetails">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="employeeID" />
+            <PropertyRef Name="EmployeeSectorCode" />
+            <PropertyRef Name="IsMedicalTeam" />
+            <PropertyRef Name="IsVirtualDoctor" />
+          </Key>
+          <Property Type="Int32" Name="deptCode" Nullable="false" />
+          <Property Type="String" Name="EmployeeRemark" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="employeeID" Nullable="false" />
+          <Property Type="String" Name="EmployeeName" MaxLength="152" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Experties" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ProfessionDescriptions" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServiceDescriptions" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="QueueOrderDescriptions" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="HTMLRemarks" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="EmployeeSectorCode" Nullable="false" />
+          <Property Type="Int32" Name="orderNumber" />
+          <Property Type="String" Name="Phones" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="IsMedicalTeam" Nullable="false" />
+          <Property Type="Byte" Name="IsVirtualDoctor" Nullable="false" />
+        </EntityType>
+        <EntityType Name="View_DeptDetails">
+          <Key>
+            <PropertyRef Name="deptCode" />
+            <PropertyRef Name="subUnitTypeCode" />
+            <PropertyRef Name="UnitTypeName" />
+            <PropertyRef Name="cityCode" />
+          </Key>
+          <Property Name="deptCode" Type="Int32" Nullable="false" />
+          <Property Name="deptName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="deptType" Type="Int32" />
+          <Property Name="deptLevel" Type="Int32" />
+          <Property Name="deptTypeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="typeUnitCode" Type="Int32" />
+          <Property Name="subUnitTypeCode" Type="Int32" Nullable="false" />
+          <Property Name="UnitTypeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cityCode" Type="Int32" Nullable="false" />
+          <Property Name="cityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="house" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="flat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="addressComment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="xcoord" Type="Double" />
+          <Property Name="ycoord" Type="Double" />
+          <Property Name="XLongitude" Type="Double" />
+          <Property Name="YLatitude" Type="Double" />
+          <Property Name="districtCode" Type="Int32" />
+          <Property Name="Simul228" Type="Int32" />
+          <Property Name="status" Type="Int16" />
+          <Property Name="populationSectorCode" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SeferNetModelStoreContainer" CdmEntityContainer="SeferNetEntities">
+          <EntitySetMapping Name="View_Events">
+            <EntityTypeMapping TypeName="IsTypeOf(SeferNetModel.View_Events)">
+              <MappingFragment StoreEntitySet="View_Events">
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="EventCode" ColumnName="EventCode" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="position">
+            <EntityTypeMapping TypeName="IsTypeOf(SeferNetModel.position)">
+              <MappingFragment StoreEntitySet="position">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="useInSearches" ColumnName="useInSearches" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="relevantSector" ColumnName="relevantSector" />
+                <ScalarProperty Name="positionDescription" ColumnName="positionDescription" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="positionCode" ColumnName="positionCode" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="View_CacheTablesRefreshingSP">
+            <EntityTypeMapping TypeName="IsTypeOf(SeferNetModel.View_CacheTablesRefreshingSP)">
+              <MappingFragment StoreEntitySet="View_CacheTablesRefreshingSP">
+                <ScalarProperty Name="SPName" ColumnName="SPName" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="TableCode" ColumnName="TableCode" />
+                <ScalarProperty Name="CacheTablesRefreshingSPCode" ColumnName="CacheTablesRefreshingSPCode" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VMessageInfoLanguages">
+            <EntityTypeMapping TypeName="IsTypeOf(SeferNetModel.VMessageInfoLanguages)">
+              <MappingFragment StoreEntitySet="VMessageInfoLanguages">
+                <ScalarProperty Name="LanguageDescription" ColumnName="LanguageDescription" />
+                <ScalarProperty Name="MessageCategoryDescription" ColumnName="MessageCategoryDescription" />
+                <ScalarProperty Name="MessageCategoryId" ColumnName="MessageCategoryId" />
+                <ScalarProperty Name="SystemMessageText" ColumnName="SystemMessageText" />
+                <ScalarProperty Name="UserMessageText" ColumnName="UserMessageText" />
+                <ScalarProperty Name="ApplicationLanguageId" ColumnName="ApplicationLanguageId" />
+                <ScalarProperty Name="LanguageMessageText" ColumnName="LanguageMessageText" />
+                <ScalarProperty Name="MessageInfoId" ColumnName="MessageInfoId" />
+                <ScalarProperty Name="MessageInfoApplicationLanguageId" ColumnName="MessageInfoApplicationLanguageId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="View_AllDeptAddressAndPhone">
+            <EntityTypeMapping TypeName="IsTypeOf(SeferNetModel.View_AllDeptAddressAndPhone)">
+              <MappingFragment StoreEntitySet="View_AllDeptAddressAndPhone">
+                <ScalarProperty Name="deptType" ColumnName="deptType" />
+                <ScalarProperty Name="administrationCode" ColumnName="administrationCode" />
+                <ScalarProperty Name="districtCode" ColumnName="districtCode" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="typeUnitCode" ColumnName="typeUnitCode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="UnitTypeName" ColumnName="UnitTypeName" />
+                <ScalarProperty Name="deptName" ColumnName="deptName" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vAllDeptDetails">
+            <EntityTypeMapping TypeName="IsTypeOf(SeferNetModel.vAllDeptDetails)">
+              <MappingFragment StoreEntitySet="vAllDeptDetails">
+                <ScalarProperty Name="deptAttribution" ColumnName="deptAttribution" />
+                <ScalarProperty Name="showEmailInInternet" ColumnName="showEmailInInternet" />
+                <ScalarProperty Name="handicappedFacilities" ColumnName="handicappedFacilities" />
+                <ScalarProperty Name="deptLevelDescription" ColumnName="deptLevelDescription" />
+                <ScalarProperty Name="Simul228" ColumnName="Simul228" />
+                <ScalarProperty Name="subAdministrationName" ColumnName="subAdministrationName" />
+                <ScalarProperty Name="AdministrationName" ColumnName="AdministrationName" />
+                <ScalarProperty Name="transportation" ColumnName="transportation" />
+                <ScalarProperty Name="statusDescription" ColumnName="statusDescription" />
+                <ScalarProperty Name="PopulationSectorDescription" ColumnName="PopulationSectorDescription" />
+                <ScalarProperty Name="parking" ColumnName="parking" />
+                <ScalarProperty Name="simpleAddress" ColumnName="simpleAddress" />
+                <ScalarProperty Name="faxes" ColumnName="faxes" />
+                <ScalarProperty Name="phones" ColumnName="phones" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="addressComment" ColumnName="addressComment" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+                <ScalarProperty Name="districtName" ColumnName="districtName" />
+                <ScalarProperty Name="pharmacologyManagerName" ColumnName="pharmacologyManagerName" />
+                <ScalarProperty Name="geriatricsManagerName" ColumnName="geriatricsManagerName" />
+                <ScalarProperty Name="administrativeManagerName" ColumnName="administrativeManagerName" />
+                <ScalarProperty Name="managerName" ColumnName="managerName" />
+                <ScalarProperty Name="subUnitTypeName" ColumnName="subUnitTypeName" />
+                <ScalarProperty Name="UnitTypeName" ColumnName="UnitTypeName" />
+                <ScalarProperty Name="deptName" ColumnName="deptName" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetZoomClinicTemplate" FunctionName="SeferNetModel.Store.rpc_GetZoomClinicTemplate" />
+          <EntitySetMapping Name="vEmployeeReceptionHours">
+            <EntityTypeMapping TypeName="IsTypeOf(SeferNetModel.vEmployeeReceptionHours)">
+              <MappingFragment StoreEntitySet="vEmployeeReceptionHours">
+                <ScalarProperty Name="ServiceCode" ColumnName="ServiceCode" />
+                <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
+                <ScalarProperty Name="EmployeeSectorCode" ColumnName="EmployeeSectorCode" />
+                <ScalarProperty Name="OpeningHourText" ColumnName="OpeningHourText" />
+                <ScalarProperty Name="ReceptionDayName" ColumnName="ReceptionDayName" />
+                <ScalarProperty Name="closingHour" ColumnName="closingHour" />
+                <ScalarProperty Name="openingHour" ColumnName="openingHour" />
+                <ScalarProperty Name="receptionDay" ColumnName="receptionDay" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="receptionID" ColumnName="receptionID" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="View_DeptRemarks">
+            <EntityTypeMapping TypeName="IsTypeOf(SeferNetModel.View_DeptRemarks)">
+              <MappingFragment StoreEntitySet="View_DeptRemarks">
+                <ScalarProperty Name="ShowOrder" ColumnName="ShowOrder" />
+                <ScalarProperty Name="SubUnitTypeCode" ColumnName="SubUnitTypeCode" />
+                <ScalarProperty Name="updateUser" ColumnName="updateUser" />
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="displayInInternet" ColumnName="displayInInternet" />
+                <ScalarProperty Name="validTo" ColumnName="validTo" />
+                <ScalarProperty Name="validFrom" ColumnName="validFrom" />
+                <ScalarProperty Name="populationSector" ColumnName="populationSector" />
+                <ScalarProperty Name="UnitTypeCode" ColumnName="UnitTypeCode" />
+                <ScalarProperty Name="IsSharedRemark" ColumnName="IsSharedRemark" />
+                <ScalarProperty Name="RemarkDeptCode" ColumnName="RemarkDeptCode" />
+                <ScalarProperty Name="administrationCode" ColumnName="administrationCode" />
+                <ScalarProperty Name="districtCode" ColumnName="districtCode" />
+                <ScalarProperty Name="RelatedRemarkID" ColumnName="RelatedRemarkID" />
+                <ScalarProperty Name="RemarkText" ColumnName="RemarkText" />
+                <ScalarProperty Name="DicRemarkID" ColumnName="DicRemarkID" />
+                <ScalarProperty Name="RemarkID" ColumnName="RemarkID" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vEmployeeReceptionRemarks">
+            <EntityTypeMapping TypeName="SeferNetModel.vEmployeeReceptionRemarks">
+              <MappingFragment StoreEntitySet="vEmployeeReceptionRemarks">
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" />
+                <ScalarProperty Name="receptionID" ColumnName="receptionID" />
+                <ScalarProperty Name="EmployeeSectorCode" ColumnName="EmployeeSectorCode" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="RemarkText" ColumnName="RemarkText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDeptReceptionHours">
+            <EntityTypeMapping TypeName="SeferNetModel.vDeptReceptionHours">
+              <MappingFragment StoreEntitySet="vDeptReceptionHours">
+                <ScalarProperty Name="ReceptionTypeDescription" ColumnName="ReceptionTypeDescription" />
+                <ScalarProperty Name="ReceptionHoursTypeID" ColumnName="ReceptionHoursTypeID" />
+                <ScalarProperty Name="openingHourText" ColumnName="openingHourText" />
+                <ScalarProperty Name="RemarkText" ColumnName="RemarkText" />
+                <ScalarProperty Name="closingHour" ColumnName="closingHour" />
+                <ScalarProperty Name="openingHour" ColumnName="openingHour" />
+                <ScalarProperty Name="receptionDay" ColumnName="receptionDay" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" />
+                <ScalarProperty Name="receptionID" ColumnName="receptionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDeptEvents">
+            <EntityTypeMapping TypeName="SeferNetModel.vDeptEvents">
+              <MappingFragment StoreEntitySet="vDeptEvents">
+                <ScalarProperty Name="toDate" ColumnName="toDate" />
+                <ScalarProperty Name="fromDate" ColumnName="fromDate" />
+                <ScalarProperty Name="DeptEventID" ColumnName="DeptEventID" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" />
+                <ScalarProperty Name="FirstEventDate" ColumnName="FirstEventDate" />
+                <ScalarProperty Name="MeetingsNumber" ColumnName="MeetingsNumber" />
+                <ScalarProperty Name="registrationStatusDescription" ColumnName="registrationStatusDescription" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="EventCode" ColumnName="EventCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDummy_LastUpdateDateOfRemarks">
+            <EntityTypeMapping TypeName="SeferNetModel.vDummy_LastUpdateDateOfRemarks">
+              <MappingFragment StoreEntitySet="vDummy_LastUpdateDateOfRemarks">
+                <ScalarProperty Name="LastUpdateDateOfDept" ColumnName="LastUpdateDateOfDept" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEmployeeDeptRemarks">
+            <EntityTypeMapping TypeName="SeferNetModel.vEmployeeDeptRemarks">
+              <MappingFragment StoreEntitySet="vEmployeeDeptRemarks">
+                <ScalarProperty Name="EmployeeSectorCode" ColumnName="EmployeeSectorCode" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="AttributedToAllClinics" ColumnName="AttributedToAllClinics" />
+                <ScalarProperty Name="displayInInternet" ColumnName="displayInInternet" />
+                <ScalarProperty Name="RemarkText" ColumnName="RemarkText" />
+                <ScalarProperty Name="DicRemarkID" ColumnName="DicRemarkID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeRemarkID" ColumnName="EmployeeRemarkID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vReceptionDaysForDisplay">
+            <EntityTypeMapping TypeName="SeferNetModel.vReceptionDaysForDisplay">
+              <MappingFragment StoreEntitySet="vReceptionDaysForDisplay">
+                <ScalarProperty Name="Display" ColumnName="Display" />
+                <ScalarProperty Name="UseInSearch" ColumnName="UseInSearch" />
+                <ScalarProperty Name="ReceptionDayName" ColumnName="ReceptionDayName" />
+                <ScalarProperty Name="ReceptionDayCode" ColumnName="ReceptionDayCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDeptServices">
+            <EntityTypeMapping TypeName="SeferNetModel.vDeptServices">
+              <MappingFragment StoreEntitySet="vDeptServices">
+                <ScalarProperty Name="ServiceStatus" ColumnName="ServiceStatus" />
+                <ScalarProperty Name="IsService" ColumnName="IsService" />
+                <ScalarProperty Name="serviceDescription" ColumnName="serviceDescription" />
+                <ScalarProperty Name="serviceCode" ColumnName="serviceCode" />
+                <ScalarProperty Name="DeptCode" ColumnName="DeptCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vServicesAndQueueOrder">
+            <EntityTypeMapping TypeName="SeferNetModel.vServicesAndQueueOrder">
+              <MappingFragment StoreEntitySet="vServicesAndQueueOrder">
+                <ScalarProperty Name="IsMedicalTeam" ColumnName="IsMedicalTeam" />
+                <ScalarProperty Name="QueueOrder" ColumnName="QueueOrder" />
+                <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
+                <ScalarProperty Name="serviceCode" ColumnName="serviceCode" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vServicesReceptionWithRemarks">
+            <EntityTypeMapping TypeName="SeferNetModel.vServicesReceptionWithRemarks">
+              <MappingFragment StoreEntitySet="vServicesReceptionWithRemarks">
+                <ScalarProperty Name="IsMedicalTeam" ColumnName="IsMedicalTeam" />
+                <ScalarProperty Name="OpeningHourText" ColumnName="OpeningHourText" />
+                <ScalarProperty Name="closingHour" ColumnName="closingHour" />
+                <ScalarProperty Name="openingHour" ColumnName="openingHour" />
+                <ScalarProperty Name="receptionDay" ColumnName="receptionDay" />
+                <ScalarProperty Name="serviceCode" ColumnName="serviceCode" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" />
+                <ScalarProperty Name="receptionID" ColumnName="receptionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDeptServicesRemarks">
+            <EntityTypeMapping TypeName="SeferNetModel.vDeptServicesRemarks">
+              <MappingFragment StoreEntitySet="vDeptServicesRemarks">
+                <ScalarProperty Name="IsMedicalTeam" ColumnName="IsMedicalTeam" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="displayInInternet" ColumnName="displayInInternet" />
+                <ScalarProperty Name="RemarkText" ColumnName="RemarkText" />
+                <ScalarProperty Name="RemarkID" ColumnName="RemarkID" />
+                <ScalarProperty Name="ServiceCode" ColumnName="ServiceCode" />
+                <ScalarProperty Name="DeptCode" ColumnName="DeptCode" />
+                <ScalarProperty Name="DeptEmployeeServiceRemarkID" ColumnName="DeptEmployeeServiceRemarkID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEmployeeProfessionalDetails">
+            <EntityTypeMapping TypeName="SeferNetModel.vEmployeeProfessionalDetails">
+              <MappingFragment StoreEntitySet="vEmployeeProfessionalDetails">
+                <ScalarProperty Name="IsVirtualDoctor" ColumnName="IsVirtualDoctor" />
+                <ScalarProperty Name="IsMedicalTeam" ColumnName="IsMedicalTeam" />
+                <ScalarProperty Name="Phones" ColumnName="Phones" />
+                <ScalarProperty Name="orderNumber" ColumnName="orderNumber" />
+                <ScalarProperty Name="EmployeeSectorCode" ColumnName="EmployeeSectorCode" />
+                <ScalarProperty Name="HTMLRemarks" ColumnName="HTMLRemarks" />
+                <ScalarProperty Name="QueueOrderDescriptions" ColumnName="QueueOrderDescriptions" />
+                <ScalarProperty Name="ServiceDescriptions" ColumnName="ServiceDescriptions" />
+                <ScalarProperty Name="ProfessionDescriptions" ColumnName="ProfessionDescriptions" />
+                <ScalarProperty Name="Experties" ColumnName="Experties" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="EmployeeRemark" ColumnName="EmployeeRemark" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_DeptDetails">
+            <EntityTypeMapping TypeName="SeferNetModel.View_DeptDetails">
+              <MappingFragment StoreEntitySet="View_DeptDetails">
+                <ScalarProperty Name="populationSectorCode" ColumnName="populationSectorCode" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Simul228" ColumnName="Simul228" />
+                <ScalarProperty Name="districtCode" ColumnName="districtCode" />
+                <ScalarProperty Name="YLatitude" ColumnName="YLatitude" />
+                <ScalarProperty Name="XLongitude" ColumnName="XLongitude" />
+                <ScalarProperty Name="ycoord" ColumnName="ycoord" />
+                <ScalarProperty Name="xcoord" ColumnName="xcoord" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="addressComment" ColumnName="addressComment" />
+                <ScalarProperty Name="flat" ColumnName="flat" />
+                <ScalarProperty Name="house" ColumnName="house" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+                <ScalarProperty Name="cityCode" ColumnName="cityCode" />
+                <ScalarProperty Name="UnitTypeName" ColumnName="UnitTypeName" />
+                <ScalarProperty Name="subUnitTypeCode" ColumnName="subUnitTypeCode" />
+                <ScalarProperty Name="typeUnitCode" ColumnName="typeUnitCode" />
+                <ScalarProperty Name="deptTypeDescription" ColumnName="deptTypeDescription" />
+                <ScalarProperty Name="deptLevel" ColumnName="deptLevel" />
+                <ScalarProperty Name="deptType" ColumnName="deptType" />
+                <ScalarProperty Name="deptName" ColumnName="deptName" />
+                <ScalarProperty Name="deptCode" ColumnName="deptCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="SeferNetEntitiesModel" ZoomLevel="75" xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <EntityTypeShape EntityType="SeferNetModel.View_Events" Width="1.5" PointX="3.375" PointY="0.5" Height="1.2636116536458335" />
+        <EntityTypeShape EntityType="SeferNetModel.position" Width="1.5" PointX="3.5" PointY="3.875" Height="2.2496956380208335" />
+        <EntityTypeShape EntityType="SeferNetModel.View_CacheTablesRefreshingSP" Width="1.5" PointX="0.75" PointY="6.625" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="SeferNetModel.VMessageInfoLanguages" Width="1.5" PointX="6.375" PointY="0.75" Height="2.4140429687499996" />
+        <EntityTypeShape EntityType="SeferNetModel.View_AllDeptAddressAndPhone" Width="1.5" PointX="8.375" PointY="0.75" Height="2.7427376302083335" />
+        <EntityTypeShape EntityType="SeferNetModel.vAllDeptDetails" Width="1.5" PointX="15.75" PointY="5.25" Height="4.8792529296875" />
+        <EntityTypeShape EntityType="SeferNetModel.vEmployeeReceptionHours" Width="2.5" PointX="11.5" PointY="5.25" Height="2.4140429687499996" />
+        <EntityTypeShape EntityType="SeferNetModel.View_DeptRemarks" Width="1.5" PointX="17.375" PointY="5.25" Height="3.8931689453124996" />
+        <EntityTypeShape EntityType="SeferNetModel.vEmployeeReceptionRemarks" Width="2.5" PointX="11.5" PointY="8" Height="1.7566536458333388" />
+        <EntityTypeShape EntityType="SeferNetModel.vDeptReceptionHours" Width="1.5" PointX="11.5" PointY="12.75" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="SeferNetModel.vDeptEvents" Width="1.5" PointX="14.5" PointY="10.75" Height="1.9210009765625031" />
+        <EntityTypeShape EntityType="SeferNetModel.vDummy_LastUpdateDateOfRemarks" Width="1.5" PointX="14.5" PointY="15.5" Height="1.0992643229166674" />
+        <EntityTypeShape EntityType="SeferNetModel.vEmployeeDeptRemarks" Width="2.375" PointX="3.375" PointY="11.75" Height="2.5783902994791674" />
+        <EntityTypeShape EntityType="SeferNetModel.vReceptionDaysForDisplay" Width="1.5" PointX="6.375" PointY="4.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="SeferNetModel.vDeptServices" Width="1.5" PointX="7.375" PointY="7.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="SeferNetModel.vServicesAndQueueOrder" Width="1.5" PointX="3.375" PointY="7.75" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="SeferNetModel.vServicesReceptionWithRemarks" Width="1.5" PointX="0.75" PointY="9.75" Height="2.2496956380208246" />
+        <EntityTypeShape EntityType="SeferNetModel.vDeptServicesRemarks" Width="1.5" PointX="6.375" PointY="10.75" Height="2.4140429687500102" />
+        <EntityTypeShape EntityType="SeferNetModel.vEmployeeProfessionalDetails" Width="1.5" PointX="10.375" PointY="0.75" Height="3.0714322916666674" />
+        <EntityTypeShape EntityType="SeferNetModel.View_DeptDetails" Width="1.5" PointX="8.375" PointY="10.75" />
+        </Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

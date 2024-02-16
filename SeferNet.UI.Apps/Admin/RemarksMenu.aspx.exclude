@@ -1,0 +1,37 @@
+<%@ Reference Page="~/Admin/AdminBasePage.aspx" %>
+
+<%@ Page Language="C#"  Title="ניהול הערות" AutoEventWireup="true" CodeFile="RemarksMenu.aspx.cs" Inherits="ReportList" MasterPageFile="~/seferMasterPage.master"%>
+<%@ MasterType VirtualPath="~/seferMasterPage.master" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="pageContent" runat="server">
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <td valign="top">
+                <table cellpadding="0" cellspacing="0" width="600px">
+                    <tr>
+                        <td>
+                            <fieldset dir="rtl" id="fldSetClinicReports" style="border: 1px solid #BEBCB7">
+                                <legend class="legendStyle">&nbsp;&nbsp;<a class="tdtext">ניהול הערות</a>&nbsp;&nbsp;
+                                </legend>
+                                <table cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td style="padding-right:8px">
+                                            <a class="RegularLabel" href="ManageGeneralRemarksDictionary.aspx">ניהול טבלת הערות סגורות</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right:8px">
+                                            <a class="RegularLabel" href="UpdateSweepingRemarks.aspx">ניהול הערות גורפות</a>
+                                        </td>
+                                    </tr>
+                                   
+                                </table>
+                             </fieldset>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+   
+    </table>
+</asp:Content>

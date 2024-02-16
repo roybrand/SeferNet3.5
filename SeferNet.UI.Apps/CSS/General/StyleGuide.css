@@ -1,0 +1,88 @@
+﻿.FormTitle 
+{  
+	font-family:arial;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 24px;
+	COLOR: #60BA01;
+} 
+
+/* white on blue background - regular*/
+.FormTitle2 
+{  
+	font-family:arial;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 13px;
+	COLOR: #ffffff;
+	BACKGROUND-COLOR: #298ae5;
+} 
+
+/* white on blue background - small*/
+.FormTitle3
+{  
+	font-family:arial;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 13px;
+	COLOR: #ffffff;
+	BACKGROUND-COLOR: #298ae5;
+} 
+
+/* Green without background*/
+.FormTitle4
+{  
+	font-family:arial;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 18px;
+	COLOR: #60ba01;
+} 
+
+
+/* Orange without background*/
+.FormTitle5
+{  
+	font-family:arial;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 18px;
+	COLOR: #f48706;
+} 
+
+
+.ViewField1
+{
+	font-family:Arial;
+	font-size:13px;
+	color:#000000;
+}
+
+.GridViewHeader 
+{
+	font-family:arial;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 13px;
+	COLOR: #024077;	
+} 
+.GridViewColumnHeader 
+{
+	font-family:arial;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 13px;
+	COLOR: #024077;	
+} 
+
+.GridViewColumnText 
+{
+	font-family:arial;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 13px;
+	COLOR: #4c4c4c;	
+} 
+
+.divScrollAuto 
+{     
+	overflow:auto;     
+	white-space:nowrap;     
+}
+
+.RegularButton 
+{ 
+	background-image: ../Images/Applic/btn_GoToUpdateClinicDetails.gif; 
+} 

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1255" />
+    <title>דוח תוצאות חיפוש נותני שירות</title>
+    <style type="text/css">
+    body {
+	    font-family:Arial;
+	    font-size:12px;
+    }
+    td 
+    {
+        font-size:12px;
+	    vertical-align:top;
+	    font-weight:normal;
+    }
+    
+    .divParams
+    {
+        float:right;
+        width:240px;    
+    }
+    
+    .tdParams
+    {
+        border-top:dotted 1px Black;
+        border-bottom:dotted 1px Black;    
+    }
+
+    .tdLable_b_bottom
+    {
+	    padding-right:5px;
+	    padding-left:10px;
+	    padding-top: 0px;
+	    padding-bottom: 0px;
+        border-left:solid 1px Black;	   	    
+	    text-align:right;
+    }
+    
+    .tdHeader_b
+    {
+	    background-color:#dbe5f1;
+	    border:solid 1px Black;
+    }
+    .tdSubHeader_b
+    {
+	    padding-right:5px;
+	    background-color:#e9eff7;
+        border-left:solid 1px Black;	    
+        border-bottom:solid 1px Black;    
+    }
+    
+    .tblOuter_2
+    {
+        border:solid 1px Black;
+    }
+    
+    .tblOuter_3
+    {
+        border-bottom:solid 1px Black;
+        border-left:solid 1px Black;
+        border-right:solid 1px Black;
+        width:11.1%;
+    }
+    
+    .SubTitle
+    {
+	    font-weight:bold;
+	    font-size:18px;
+    } 
+    </style>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;direction:rtl;">
+        <tr>
+            <td style="width:100%">
+                <table cellpadding="0" cellspacing="0" style="width:100%">
+                    <tr>
+                        <td align="right" style="padding-bottom:5px; width:50%">
+                            clalitLogo
+                        </td>
+                        <td align="left" style="padding-bottom:5px; width:50%">
+                            clalitAndMushlamLogo
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" style="width:100%">
+                    <tr>
+                        <td align="right" style="padding-bottom:5px">
+                            <span class="SubTitle">תוצאות חיפוש ל:</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        SearchParameters
+        <tr>
+            <td style="height:25px;vertical-align:middle;">PagingInfo</td>
+        </tr>
+        <!--clipbegin-->
+        <tr>
+            <td style="height:10px;"></td>
+        </tr>
+        <tr>
+            <td class="tdHeader_b" align="center"><span class="SubTitle">EmployeeListHeader</span></td>
+        </tr>
+        <tr>
+            <td style="height:4px;"></td>
+        </tr>
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" style="width:100%">
+                    <!-- ##removeifemptycontainerbegin--Employees## -->
+                    <!-- ##blockbegin--Employees## -->
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" class="tblOuter_2" style="width:100%">
+                                <tr>
+                                    <td align="right" style="width:30%;" class="tdSubHeader_b">פרטי נותן השירות</td>
+                                    <td align="right" style="width:30%;" class="tdSubHeader_b">פרטי יחידה</td>
+                                    <td align="right" style="width:10%;" class="tdSubHeader_b">שפות</td>
+                                    <td align="right" style="width:30%;" class="tdSubHeader_b">שעות קבלה</td>
+                                </tr>
+                                <tr>
+                                    <td class="tdLable_b_bottom" valign="top"><b>##Employees.EmployeeName##</b><b>##Employees.expert##</b><br>הסכם: ##Employees.AgreementTypeDescription##</td>
+                                    <td class="tdLable_b_bottom" valign="top"><b>##Employees.deptName##</b>##Employees.cityName####Employees.address####Employees.phone####Employees.fax##</td>
+                                    <td class="tdLable_b_bottom" valign="top">##Employees.EmployeeLanguageDescription##</td>
+                                    <td class="tdLable_b_bottom" valign="top">
+                                        <!-- ##removeifemptycontainerbegin--EmployeeServices## -->
+                                        <table cellpadding="0" cellspacing="0" style="width:100%">
+                                            <!-- ##blockbegin--EmployeeServices## -->
+                                            <tr>
+                                                <td style="padding-top:5px"><b>##EmployeeServices.ServiceDescription##</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <!-- ##removeifemptycontainerbegin--EmployeeServicesReception## -->
+                                                    <table>
+                                                        <!-- ##blockbegin--EmployeeServicesReception## -->
+                                                        <tr>
+                                                            <td style="width:18px">##EmployeeServicesReception.ReceptionDayName##</td>
+                                                            <td>##EmployeeServicesReception.ReceptionHours##</td>
+                                                        </tr>
+                                                        <!-- ##blockend--EmployeeServicesReception## -->
+                                                    </table>
+                                                    <!-- ##removeifemptycontainerend--EmployeeServicesReception## -->
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <!-- ##removeifemptycontainerbegin--EmployeeServiceRemarks## -->
+                                                    <table cellpadding="0" cellspacing="0" style="width:100%">
+                                                        <!-- ##blockbegin--EmployeeServiceRemarks## -->
+                                                        <tr>
+                                                            <td class="tdLable_b_bottom" style="border-left: none; border-bottom: dotted 1px Black;">##EmployeeServiceRemarks.RemarkText##</td>
+                                                        </tr>
+                                                        <!-- ##blockend--EmployeeServiceRemarks## -->
+                                                    </table>
+                                                    <!-- ##removeifemptycontainerend--EmployeeServiceRemarks## -->
+                                                </td>
+                                            </tr>
+
+                                            <!-- ##blockend--EmployeeServices## -->
+                                        </table>
+                                        <!-- ##removeifemptycontainerend--EmployeeServices## -->                                                                        
+                                    </td>
+                                </tr>
+                                <!-- ##removeifemptycontainerbegin--EmployeeRemarks## -->
+                                <tr>
+                                    <td class="tdLable_b_bottom" style="border-left:dotted 1px Black;border-top:dotted 1px Black;">הערות</td>
+                                    <td colspan="3">
+                                        <table cellpadding ="0" cellspacing="0" style="width:100%">
+                                            <!-- ##blockbegin--EmployeeRemarks## -->
+                                            <tr>
+                                                <td class="tdLable_b_bottom" style="border-left:dotted 1px Black; border-top: dotted 1px Black;">##EmployeeRemarks.RemarkText##</td>
+                                            </tr>
+                                            <!-- ##blockend--EmployeeRemarks## -->
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- ##removeifemptycontainerend--EmployeeRemarks## --> 
+                            </table>
+                        </td>
+                     </tr>
+                    <tr>
+                        <td style="height:10px;border-top:1px solid Black;">&nbsp;</td>
+                    </tr>
+                    <!-- ##blockend--Employees## -->
+                    <!-- ##removeifemptycontainerend--Employees## -->
+                </table>
+            </td>
+        </tr>
+        <!--clipend-->
+    </table>
+</body>
+</html>

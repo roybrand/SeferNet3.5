@@ -1,0 +1,7 @@
+.panel {
+    display: flex;
+    flex-direction: row;
+    border: 0px solid #026332;
+    border-radius: 3px;
+    max-width: 900px;    
+}

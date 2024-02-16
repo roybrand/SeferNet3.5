@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="352ad4c0-c43e-46ca-9800-fae8d792cdcd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/CentralLogRegularService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CentralLogRegularService.disco" MetadataType="Disco" ID="73c4a18d-fad1-448f-bb7f-17e5cc9b4196" SourceId="1" SourceUrl="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/CentralLogRegularService.svc?disco" />
+    <MetadataFile FileName="CentralLogService.wsdl" MetadataType="Wsdl" ID="4480d7fe-5a3f-4ce3-9671-45d9dc618380" SourceId="1" SourceUrl="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/CentralLogRegularService.svc?wsdl" />
+    <MetadataFile FileName="CentralLogRegularService.xsd" MetadataType="Schema" ID="e0c88cf3-a93c-460d-9f32-b68a63f9bcb7" SourceId="1" SourceUrl="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/CentralLogRegularService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CentralLogRegularService1.xsd" MetadataType="Schema" ID="76be4824-1ec4-4467-8e18-8922059aa707" SourceId="1" SourceUrl="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/CentralLogRegularService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CentralLogRegularService2.xsd" MetadataType="Schema" ID="9516885b-a8cd-4de3-ac66-744bf454b7fe" SourceId="1" SourceUrl="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/CentralLogRegularService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

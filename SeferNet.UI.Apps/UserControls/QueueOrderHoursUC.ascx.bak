@@ -1,0 +1,298 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="QueueOrderHoursUC.ascx.cs"
+    Inherits="UserControls_QueueOrderHoursUC" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register TagPrefix="MultiDDlSelect_UC" TagName="MultiDDlSelect_UCItem" Src="~/UserControls/MultiDDlSelect.ascx" %>
+
+<script language="javascript" type="text/javascript">
+
+    // large GridView has low performance if it is in Update panel
+    //this  is solution
+
+    function validateHours(val, args) {
+
+
+        var txtFromHourClientID = document.getElementsByName('<%=this.hdnHeaderFromHourClientID.ClientID %>')[0].value;
+        var openingTime = document.getElementsByName(txtFromHourClientID)[0].value;
+        var openingTimeArr = openingTime.split(':');
+        var FromHour = openingTimeArr[0];
+        var FromMinute = openingTimeArr[1];
+
+        var txtToHourClientID = document.getElementsByName('<%=this.hdnHeaderToHourClientID.ClientID %>')[0].value;
+        var closingTime = document.getElementsByName(txtToHourClientID)[0].value;
+        var closingTimeArr = closingTime.split(':');
+        var ToHour = closingTimeArr[0];
+        var ToMinute = closingTimeArr[1];
+
+        var FromHourInt = parseInt(FromHour, 10);
+        var ToHourInt = parseInt(ToHour, 10);
+
+        var FromMinuteInt = parseInt(FromMinute, 10);
+        var ToMinuteInt = parseInt(ToMinute, 10);
+
+        var receptionDateFrom = new Date();
+        receptionDateFrom.setHours(FromHourInt, FromMinute, 0, 0);
+
+        var receptionDateTo = new Date();
+        receptionDateTo.setHours(ToHourInt, ToMinute, 0, 0);
+
+        if (receptionDateFrom < receptionDateTo)
+            args.IsValid = true;
+        else
+            args.IsValid = false;
+    }    
+    
+</script>
+
+<asp:UpdatePanel runat="server" UpdateMode="Conditional" ID="UpdPanel1">
+    <ContentTemplate>
+        <asp:GridView ID="dgOrderHours" runat="server" dir="rtl" AutoGenerateColumns="False"
+            AllowSorting="True" EnableTheming="True" BorderWidth="1px" OnRowDataBound="dgOrderHours_RowDataBound"
+            OnRowDeleting="dgOrderHours_RowDeleting" OnRowCancelingEdit="dgOrderHours_RowCancelingEdit"
+            Width="330px">
+            <Columns>
+                <asp:TemplateField Visible="False" meta:resourcekey="TemplateFieldResource1">
+                    <ItemTemplate>
+                        <asp:Label ID="lblDays2" runat="server" Text='<%# Eval("Days") %>' meta:resourcekey="lblDays2Resource1"></asp:Label>
+                        <asp:Label ID="lblID" runat="server" Text='<%# Eval("ID") %>' meta:resourcekey="lblIDResource1"></asp:Label>
+                        <asp:Label ID="lblAdd_ID" runat="server" Text='<%# Eval("Add_ID") %>'></asp:Label>
+                        <asp:Label ID="lblReceptionIds" runat="server" Text='<%# Eval("QueueOrderHoursID") %>'
+                            meta:resourcekey="lblReceptionIdsResource1"></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField meta:resourcekey="TemplateFieldResource3">
+                    <HeaderTemplate>
+                        <table>
+                            <tr>
+                                <td align="right" valign="bottom">
+                                    <asp:Label ID="Label1" runat="server" Text=": ימים " meta:resourcekey="Label1Resource1"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <MultiDDlSelect_UC:MultiDDlSelect_UCItem runat="server" ID="MultiDDlSelect_Days">
+                                    </MultiDDlSelect_UC:MultiDDlSelect_UCItem>
+                                </td>
+                            </tr>
+                        </table>
+                    </HeaderTemplate>
+                    <HeaderStyle />
+                    <ItemTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-right: 5px;">
+                                    <asp:Label runat="server" ID="lblDays" Text='<%# Eval("Days") %>'></asp:Label>
+                                </td>
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+                    <ItemStyle />
+                    <EditItemTemplate>
+                        <table>
+                            <tr align="left">
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <MultiDDlSelect_UC:MultiDDlSelect_UCItem runat="server" ID="mltDdlDayE"></MultiDDlSelect_UC:MultiDDlSelect_UCItem>
+                                </td>
+                            </tr>
+                        </table>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField meta:resourcekey="TemplateFieldResource4">
+                    <HeaderTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label2" runat="server" Text=":משעה" meta:resourcekey="Label2Resource1"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtFromHour" runat="server" Width="40px" ></asp:TextBox>
+                                    <cc1:MaskedEditExtender ID="FromHourExtender" runat="server" ErrorTooltipEnabled="True"
+                                        Mask="99:99" MaskType="Time" TargetControlID="txtFromHour" Enabled="True">
+                                    </cc1:MaskedEditExtender>
+                                    <cc1:MaskedEditValidator ID="FromHourValidator" runat="server" ControlExtender="FromHourExtender"
+                                        ControlToValidate="txtFromHour" InvalidValueMessage="שעת הפתיחה אינה תקינה" Display="Dynamic"
+                                        InvalidValueBlurredMessage="*" ValidationGroup="vldGrAdd" Text="*" ErrorMessage="שעת הפתיחה אינה תקינה"
+                                        meta:resourcekey="FromHourValidatorResource2" />
+                                </td>
+                            </tr>
+                        </table>
+                    </HeaderTemplate>
+                    <HeaderStyle />
+                    <ItemTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label runat="server" ID="lblOpeningHour" Text='<%# Eval("openingHour") %>' meta:resourcekey="lblOpeningHourResource1"></asp:Label>
+                                </td>
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtFromHour" runat="server" Width="40px" Text='<%# Eval("openingHour") %>'
+                                        meta:resourcekey="txtFromHourResource1"></asp:TextBox>
+                                    <cc1:MaskedEditExtender ID="FromHourExtender" runat="server" ErrorTooltipEnabled="True"
+                                        Mask="99:99" MaskType="Time" TargetControlID="txtFromHour" CultureAMPMPlaceholder=""
+                                        CultureCurrencySymbolPlaceholder="" CultureDateFormat="" CultureDatePlaceholder=""
+                                        CultureDecimalPlaceholder="" CultureThousandsPlaceholder="" CultureTimePlaceholder=""
+                                        Enabled="True">
+                                    </cc1:MaskedEditExtender>
+                                    <cc1:MaskedEditValidator ID="FromHourValidator" runat="server" ControlExtender="FromHourExtender"
+                                        ControlToValidate="txtFromHour" InvalidValueMessage="השעת פתיחה אינה תקינה" Display="Dynamic"
+                                        InvalidValueBlurredMessage="*" ValidationGroup="vldGrEdit" ErrorMessage="FromHourValidator"
+                                        meta:resourcekey="FromHourValidatorResource1" />
+                                </td>
+                            </tr>
+                        </table>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField meta:resourcekey="TemplateFieldResource5">
+                    <HeaderTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label3" runat="server" Text=":עד שעה" meta:resourcekey="Label3Resource1"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtToHour" runat="server" Width="40px"></asp:TextBox>
+                                    <cc1:MaskedEditExtender ID="ClosingHourExtender" runat="server" ErrorTooltipEnabled="True"
+                                        Mask="99:99" MaskType="Time" TargetControlID="txtToHour" Enabled="True">
+                                    </cc1:MaskedEditExtender>
+                                    <cc1:MaskedEditValidator ID="ClosingHourValidator" runat="server" ControlExtender="ClosingHourExtender"
+                                        ControlToValidate="txtToHour" InvalidValueMessage="השעת סגירה אינה תקינה" Display="Dynamic"
+                                        InvalidValueBlurredMessage="*" ErrorMessage="ClosingHourValidator" ValidationGroup="vldGrAdd" />
+                                    <asp:CustomValidator ControlToValidate="txtToHour" ClientValidationFunction="validateHours"
+                                        ErrorMessage="השעות אינן תקינות" Text="*" ID="vldCheckHours" runat="server" ValidationGroup="vldGrAdd"></asp:CustomValidator>
+                                </td>
+                            </tr>
+                        </table>
+                    </HeaderTemplate>
+                    <HeaderStyle />
+                    <ItemTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="lbl300" runat="server" meta:resourcekey="lbl300Resource1"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label runat="server" ID="lblClosingHour" Text='<%# Eval("closingHour") %>' meta:resourcekey="lblClosingHourResource1"></asp:Label>
+                                </td>
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtToHour" runat="server" Width="40px" Text='<%# Eval("closingHour") %>'
+                                        meta:resourcekey="txtToHourResource1"></asp:TextBox>
+                                    <cc1:MaskedEditExtender ID="ClosingHourExtender" runat="server" ErrorTooltipEnabled="True"
+                                        Mask="99:99" MaskType="Time" TargetControlID="txtToHour" Enabled="True">
+                                    </cc1:MaskedEditExtender>
+                                    <cc1:MaskedEditValidator ID="ClosingHourValidator" runat="server" ControlExtender="ClosingHourExtender"
+                                        ControlToValidate="txtToHour" InvalidValueMessage="השעת סגירה אינה תקינה" Display="Dynamic"
+                                        InvalidValueBlurredMessage="*" ValidationGroup="vldGrEdit" ErrorMessage="ClosingHourValidator"
+                                        meta:resourcekey="ClosingHourValidatorResource1" />
+                                    <asp:CustomValidator ControlToValidate="txtToHour" ClientValidationFunction="validateHours"
+                                        ErrorMessage="השעות אינן תקינות" Text="*" ID="vldCheckHours" runat="server" ValidationGroup="vldGrEdit"></asp:CustomValidator>
+                                </td>
+                            </tr>
+                        </table>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField meta:resourcekey="TemplateFieldResource9">
+                    <HeaderTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="text" id="testtd" style="visibility: hidden; width: 1px;" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="middle">
+                                    <asp:ImageButton runat="server" ID="imgClear" CausesValidation="false" CommandName="clear"
+                                        OnClick="imgClear_Click" ImageUrl="~/Images/btn_clear2.gif" />
+                                </td>
+                            </tr>
+                        </table>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:ImageButton ID="imgDelete" runat="server" CommandName="delete" OnClick="imgDelete_Click"
+                                        ImageUrl="~/Images/Applic/btn_X_red.gif" meta:resourcekey="imgDeleteResource1" />
+                                </td>
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+                    <ItemStyle VerticalAlign="Bottom" />
+                </asp:TemplateField>
+                <asp:TemplateField meta:resourcekey="TemplateFieldResource10">
+                    <HeaderTemplate>
+                        <table width="80px">
+                            <tr>
+                                <td>
+                                    <input type="text" id="testtd" style="visibility: hidden; width: 1px;" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="middle">
+                                    <asp:ImageButton runat="server" ID="imgAdd" CommandName="add" OnClick="imgAdd_Click"
+                                        ImageUrl="~/Images/btn_add copy.gif" ValidationGroup="vldGrAdd" />
+                                </td>
+                            </tr>
+                        </table>
+                    </HeaderTemplate>
+                    <HeaderStyle VerticalAlign="Middle" />
+                    <ItemTemplate>
+                        <asp:ImageButton ID="imgUpdate" runat="server" CommandName="update" OnClick="imgUpdate_Click"
+                            ImageUrl="~/Images/btn_edit.gif" />
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" />
+                    <EditItemTemplate>
+                        <table width="80px">
+                            <tr>
+                                <td>
+                                    <asp:ImageButton ID="imgCancel" runat="server" CommandName="canel" CausesValidation="False"
+                                        OnClick="imgCancel_Click" ImageUrl="~/Images/btn_cancel copy.gif"  />
+                                </td>
+                                <td>
+                                    <asp:ImageButton ID="imgSave" runat="server" ValidationGroup="vldGrEdit" CommandName="save"
+                                        OnClick="imgSave_Click" ImageUrl="~/Images/btn_Save copy.gif" />
+                                </td>
+                            </tr>
+                        </table>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+            <SelectedRowStyle ForeColor="GhostWhite" />
+            <HeaderStyle BackColor="#F3EBE0" Font-Bold="True" />
+        </asp:GridView>
+        <div id="hdnDiv">
+            <asp:HiddenField ID="hdnHeaderFromHourClientID" runat="server" />
+            <asp:HiddenField ID="hdnHeaderToHourClientID" runat="server" />
+            <asp:HiddenField ID="hdnHeaderValidFromClientID" runat="server" />
+            <asp:HiddenField ID="hdnHeaderValidToClientID" runat="server" />
+        </div>
+    </ContentTemplate>
+</asp:UpdatePanel>

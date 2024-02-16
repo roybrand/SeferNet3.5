@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://onlinedemog.clalit.org.il:8199/Clalit.ClalitCustomers/ClalitCustomersService.asmx?wsdl" docRef="http://onlinedemog.clalit.org.il:8199/Clalit.ClalitCustomers/ClalitCustomersService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://onlinedemog.clalit.org.il:8199/Clalit.ClalitCustomers/ClalitCustomersService.asmx" xmlns:q1="http://www.clalit.org.il/ClalitCustomers/1.0" binding="q1:ClalitCustomersService" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

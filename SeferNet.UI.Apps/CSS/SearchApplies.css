@@ -1,0 +1,163 @@
+.CssGridTitle
+{
+	font-family:arial;
+	font-weight:bold;
+	FONT-SIZE: 13px;
+    COLOR:Black;
+    TEXT-DECORATION: none;
+}
+
+.CssGridLinkData
+{
+	font-family:arial;
+    FONT-SIZE: 13px;
+    COLOR: #316AC5;
+    TEXT-DECORATION: none;
+    
+}
+.CssGridData
+{
+	font-family:arial;
+    FONT-SIZE: 13px;
+    COLOR: #000000;
+    TEXT-DECORATION: none;
+}
+.CssGridLinkData:hover
+{
+	TEXT-DECORATION: underline;
+	font-family:arial;
+    FONT-SIZE: 13px;
+    COLOR: red;
+    TEXT-DECORATION: none;
+}
+.CssGridPagerStyleIndex
+{
+	COLOR: #000000;
+	font-family:arial;
+	FONT-SIZE: 15px;
+	border:  solid 0px #F0F0F0;
+}
+.CssGridPagerStyleIndex:hover
+{
+	COLOR: #00ff00;
+	font-family:arial;
+	FONT-SIZE: 15px;
+	border:  solid 0px #F0F0F0;
+}
+
+.CssMainGrid
+{
+	border-bottom: solid 0px #FFFFFF;
+	
+}
+
+.CssGridRegularData
+{
+	font-family:arial;
+    FONT-SIZE: 13px;
+    COLOR: BLACK;
+    TEXT-DECORATION: none;
+    cursor:hand;
+}
+
+.CssGridClickableData
+{
+	font-family:arial;
+	cursor:hand;
+    FONT-SIZE: 13px;
+    COLOR: #316AC5;
+    TEXT-DECORATION: none;
+}
+
+BODY
+{	font-family:Arial,Tahoma;
+	margin:0px 0px 0px 0px;
+	scroll:auto;
+	direction:ltr; /*Just for the menu check this out later*/
+}
+
+
+
+.subTitle 
+{
+	FONT-WEIGHT	: bolder;
+	FONT-SIZE	: 13px;
+	FONT-FAMILY	: Arial;
+	COLOR: #13B232	;
+	width:100px;
+}
+
+TD
+{
+	padding	:1px 1px 1px 1px;
+	margin	:1px 1px 1px 1px;
+}
+.btnClass
+{
+    BORDER-RIGHT: 1px solid;
+    BORDER-TOP: 1px solid;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 13px; 
+    BORDER-LEFT: 1px solid;
+    CURSOR: hand; COLOR: white;
+    BORDER-BOTTOM: 1px solid;
+    BACKGROUND-COLOR: #000066;
+    width:50px;
+    FONT-FAMILY:  Arial (Hebrew),Arial, David (Hebrew), Courier New (Hebrew);
+}
+
+
+
+.text
+{
+	font-weight:normal;
+	FONT-SIZE: 13px;
+	COLOR: #575757;
+	TEXT-DECORATION: none;
+	FONT-FAMILY:  Arial (Hebrew),Arial, David (Hebrew), Courier New (Hebrew);
+}
+
+.text:hover
+{
+    FONT-SIZE: 13px;
+    COLOR: #575757;
+    TEXT-DECORATION: underline
+}
+
+.text_b
+{
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 13px;
+	COLOR: #575757;
+	TEXT-DECORATION: none;
+	FONT-FAMILY:  Arial (Hebrew),Arial, David (Hebrew), Courier New (Hebrew);
+}
+.txtClass
+{
+	font-family:Arial;
+	font-size:13px;
+	width:80px;
+	background-color:#f0f0f0;
+}
+
+
+.CssGridClickableData
+{
+	font-family:arial;
+	cursor:hand;
+    FONT-SIZE: 13px;
+    COLOR: #316AC5;
+    TEXT-DECORATION: none;
+}
+
+.ErrorMessage
+{
+	font-family:Arial;
+	font-size:13px;
+	COLOR:#ff0000;
+}
+
+
+
+
+

@@ -1,0 +1,4 @@
+DBRefFolders found in your dbp file
+Connect String: Data Source=mksql215\instance15;Initial Catalog=SeferNet;Integrated Security=True
+Provider: Microsoft SQL Server
+

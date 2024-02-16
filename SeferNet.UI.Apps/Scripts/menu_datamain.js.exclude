@@ -1,0 +1,397 @@
+﻿
+
+if (screen.width>800){
+	sc=1
+	_subOffsetLeft=-284
+}
+else{
+	sc=0
+	_subOffsetLeft=-220
+}
+_menuCloseDelay=100             // The time delay for menus to remain visible on mouse out
+_menuOpenDelay=1              // The time delay before menus open on mouse over
+_followSpeed=10                // Follow scrolling speed
+_followRate=50                // Follow scrolling Rate
+_subOffsetTop=0               // Sub menu top offset
+//_subOffsetLeft=-268            // Sub menu left offset
+//_scrollAmount=3               // Only needed for Netscape 4.x
+//_scrollDelay=20               // Only needed for Netcsape 4.x
+OnClick = true
+
+
+/*with(menuStyle=new mm_style()){
+onbgcolor="#00a9ec";
+oncolor="black";
+offbgcolor="transparent";
+offcolor="white";
+bordercolor="#f5ba6c";
+borderstyle="solid";
+borderwidth=0;
+separatorcolor="white";
+separatorsize="1";
+padding=3;
+fontsize="75%";
+fontweight="bold"
+fontstyle="normal";
+fontfamily="Arial (Hebrew),Arial,Verdana (Hebrew), David (Hebrew), Courier New (Hebrew)";
+//pagecolor="black";
+//pagebgcolor="#82B6D7";
+//headercolor="#000000";
+//headerbgcolor="#ffffff";
+//subimage="arrow.gif";
+//subimagepadding="2";
+//overfilter="Fade(duration=0);Alpha(opacity=100);"; //הופעה, צל
+//outfilter="randomdissolve(duration=0)";//העלמות
+//html="rtl";
+//backgroundimage="url(images/orange2.gif)"
+}*/
+
+with(menuStyle=new mm_style()){
+onbgcolor="#9fd5f9";
+oncolor="black";
+offbgcolor="#00a9ec";
+offcolor="white";
+bordercolor="white";
+borderstyle="solid";
+borderwidth="1";
+separatorcolor="white";
+separatorsize="1";
+fontstyle="normal";
+fontweight="bold";
+fontfamily="Arial (Hebrew),Arial,Verdana (Hebrew), David (Hebrew), Courier New (Hebrew)";
+direction="right"
+align="right";
+if (sc==1){
+	padding=4;
+	itemwidth="160";
+	fontsize="75%";
+}
+else{
+	padding=2;
+	itemwidth="120";
+	fontsize="67%";
+}
+//pagecolor="black";
+//pagebgcolor="#82B6D7";
+//headercolor="#000000";
+//headerbgcolor="#ffffff";
+//subimage="arrow.gif";
+//subimagepadding="2";
+//overfilter="Fade(duration=0);Alpha(opacity=100);"; //הופעה, צל
+//outfilter="randomdissolve(duration=0)";//העלמות
+//html="rtl";
+//backgroundimage="url(images/orange2.gif)"
+}
+/*with(menuStyle=new mm_style()){
+onbgcolor="#9fd5f9";
+oncolor="black";
+offbgcolor="#00a9ec";
+offcolor="white";
+bordercolor="white";
+borderstyle="solid";
+borderwidth="1";
+separatorcolor="white";
+separatorsize="1";
+padding=4;
+fontsize="75%";
+fontstyle="normal";
+fontweight="bold"
+fontfamily="Arial (Hebrew),Arial,Verdana (Hebrew), David (Hebrew), Courier New (Hebrew)";
+}
+with(menuStyle=new mm_style()){
+onbgcolor="#9fd5f9";
+oncolor="black";
+offbgcolor="#00a9ec";
+offcolor="white";
+bordercolor="white";
+borderstyle="solid";
+borderwidth="1";
+separatorcolor="white";
+separatorsize="1";
+padding=4;
+fontsize="75%";
+fontstyle="normal";
+fontweight="bold"
+fontfamily="Arial (Hebrew),Arial,Verdana (Hebrew), David (Hebrew), Courier New (Hebrew)";
+itemwidth="80";
+}*/
+
+with(mymenu=new menuname("shimushon")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=כלליתון;url=http://home.clalit.org.il/sites/clalit/claliton/programs.aspx?href=http://mkweb104/intranet/newlook/Claliton/site/default.aspx;status=מה חדש בשירותי בריאות כללית;target=_self;");
+aI("text=עזרה וכלים;url=http://home.clalit.org.il/sites/clalit/help.aspx;target=_self;");
+aI("text=מפת הפורטל;url=http://home.clalit.org.il/sites/clalit/Map.aspx;target=_self;");
+aI("text=ספר טלפונים;url=http://home.clalit.org.il/sites/clalit/PhoneBook.aspx;status=ספר טלפונים;target=_self;");
+aI("text=אודות הכללית;url=http://home.clalit.org.il/sites/clalit/HotSpot;status=אודות הכללית;target=_self;");
+aI("text=דרך חיים;url=http://www.miok.co.il;status=MIOK;target=_blank;");
+aI("text=אתר הכללית;url=http://www.clalit.org.il/asppage1.asp;status=אתר הכללית;target=_blank;");
+aI("text=כתבו לנו;url=mailto:portal@clalit.org.il;status=כתבו לנו;target=_blank;");
+
+}
+
+
+with(mymenu=new menuname("servicebasket")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=סל השירותים לפי התעריפון;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/ServicesBasket/login.asp?SysName=ServiceBasket&sps=2;target=_self;");
+aI("text=תעריפון;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/ServicesBasket/login.asp?SysName=ServicePrice&sps=2;target=_self;");
+aI("text=מידע על פעולות ובדיקות חדשות/חריגות;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/NonBasketServices/?sps=2;status=מידע על פעולות ובדיקות חדשות/חריגות;target=_self;");
+aI("text=זכאות לפי סל השירותים;url=http://172.16.10.31/kph/index.html;status=מידע על פעולות ובדיקות חדשות/חריגות;target=_blank;");
+aI("text=חוזרי שירות;url=http://home.clalit.org.il/sites/clalit/hozerSherut/default.aspx;target=_self;");
+}
+
+with(mymenu=new menuname("servicebook")){
+style=menuStyle;
+//menuwidth="100";
+overflow="scroll";//פס גלילה
+aI("text=בתי חולים;url=http://mkweb104.clalit.org.il:8093/hospitals/hospitals_params.asp;target=_blank;");
+aI("text=קהילה;url=http://mkweb104.clalit.org.il:8093;target=_blank;");
+}
+
+with(mymenu=new menuname("pictures")){
+style=menuStyle;
+//menuwidth="100";
+overflow="scroll";//פס גלילה
+aI("text=ספריית תמונות שירותי בריאות כללית;url=http://home.clalit.org.il/sites/clalit/DocLib11/Forms/AllItems.aspx;target=_blank;");
+aI("text=ספריית סמלים ותמונות תפריטים לפורטל;url=http://home.clalit.org.il/sites/clalit/DocLib5/Forms/AllItems.aspx;target=_blank;");
+}
+
+
+with(mymenu=new menuname("orglib")){
+style=menuStyle;
+//menuwidth="100";
+overflow="scroll";//פס גלילה
+aI("text=איכות;url=http://home.clalit.org.il/sites/clalit/quality/default.aspx;target=_self;");
+//aI("text=איכות בתי חולים;url=http://home1.clalit.org.il/quality/;target=_blank;");
+//aI("text=איכות קהילה;url=http://home1.clalit.org.il/quality_new/;target=_blank;");
+aI("text=חוזרים מרוכזים;url=http://home.clalit.org.il/sites/clalit/hozerMerocaz;target=_self;");
+aI("text=<img src='../images/arrow.gif'>&nbsp;&nbsp;טפסי ביטוח;showmenu=bituah;status=טפסי ביטוח;");
+aI("text=טפסים;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/forms/main.asp?sps=2;target=_self;");
+//aI("text=כנס איכות 2002;url=http://home1.clalit.org.il/QualityNewKeness/;target=_blank;");
+aI("text=כנס בריאות לאוכלוסיה הערבית;url=http://home.clalit.org.il/sites/clalit/MIGZAR/default.aspx;target=_self;");
+aI("text=לקט יפעת;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/ifatpress/MEDIA/searchResults.asp?LastSessionClipID=11817395&TypeMaxRecords=10&JustPrivateItems=1&infotypeID=2,9,10&whatTzuga=list&showByMaxResults=0&topRecords=10&MainPage=MenuList&noDefaultSearch=yes&saveQuery=no&whatDate=Clips2Client.insertdate&fromTime=00:00&FromDate=5/7/2004;target=_self;");
+aI("text=נהלים והנחיות;url=http://home.clalit.org.il/sites/clalit/hozerMerocaz/DocLib8/nehalim.aspx;target=_self;");
+aI("text=ספריית מכרזים;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/gizbarut/ExtrimTable.asp?typeofdata=3&project=20&sps=2;target=_self;");
+aI("text=<img src='../images/arrow.gif'>&nbsp;&nbsp;ספריות תמונות;showmenu=pictures;status=ספריות תמונות;");
+aI("text=פרוייקטים;url=http://home.clalit.org.il/sites/clalit/projects/default.aspx;target=_self;");
+aI("text=קרן מחקרים;url=http://home.clalit.org.il/sites/clalit/keren/default.aspx;target=_self;");
+
+}
+
+
+
+with(mymenu=new menuname("bituah")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=בקשה למתן טיפול רפואי לנפגע עבודה - עצמאי (בל/283);url=http://home1.clalit.org.il/PdfFiles/WorkInjuryIndependent.pdf;target=_blank;");
+aI("text=טופס למתן טיפול רפואי לנפגע עבודה (בל/250);url=http://home1.clalit.org.il/PdfFiles/WorkInjury.pdf;target=_blank;");
+}
+
+with(mymenu=new menuname("communities")){
+style=menuStyle;
+overflow="scroll";//פס גלילה
+//aI("text=קהילות ידע (אתר ניהול ידע) <img src='http://home.clalit.org.il/sites/clalit/menu/arrow.gif'> ;showmenu=communitiesOut;status=מהרבה חכמים לארגון יודע;target=_blank;");
+//aI("text=קהילות ידע (אתר הפורטל) <img src='http://home.clalit.org.il/sites/clalit/menu/arrow.gif'> ;showmenu=communitiesIn;status=קהילות בטכנולוגיית Share Point;");
+//aI("text=ניהול עצמי מחלקתי <img src='http://home.clalit.org.il/sites/clalit/menu/arrow.gif'> ;showmenu=communitiesIn1;status=קהילות בטכנולוגיית Share Point;");
+aI("text=<font style='color:black;font-size:13px'>מפת הקהילות</font>;url=http://home.clalit.org.il/sites/clalit/communityMap.aspx;target=_self;");
+//aI("text=<img src='images/arrow.gif'>&nbsp;&nbsp;ERP;showmenu=erp;status=ERP;");
+aI("text=באגף המחשוב QA;url=http://home.clalit.org.il/sites/clalit/qa;target=_self;status=צוות בדיקות");
+aI("text=אבטחת מידע;url=http://home.clalit.org.il/sites/clalit/security/default.aspx;target=_self;");
+aI("text=אקרדיטציה;url=http://home.clalit.org.il/sites/clalit/acreditation/default.aspx;target=_self;");
+aI("text=ביזור;url=http://home.clalit.org.il/sites/clalit/nihul/bizur/default.aspx;target=_self;");
+aI("text=ביטחון;url=http://home.clalit.org.il/sites/clalit/bitachonnew/default.aspx;target=_self;");
+aI("text=בילינג;url=http://home.clalit.org.il/sites/clalit/billing/default.aspx;target=_self;");
+aI("text=בקרת שירותים רפואיים;url=http://home.clalit.org.il/sites/clalit/bakaragaf/default.aspx;target=_self;");
+aI("text=גל ERP;url=http://home.clalit.org.il/sites/clalit/galerp/default.aspx;target=_self;status=גל ERP");
+aI("text=גריאטריה;url=http://home.clalit.org.il/sites/clalit/nursing/geriatrics/default.aspx;target=_self;");
+aI("text=<img src='../images/arrow.gif'>&nbsp;&nbsp;המחלקה ליישומי מידע;showmenu=bi;status=מרכז מידע;");
+aI("text=ועדת הלסינקי;url=http://home.clalit.org.il/sites/clalit/helsinkihosp/default.aspx;target=_self;");
+aI("text=חינוך וקידום בריאות;url=http://home.clalit.org.il/sites/clalit/dian/default.aspx;target=_self;");
+aI("text=חשבונאות;url=http://home.clalit.org.il/sites/clalit/accountingSite;target=_self;status=חשבונאות");
+aI("text=כלליתIT;url=http://home.clalit.org.il/sites/clalit/itclalit/default.aspx;target=_self;");
+aI("text=<img src='../images/arrow.gif'>&nbsp;&nbsp;לוגיסטיקה ותשתיות;showmenu=logi;status=לוגיסטיקה ותשתיות;");
+aI("text=מדדי איכות רפואיים;url=http://home.clalit.org.il/sites/clalit/qualitymeasure/default.aspx;target=_self;");
+aI("text=מערך ביטוחי בריאות;url=http://home.clalit.org.il/sites/clalit/groups/default.aspx;target=_self;");
+aI("text=מרכז שירות לקוחות;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/mashal/main.asp?sps=2;target=_self;status=הדרכה");
+aI("text=מרכזי הערכה;url=http://home1.clalit.org.il/mercaz/main.asp;target=_blank;");
+aI("text=משאבי אנוש;url=http://home.clalit.org.il/sites/clalit/mashab1/default.aspx;target=_self;status=משאבי אנוש");
+aI("text=ניהול בכללית;url=http://home.clalit.org.il/sites/clalit/nihul/default.aspx;target=_self;status=ניהול בכללית");
+aI("text=עבודה סוציאלית רפואית;url=http://home.clalit.org.il/sites/clalit/osimdarom/default.aspx;target=_self;status=משאבי אנוש");
+aI("text=<img src='images/arrow.gif'>&nbsp;&nbsp;רפואה ומקצועות הבריאות;showmenu=refua;status=רפואה ומקצועות הבריאות;");
+aI("text=שיווק;url=http://home.clalit.org.il/sites/clalit/marketing/default.aspx;target=_self;status=שיווק");
+aI("text=שעת חירום;url=http://home.clalit.org.il/sites/clalit/herom/default.aspx;target=_self;status=שעת חירום");
+aI("text=תורת בריאות הנפש;url=http://home.clalit.org.il/sites/clalit/PSICIATRIA/torat%20briot%20hanefsh/default.aspx;target=_self;status=תורת בריאות הנפש");
+aI("text=תקציבים;url=http://home.clalit.org.il/sites/clalit/takzivim/default.aspx;target=_self;status=תקציבים");
+}
+
+with(mymenu=new menuname("erp")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=גל ERP;url=http://home.clalit.org.il/sites/clalit/galerp/default.aspx;target=_self;status=גל ERP");
+//aI("text=ידיעון גל ERP;url=http://home.clalit.org.il/sites/clalit/galnews/default.aspx;target=_self;status=ידיעון גל");
+}
+
+
+with(mymenu=new menuname("logi")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=לוגיסטיקה - ראשי;url=http://home.clalit.org.il/sites/clalit/logi/default.aspx;target=_self;");
+aI("text=מינהל הספקה;url=http://home.clalit.org.il/sites/clalit/manhas/default.aspx;target=_self;");
+aI("text=מינהל רכש תרופות;url=http://home.clalit.org.il/sites/clalit/logi/purchasing4All;target=_self;");
+aI("text=אגף רכש ציוד;url=http://home.clalit.org.il/sites/clalit/logi/purchasing4All;target=_self;");
+aI("text=ניהול ריאגנטים;url=http://mknt25.clalit.org.il/;target=_blank;");
+aI("text=ניהול רכש מיכשור רפואי;url=http://mknt25/contact/def_con.asp;target=_blank;");
+aI("text=מינהל תשתיות ובינוי;url=http://home.clalit.org.il/sites/clalit/logi/binui;target=_self;");
+aI("text=<img src='../images/arrow.gif'>&nbsp;&nbsp;הנהלה;showmenu=manage;status=הנהלה;");
+aI("text=<img src='../images/arrow.gif'>&nbsp;&nbsp;מטה;showmenu=mate;status=מטה;");
+aI("text=הנדסה רפואית;url=http://home.clalit.org.il/sites/clalit/construction.aspx;target=_self;");
+
+}
+
+with(mymenu=new menuname("manage")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=מתחם הנהלה;url=http://home.clalit.org.il/sites/clalit/logi/bait/default.aspx;target=_self;status=מתחם הנהלה");
+aI("text=דת וכשרות;url=http://home.clalit.org.il/sites/clalit/logi/dat/default.aspx;target=_self;status=דת וכשרות");
+}
+
+with(mymenu=new menuname("mate")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=תכנון ובקרה;url=http://home.clalit.org.il/sites/clalit/logi/org.aspx;target=_self;status=תכנון ובקרה");
+aI("text=תוה''ב;url=http://home.clalit.org.il/sites/clalit/logi/tohab.aspx;target=_self;status=תוה''ב");
+aI("text=כספים;url=http://home.clalit.org.il/sites/clalit/logi/money.aspx;target=_self;status=כספים");
+aI("text=תקשורת;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/Newlook/logi/?sps=2;target=_self;status=מדור תקשורת");
+}
+
+
+
+with(mymenu=new menuname("refua")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=חדר רופאים;url=http://home.clalit.org.il/sites/clalit/medicine/agapeyrefua/default.aspx;target=_self;status=אגפי רפואה");
+aI("text=אגף רפואה בתי חולים;url=http://home.clalit.org.il/sites/clalit/medicine/agapeyrefua/hativahosp.aspx;target=_self;status=אגף רפואה בתי חולים");
+aI("text=אחיות ואחים בכללית;url=http://home.clalit.org.il/sites/clalit/nursing/default.aspx;target=_self;status=אחיות ואחים בכללית");
+//aI("text=ספריות רפואיות;url=http://home.clalit.org.il/sites/clalit/medicine/links.aspx;target=_self;status=ספריות רפואיות");
+aI("text=רוקחות;url=http://home.clalit.org.il/sites/clalit/pharmacology/;target=_self;status=רוקחות");
+}
+
+with(mymenu=new menuname("bi")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=יישומי מידע;url=http://home.clalit.org.il/sites/clalit/InformationSystems/default.aspx;target=_self;status=יישומי מידע");
+aI("text=מרכז מידע;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/bi/defaultnew.asp?sps=2;target=_self;status=מרכז מידע");
+}
+
+
+/*with(mymenu=new menuname("mashabei")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=משאבי אנוש;url=http://home.clalit.org.il/sites/clalit/mashab/default.aspx;target=_self;status=משאבי אנוש");
+aI("text=פמ''א;url=http://home.clalit.org.il/sites/clalit/mashab/pama/default.aspx;target=_self;status=פמ''א");
+}*/
+
+with(mymenu=new menuname("opsystems")){
+style=menuStyle;
+overflow="scroll";//פס גלילה
+aI("text=Action Base;url=http://home1.clalit.org.il/actionbase/;target=_blank;");
+aI("text=קליקס - CLICKS;url=http://home.clalit.org.il/sites/clalit/clicks/default.aspx;target=_self;");
+aI("text=ERP - COCKPIT;url=http://cockpitserver/cockpit/webclient;target=_blank;");
+aI("text=מערכת ספקים - INFOBAY;url=https://mkweb103.clalit.org.il/cbdistp;target=_blank;");
+aI("text=Lab WebAsk;url=https://mkweb104.clalit.org.il/DoctorsLab/entry.aspx;target=_blank;");
+//aI("text=עדכון פרטים - Outlook;url=https://webapps.clalit.org.il/update/;target=_blank;");
+aI("text=אופק;url=http://home1.clalit.org.il/Medness/Ofek.htm;target=_blank;");
+aI("text=אישורי תרופות;url=http://medconfirm.clalit.org.il:8096;target=_blank;");
+aI("text=אישורים כללית;url=http://mkweb104.clalit.org.il:447/;target=_blank;");
+aI("text=אל תור;url=http://1.9.52.52/NewLook/Tasks/1.06/Login.asp;target=_blank;");
+aI("text=ארכיון תלבר;url=http://1.66.1.8/archive/DefaultLogin.asp;target=_blank;");
+aI("text=בע''ז;url=http://boazweb/boazweb;target=_blank;");
+aI("text=בקרה במרפאות בקהילה;url=http://home.clalit.org.il/sites/clalit/ITMonitor/monitor.aspx;target=_self;");
+aI("text=בקרת הסכמים;url=http://1.1.17.123/newheskemim;target=_blank;");
+aI("text=בקרת תהליכי מערכת עמרי;url=http://1.72.254.114/Cntrlrep;target=_blank;");
+aI("text=<img src='../images/arrow.gif'>&nbsp;&nbsp;בקשת הרשאות;showmenu=bakashatharshaot;status=בקשת הרשאות");
+aI("text=גנומטר - מידע גנטי;url=http://genometer.com/;target=_blank;");
+aI("text=הדפסי הודעות;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/Print/?sps=2;");
+aI("text=הצגת יומן רופא;url=http://mknt166:8198/DoctorsSchedule/ScheduleRequest.aspx;target=_blank;");
+aI("text=זימון ביקורים רפואה יועצת;url=https://e-services.clalit.org.il/zimunet/click/defaultBack.asp?fn=3&WT.cg_n=SpecDoctorOrder;target=_blank;");
+aI("text=חישובי שכר;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/salary/searchfb.asp?sps=2;");
+aI("text=טרשת נפוצה;url=http://webapps.clalit.org.il/sclerosis;target=_blank;");//http://webapps.clalit.org.il/sclerosis/
+aI("text=כללי חיוב;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/hospinfo/main.asp?sps=2;target=_self;");
+aI("text=למידה מרחוק - ברקת;url=http://elearn.clalit.org.il;target=_blank;");
+aI("text=מערכת דאקס;url=http://home.clalit.org.il/sites/clalit/daks/default.aspx;target=_self;");
+aI("text=נוהל מפתח;url=http://webapps/methoda/;target=_blank;");
+aI("text=ניהול רשומות לא רפואיות;url=http://home.clalit.org.il/sites/clalit/RecordManage/default.aspx;target=_self;");
+aI("text=Citrix פורטל ה;url=http://citrix1.clalit.org.il/;target=_blank;");
+aI("text=פנקס התרופות;url=http://clalit-drugformulary.clalit.org.il:8060;target=_blank;");
+aI("text=פניות משאבי אנוש;url=http://crmhr:7074;target=_self;");
+aI("text=קטלוג פריטים מרכזי;url= https://catalogweb.clalit.org.il:8444/;target=_self;");
+aI("text=תיק עובד ממוחשב;url=http://mknt177:8094/D2Kintra/login.aspx;target=_blank;");
+aI("text=תמר באינטראנט;url=http://199.203.134.61;target=_blank;");
+
+
+
+
+}
+
+with(mymenu=new menuname("bakashatharshaot")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=בינה;url=http://1.1.17.123/PniyotLeBina;target=_blank;status=בינה");
+}
+
+with(mymenu=new menuname("helpdesk")){
+style=menuStyle;
+//overflow="scroll";//פס גלילה
+aI("text=הקו החם;url=http://mknt39/xml_bugs/users1.asp;target=_blank;");
+aI("text=מש''ל;url=http://home.clalit.org.il/sites/clalit/programs.aspx?href=http://home1.clalit.org.il/newlook/mashal/main.asp?sps=2;target=_self;");
+aI("text=מערכת תמיכה-תמר;url=http://199.203.134.61/;target=_blank;");
+//aI("text=מרכז מידע-בתי חולים;url=;target=_blank;");
+//aI("text=מרכז שירות;url=http://scnt01/scripts/pdmcgi.exe;target=_blank;");
+//aI("text=מרכז תמיכה;url=http://mknt35/;target=_blank;");
+aI("text=תמיכת Medness;url=http://172.16.10.84/CallCenter;target=_blank;");
+}
+
+
+with(mymenu=new menuname("mahoz")){
+style=menuStyle;
+//menuwidth="100";
+//overflow="scroll";//פס גלילה
+aI("text=דן פתח-תקווה;url=http://home.clalit.org.il/sites/clalit/danpt;target=_self;");
+aI("text=דרום;url=http://home.clalit.org.il/sites/clalit/south;target=_self;");
+aI("text=חיפה וג. מערבי;url=http://home.clalit.org.il/sites/clalit/haifa;target=_self;");
+aI("text=ירושלים;url=http://home.clalit.org.il/sites/clalit/jerusalem;target=_self;");
+aI("text=מרכז;url=http://home.clalit.org.il/sites/clalit/center;status=מחוז מרכז;target=_self;");
+aI("text=צפון;url=http://home.clalit.org.il/sites/clalit/zafon;target=_self;");
+aI("text=שרון שומרון;url=http://home.clalit.org.il/sites/clalit/sharon;target=_self;");
+aI("text=תל-אביב יפו;url=http://home.clalit.org.il/sites/clalit/telavivyafo;target=_self;");
+}
+with(mymenu=new menuname("center1")){
+style=menuStyle;
+itemwidth="150";
+aI("text=דף בית;url=http://home.clalit.org.il/sites/clalit/center;status=מחוז מרכז;target=_self;");
+aI("text=משאבי אנוש;url=http://home.clalit.org.il/sites/clalit/center/mashabCenter;status=משאבי אנוש מחוז מרכז;target=_self;");
+}
+
+with(mymenu=new menuname("hosp")){
+style=menuStyle;
+overflow="scroll";//פס גלילה
+aI("text=בית רבקה;url=http://home.clalit.org.il/sites/clalit/rivka;target=_self;");
+aI("text=גהה;url=http://home.clalit.org.il/sites/clalit/geha;target=_self;");
+aI("text=העמק;url=http://home.clalit.org.il/sites/clalit/emek;target=_self;");
+aI("text=הרצפלד;url=http://home.clalit.org.il/sites/clalit/harzfeld;target=_self;");
+aI("text=טלביה;url=http://home.clalit.org.il/sites/clalit/talbia;target=_self;");
+aI("text=יוספטל;url=http://home.clalit.org.il/sites/clalit/yoseftal;target=_self;");
+aI("text=כרמל;url=http://home.clalit.org.il/sites/clalit/carmel;target=_self;");
+aI("text=לוינשטיין;url=http://home.clalit.org.il/sites/clalit/loewenstein;target=_self;");
+aI("text=מ.ר רבין – בלינסון;url=http://rmc.clalit.org.il;target=_blank;");
+aI("text=מ.ר רבין – השרון (גולדה);url=http://home.clalit.org.il/sites/clalit/golda;target=_self;");
+aI("text=מרכז רפואי מאיר;url=http://home.clalit.org.il/sites/clalit/meir;target=_self;");
+aI("text=סורוקה;url=http://home.clalit.org.il/sites/clalit/soroka;target=_self;");
+aI("text=קפלן;url=http://home.clalit.org.il/sites/clalit/kaplan;target=_self;");
+aI("text=שלוותה-המרכז לבריאות הנפש;url=http://home.clalit.org.il/sites/clalit/shalvata;target=_self;");
+aI("text=שניידר מ. לרפואת ילדים בישראל;url=http://home.clalit.org.il/sites/clalit/schneider;target=_self;");
+}
+
+drawMenus();
+

@@ -1,0 +1,1491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <PostUpgradeAddToSCC>;D:\Projects\SeferShirut\Dev\SeferNet\SeferDB\SeferDB.dbproj;D:\Projects\SeferShirut\Dev\SeferNet\SeferDB\Connections.txt;D:\Projects\SeferShirut\Dev\SeferNet\SeferDB\Scripts\Post-Deployment\Script.PostDeployment.sql;D:\Projects\SeferShirut\Dev\SeferNet\SeferDB\Scripts\Pre-Deployment\Script.PreDeployment.sql</PostUpgradeAddToSCC>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProjectName>SAK</SccProjectName>
+    <PreviousProjectVersion>4.0</PreviousProjectVersion>
+    <UpgradedFromDBP>True</UpgradedFromDBP>
+    <Name>dbpProjectName</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.0</ProjectVersion>
+    <ProjectGuid>{67cbc824-a49e-4e9b-a947-360f3dfe65c3}</ProjectGuid>
+    <DSP>Microsoft.Data.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ShowWizard>False</ShowWizard>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <IncludeSchemaNameInFileName>False</IncludeSchemaNameInFileName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchema</DefaultFileStructure>
+    <DeployToDatabaseAddToServerExplorer>True</DeployToDatabaseAddToServerExplorer>
+    <DeployToScript>True</DeployToScript>
+    <CatalogPropertiesFile>Properties\Database.sqlsettings</CatalogPropertiesFile>
+    <LoadSqlClrTypes>True</LoadSqlClrTypes>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>.\sql\release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TargetConnectionString>
+    </TargetConnectionString>
+    <TargetDatabase>
+    </TargetDatabase>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <SuppressWarnings>
+    </SuppressWarnings>
+    <DeploymentConfigFile>Properties\Database.sqldeployment</DeploymentConfigFile>
+    <SqlCommandVariablesFile>Properties\Database.sqlcmdvars</SqlCommandVariablesFile>
+    <DeployToDatabase>False</DeployToDatabase>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>.\sql\debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TargetConnectionString>
+    </TargetConnectionString>
+    <TargetDatabase>
+    </TargetDatabase>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <SuppressWarnings>
+    </SuppressWarnings>
+    <DeploymentConfigFile>Properties\Database.sqldeployment</DeploymentConfigFile>
+    <SqlCommandVariablesFile>Properties\Database.sqlcmdvars</SqlCommandVariablesFile>
+    <DeployToDatabase>False</DeployToDatabase>
+  </PropertyGroup>
+  <!--Import the settings-->
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\TeamData\Microsoft.Data.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Change Scripts\ImportTablesToDev" />
+    <Folder Include="Queries\StoredProcedures\Back Convert" />
+    <Folder Include="Queries\Views\ExternalViews" />
+    <Folder Include="Queries\Views\ExternalViews\InternetTeamViews" />
+    <Folder Include="Queries\Views\ExternalViews\IntegrationTeamViews" />
+    <Folder Include="Queries\Functions\Map" />
+    <Folder Include="Queries\StoredProcedures\ExternalSPs" />
+    <Folder Include="Queries\StoredProcedures\ExternalSPs\InternetTeamSps" />
+    <Folder Include="Change Scripts\Change Scripts V3.2" />
+    <Folder Include="Queries\Functions\DailyProcesses" />
+    <Folder Include="Queries\Views\DailyProcesses" />
+  </ItemGroup>
+  <ItemGroup>
+    <PropertiesFile Include="Properties\Database.sqlsettings">
+    </PropertiesFile>
+    <PropertiesFile Include="Properties\Database.sqldeployment">
+    </PropertiesFile>
+    <PropertiesFile Include="Properties\Database.sqlcmdvars">
+    </PropertiesFile>
+    <Build Include="Properties\Database.sqlpermissions">
+      <ModelBuilderType>Permissions</ModelBuilderType>
+    </Build>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Change Scripts" />
+    <Folder Include="Change Scripts\ImportTables" />
+    <Folder Include="Queries" />
+    <Folder Include="Queries\Functions" />
+    <Folder Include="Queries\Functions\Print" />
+    <Folder Include="Queries\Functions\Reports" />
+    <Folder Include="Queries\StoredProcedures" />
+    <Folder Include="Queries\StoredProcedures\Interface" />
+    <Folder Include="Queries\StoredProcedures\Reports" />
+    <Folder Include="Queries\StoredProcedures\Reports\RS" />
+    <Folder Include="Queries\Triggers" />
+    <Folder Include="Queries\Views" />
+    <Folder Include="Properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <NotInBuild Include="Connections.txt" />
+    <NotInBuild Include="Change Scripts\ImportTables\ImportTables.sql" />
+    <NotInBuild Include="Queries\Functions\fun_getAdminManagerName.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetDeptEmployeeCurrentStatus.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetDeptEmployeeFax.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetDeptEmployeePhones.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetDeptEmployeePhonesOnly.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetDeptEventPhones.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetDeptPhones.sql" />
+    <NotInBuild Include="Queries\Functions\fun_getDeptQueueOrderPhones_All.sql" />
+    <NotInBuild Include="Queries\Functions\fun_getDeptReceptionRemarks.sql" />
+    <NotInBuild Include="Queries\Functions\fun_getDeptReceptionRemarksValid.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetDeptServiceHoursRemarks.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeCurrentStatus.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeExpert.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeInDeptPositions.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeInDeptProfessions.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeInDeptServices.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeLanguages.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeProfessions.sql" />
+    <NotInBuild Include="Queries\Functions\fun_getEmployeeQueueOrderPhones_All.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeRemarkDeptsCodes.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeRemarkDeptsNames.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeRemarksForReception.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeServices.sql" />
+    <NotInBuild Include="Queries\Functions\fun_getManagerName.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetProfessionsForEmployeeReception.sql" />
+    <NotInBuild Include="Queries\Functions\fun_getRemarkByServiceByEmployee.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetSectorsCodesForProfession.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetSectorsForProfession.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetServiceCodesForEmployeeReception.sql" />
+    <NotInBuild Include="Queries\Functions\fun_GetServicesForEmployeeReception.sql" />
+    <NotInBuild Include="Queries\Functions\fun_ParsePhoneNumberWithExtension.sql" />
+    <NotInBuild Include="Queries\Functions\fun_ShowMenuItem.sql" />
+    <NotInBuild Include="Queries\Functions\fun_StingToTable_DeptHandicappedFacilities.sql" />
+    <NotInBuild Include="Queries\Functions\fun_StingToTable_DeptNames.sql" />
+    <NotInBuild Include="Queries\Functions\fun_StingToTable_DeptStatus.sql" />
+    <NotInBuild Include="Queries\Functions\GetAddress.sql" />
+    <NotInBuild Include="Queries\Functions\getDeptPhoneNumber.sql" />
+    <NotInBuild Include="Queries\Functions\MakePhoneNumber.sql" />
+    <NotInBuild Include="Queries\Functions\Print\fun_GetClinicHandicappedFacilities.sql" />
+    <NotInBuild Include="Queries\Functions\Print\fun_getGeriatricsManagerName.sql" />
+    <NotInBuild Include="Queries\Functions\Print\fun_getPharmacologyManagerName.sql" />
+    <NotInBuild Include="Queries\Functions\Print\fun_GetPivotedDeptReceptionHours.sql" />
+    <NotInBuild Include="Queries\Functions\Print\rfn_GetDeptEmployeeQueueOrderDescriptionsHTML.sql" />
+    <NotInBuild Include="Queries\Functions\Print\rfn_GetDeptEmployeeRemarkDescriptionsHTML.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_CheckExpirationDate_str.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_FormatAddress.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_FormatEmployeeName.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_FormatPhoneReverse.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDepServicetAndDeptEmployeeReceptionIntervalNonIntersection.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptAndEmployeeReceptionIntervalNonIntersection.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptAndServiceReceptionIntervalNonIntersection.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptAndServicesReception.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeExpertProfessionCodes.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeExpertProfessionDescriptions.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeePhoneDescriptions.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeePositionCodes.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeePositionDescriptions.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeProfessionCodes.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeProfessionDescriptions.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeQueueOrderDescriptions.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeQueueOrderDetails.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeQueueOrderSpecialPhones.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeReception.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeReceptionsString.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeesServiceCodes.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeesServiceDescriptions.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptHandicappedFacilities.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptQueueOrderDetails.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptQueueOrderSpecialPhones.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptReception.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptReceptionsString.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptServiceCodes.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptServiceDescriptions.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptServicesReception.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptsReceptionIntervalNonIntersection.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetEmployeeAllExpertProfessionsString.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetEmployeeAllServicesString.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetReportServiceDetailsForDeptsByServicesTypes.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_IsDatesCurrent.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_SplitStringValues.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_SplitStringValuesToStr.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_TimeInterval.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_TimeInterval_float.sql" />
+    <NotInBuild Include="Queries\Functions\Reports\rfn_TimeIntervalsNonIntersectedPart.sql" />
+    <NotInBuild Include="Queries\Functions\rfn_ConvertDate.sql" />
+    <NotInBuild Include="Queries\Functions\SplitString.sql" />
+    <NotInBuild Include="Queries\Functions\SplitStringToTable.sql" />
+    <NotInBuild Include="Queries\Functions\SqlDynamicColumnCommaSeparator.sql" />
+    <NotInBuild Include="Queries\Functions\SqlDynamicWhereAndSeparator.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\GetEmployeeGeneralData.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Delete_InterfaceToSimulErrors.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Delete_InterfaceToSimulErrorsIntermediate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Get_DeadEmloyeesList.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Get_DeletedEmployeesList.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Insert_Interface_NewDepts_Intermediate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Insert_Interface_UpdateDeptsAutomatically_Intermediate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Insert_Interface_UpdateDeptsManually_Intermediate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Insert_InterfaceFromSimulNewDepts_and_UnitTypeConvertSimul.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Insert_InterFaceFromSimulNoUpdate_and_UnitTypeConvertSimul.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Insert_InterfaceToSimulErrors_from_InterfaceToSimulErrorsIntermediate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Insert_LogInterface.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Update_Dept_and_Insert_InterfaceFromSimulDeptHistory.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Update_Employee_License_from_TR_DoctorsInfo226.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_Update_Simul228_From_Admin.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_updateDeptNames.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_UpdateEmployeeServiceInDeptStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_UpdateEmployeeStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_updateUserViaAD.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_updateX_D_Emp_FromEmployeeStatusInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\rpc_GetReportDetails.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptAndEmployeeReceptionDifferences.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptAndOfficeReceptionDifferences.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptAndPharmacyReceptionDifferences.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptAndServicesReceptions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptEmployeeAndPharmacyReceptionDifferences.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptEmployeeReceptions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptEmployees.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptEvents.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptNameAndStatusFuture.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptOfficeAndDeptEmployeeReceptionDifferences.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptsByProfessionsTypes.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptsByServicesTypes.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptSubAdminClinics.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_EmployeeReceptions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_EmployeeRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_Employees.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_AddEvent.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_AttachFileToDeptEvent.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_AttachFileToEvent.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_CheckHoursOverlappRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_checkIfDeptEmployeeQueueOrderEnabled.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_CheckIfDeptHasFutureNotActiveStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_CheckIfEmployeeExistsInDoctorsList.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_CheckIfEmployeeIsDoctor.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteAllDeptEmployeePhones.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteAttachedFileToEvent.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteDeptEmployeeQueueOrderMethods.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptEmployeeReceptionProfessions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptEmployeeReceptionRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptEmployeeService.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteDeptEmployeeServiceRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptEvent.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptEventParticulars.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptEventPhones.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptHandicappedFacilities.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptNames.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptPhones.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptPhonesForSubClinics.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteDeptProfession.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptQueueOrderMethods.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptReceptionRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteDeptReceptions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteDeptRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteDeptServiceStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDeptStatuses.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDic_GeneralRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDIC_PhonePrefix.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDoctorHours.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteDoctorInClinic.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteEmployeeLanguages.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteEmployeePhones.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteEmployeePositionInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteEmployeeProfession.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteEmployeeProfessionsInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteEmployeeReception.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteEmployeeReceptionInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteEmployeeRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteEmployeeRemarksAttributedToDepts.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteEmployeeService.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteEmployeeServiceInDeptStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteEmployeeStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteEmployeeStatusInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteEventFile.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteMainMenuItem.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteMainMenuRestrictions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteProfessionHours.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteProfessionsParentChild.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteRemarkInfo.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteServiceQueueOrderMethods.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteSimulExceptions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteSimulNewDepts.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteSubUnitType.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteUser.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteUserPermissions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteX_dept_XY.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeptOverView.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DoctorOverView.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_FindClinicByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_findDistrictsByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_findDoctorByFirstNameAndSector.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_findDoctorByLastNameAndSector.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getAdminByName_DistrictDepended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getAdministrationList.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getAdminsExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetAllDeptServiceStatuses.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetAllEmployeeDegree.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getAllServicesExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getCachedTables.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getCitiesAndDistrictsByNameAndDistrict.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getCitiesAndDistrictsByNameAndDistricts.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getCitiesByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetCitiesByName_internet.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getCitiesByNameAndDistrict.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getClinicByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetClinicByName_AdministrationDepended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getClinicByName_DistrictDepended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getClinicByNameWithDeptCode_DistrictDepended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetCurrentStatusForEmployee.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetCurrentStatusForEmployeeInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptDetailsForPopUp.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptDetailsForUpdate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptDistrict.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEmployeePhones.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEmployeeReceptionProfessions_Attributed.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEmployeeReceptionRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEmployeeReceptionRemarksByID.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptEmployeeServiceRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEmployeeServicesForReceptionToAdd.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEventByID.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptEventFiles.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEventForPopUp.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEventForUpdate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEventParticularByID.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEventParticulars.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptEvents.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptFirstPhone.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptForEmployee.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptList_PagedSorted.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptMainPhones.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptNamesForUpdate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptPhoneByID.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptPhones.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptProfessions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptQueueOrderMethods.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptReceptionAndRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptReceptionRemarkForUpdate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptReceptionRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptReceptions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptRemarksForPopUpSelection.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptsForEmployeeRemarkFromAllDepts.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptsListByParams.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDeptStatusByID.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDIC_GeneralRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDic_GeneralRemarksByRemarkID.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDicQueueOrderMethods.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDistrictsExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDoctorList_PagedSorted.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDoctorNameList.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployee.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeByFirstNameFrom226.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeByLastNameFrom226.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeDepts.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeDeptsByText.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeGeneralData.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeInClinicDetails.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeListForSpotting.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeListForSpotting_MF.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeePositionsExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeProfessionForUpdate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeProfessions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeProfessionsInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeQueueOrderDescription.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeQueueOrderMethods.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeReceptionAndRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeReceptionByServiceAndProfession.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeRemarksAttributedToDepts.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeRemarksForDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeRemarksForUpdate.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeesDeadOrDeletedOnMF.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeSectors.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeServiceInDeptStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeServices.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeServicesExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeServicesInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeSpecialityByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeStatusInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getErrorsListSimulVcSefer.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEventsExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetFileNameByDeptEventFileID.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getHandicappedFacilities.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getHandicappedFacilitiesByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getHandicappedFacilitiesExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getHandicappedFacilitiesForDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getHandicappedFacilitiesInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetIntegerDevidedByCountForEmployeesDeadOrDeletedOnMF.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getLanguagesByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getLanguagesExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getLanguagesForEmployee.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetLanguagesForEmployeeExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMailToList.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMainDeptPhone.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getMainMenuData.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getMainMenuItem.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getNeighbourhoodsByCityCode.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getNewClinic.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getNewClinicsList.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetNextEventCode.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getObjectTypesExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getPhonePrefixListAll.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetPositionsByNameAndSector.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getProfessionsByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getProfessionsForEmployee.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getProfessionsNotInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getProfessionsWithDependency.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetQueryFields.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetQueryParameters.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetRelevatSectors.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getRemarksExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getRemarksTypes.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServiceForPopUp_ViaEmployee.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServiceRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetServicesAndEvents.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServicesAndEventsByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServicesByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetServicesNewAndEventsBySector.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServicesByNameAndSector.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetServicesNewBySector.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEventsByName.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getSimul403_interface.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getSimulExceptions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getSitesByCityCode.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getStreetsByCityCode.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getSubUnitTypes.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getSweepingRemarkAreasByRelatedRemarkID.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getSweepingRemarkByID.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSweepingRemarkExcludedDepts.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSweepingRemarks_MultiSelected.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetTreeViewEvents.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetUnitRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getUnitTypeConvertSimul.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getUnitTypesByName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getUnitTypesExtended.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getUnitTypeWithAttributes.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getUserDetails.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getUserInfo.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getUserList.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getUserPermissions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getUserPermittedDistricts.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptEmployeePhone.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptEmployeeQueueOrderPhone.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptEmployeeReceptionRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptEmployeeService.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertDeptEmployeeServiceRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptEvent.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptEventParticular.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptHandicappedFacilities.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptName.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptNameForNewDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptPhone.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptPhoneForSubClinics.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptPhonesForNewDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptProfessionHours.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptProfessions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptQueueOrderHours.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptQueueOrderMethod.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptQueueOrderPhone.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptReceptionRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptReceptions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertDeptServiceStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptSimul.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptStatusForNewDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDeptStatusWithoutDependency.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertDic_GeneralRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDIC_PhonePrefix.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertDoctorAbsence.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertDoctorInClinic.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertEmployeeIntoSefer.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertEmployeeLanguages.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertEmployeePhone.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertEmployeePositionsInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertEmployeeProfession.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertEmployeeQueueOrderHours.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertEmployeeQueueOrderMethod.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertEmployeeReception.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertEmployeeRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertEmployeeRemarksAttributedToDepts.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertEmployeeServiceInDeptStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertEmployeeServices.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertEmployeeStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertEmployeeStatusInDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertHandicappedFacilities.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertHandicappedFacility.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertIncorrectDataReport.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertMainMenuItem.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertMainMenuRestriction.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertPosition.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertServiceQueueOrderHours.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertServiceQueueOrderMethod.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertServiceQueueOrderPhone.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertSimulExceptions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertSubUnitTypeCodeToUnitTypeCode.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertSweepingDeptRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertSweepingRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertSweepingRemarkExclusions.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertUnitType.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertUser.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertUserPermission.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertX_dept_XY.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_IsEmployeeParaMedicalOrSiudSector.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_IsProfessionAllowedToEmployee.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_IsVirtualDoctorOrMedicalTeam.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_OrganizationTree.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_showHandicappedFacilities.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_showLanguagesTree.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_showPositionsTree.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_showProfessionsTree.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_showServicesTree.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_showTreeViewItemDetails.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_showTreeViewUnitTypes.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_Update_x_Dept_Employee_PhonesInClinic.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateDeptEmployeeQueueOrder.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateDeptEmployeeQueueOrderPhone.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateDeptEvent.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateDeptEventParticular.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateDeptHandicappedFacilities.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateDeptLevelAndShowInInternet.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateDeptProfessionHours.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateDeptQueueOrder.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateDeptReceptionRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateDeptRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateDIC_PhonePrefix.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateDicGeneralRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateDoctorsInClinic.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateEmployee.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateEmployeeCurrentStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateEmployeeExpertise.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateEmployeeInDeptCurrentStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateEmployeeLicenseFromMF.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateEmployeeProfession.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateEmployeeRemarks.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateEmployeesDeadOrDeletedOnMF.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateEmployeeServiceInDeptCurrentStatus.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateEmplyeePhonesCascadeFromDept.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateEvent.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateHandicappedFacility.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateLanguages.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateMainMenu_MoveItem.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateMainMenuItem.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updatePosition.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateSubUnitTypes.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateSweepingRemark.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateUnitTypeConvertSimul.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateUnitTypes.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateUser.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\sp_generate_inserts.sql" />
+    <NotInBuild Include="Queries\Triggers\rtr_MessageInfo.sql" />
+    <NotInBuild Include="Queries\Views\v_EmployeeReceptionByServiceAndProfession.sql" />
+    <NotInBuild Include="Queries\Views\View_AllAdministrations.sql" />
+    <NotInBuild Include="Queries\Views\View_AllDeptAddressAndPhone.sql" />
+    <NotInBuild Include="Queries\Views\View_AllDistricts.sql" />
+    <NotInBuild Include="Queries\Views\View_CacheTablesRefreshingSP.sql" />
+    <NotInBuild Include="Queries\Views\View_DayPeriod.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptAndServicesRemarks.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptDetails.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptEmployeeExpertProfessions.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptEmployeePositions.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptEmployeeProfessions.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptEmployeeReceptions.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptEmployeeRemarks.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptEmployeesCurrentStatus.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptEmployeeServices.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptEventParticularsStartFinish.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptProfessions.sql" />
+    <NotInBuild Include="Queries\Views\View_DeptRemarks.sql" />
+    <NotInBuild Include="Queries\Views\View_EmployeeExpertProfessions.sql" />
+    <NotInBuild Include="Queries\Views\View_EmployeeProfessions.sql" />
+    <NotInBuild Include="Queries\Views\View_EmployeeSector.sql" />
+    <NotInBuild Include="Queries\Views\View_EmployeeSector_WithoutDoctor.sql" />
+    <NotInBuild Include="Queries\Views\View_EmployeeServices.sql" />
+    <NotInBuild Include="Queries\Views\View_Events.sql" />
+    <NotInBuild Include="Queries\Views\View_InterfaceErrorCodes.sql" />
+    <NotInBuild Include="Queries\Views\View_Languages.sql" />
+    <NotInBuild Include="Queries\Views\View_Parent_Professions.sql" />
+    <NotInBuild Include="Queries\Views\view_positions.sql" />
+    <NotInBuild Include="Queries\Views\View_Professions.sql" />
+    <NotInBuild Include="Queries\Views\View_QueueOrderMethod.sql" />
+    <NotInBuild Include="Queries\Views\View_Remarks.sql" />
+    <NotInBuild Include="Queries\Views\View_RemarkTypeDeptAndServices.sql" />
+    <NotInBuild Include="Queries\Views\View_SubAdministrations.sql" />
+    <NotInBuild Include="Queries\Views\View_subProfessions.sql" />
+    <NotInBuild Include="Queries\Views\View_SubUnitTypes.sql" />
+    <NotInBuild Include="Queries\Views\View_UnitType.sql" />
+    <NotInBuild Include="Queries\Views\VMessageInfoLanguages.sql" />
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetZoomClinicTemplate.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vAllDeptDetails.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vEmployeeReceptionHours.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vEmployeeReceptionRemarks.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vEmployeeProfessionalDetails.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vDeptReceptionHours.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vDummy_LastUpdateDateOfRemarks.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vDeptEvents.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vServicesReceptionWithRemarks.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vEmployeeDeptRemarks.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Change Scripts\ImportTablesToDev\ImportTables.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertRemarkCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateRemarkCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteRemarkCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDIC_RemarkCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\View_ActivityStatus_Binary.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_getEmployeeOrderByProfessionInDept.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vDeptServicesRemarks.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteMushlamToSeferMapping.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateMushlamToSeferMapping.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServiceByNameOrCode.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertMushlamToSeferServiceMapping.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vDeptServices.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteServiceCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateServiceCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertServiceCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMF_Specialities051.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetServiceCategoriesExtended.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetServiceByCode.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateService.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetServicesForUpdate.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServiceCategoriesByName.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetServicesFromMFTables.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertService.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetSectorsForService.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateEmployeeInDeptStatusWhenNoProfessions.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_DeptAndServicesRemarks.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_GetDeptsForTextFile.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\BuildConvertServicesToProfessionsRecords.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_CleanString.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_CutNumericStr.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCCleanString.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCComapareDistricts.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCCompareDates.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCCompareDates3.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCCompareDatesToLog.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCGetComment.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCGetMoreRecentDate.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_ingBCGetStreet.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_ingBCIsBC.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCNewCodeToOldCode.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCNewCodeToOldCode2.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCNewCodeToOldCodeBySector.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_IngBCUnitType.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rfn_SplitStringValuesToStrLong.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rpc_IngBCUpdateCrossDistricts.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Back Convert\rpc_ingBCWriteToLog.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\View_DeptEmployee_EmployeeRemarks.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptGeneralBelongings.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getReceptionDays.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertSynonymToService.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSynonymsToService.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteServiceSynonym.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateDeptGeneralBelongings.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_updateDIC_ReceptionDays.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_getRolesForMenuItem.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_getEmployeeServiceQueueOrderPhones_All.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\InternetTeamViews\VFastDept.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\InternetTeamViews\VFastDeptShift.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\InternetTeamViews\VFastDeptServiceShift.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeServicePhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeServiceQueueOrderGroup.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_Update_x_Dept_Employee_Service_CascadeUpdatePhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\InternetTeamViews\VFastEmployee.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\InternetTeamViews\VFastDeptEmployeeProfessionShift.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_DeptReceptionHours.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getUserPermittedDistrictsForReports.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_getEmployeeQueueOrderPhones_ByQueueOrderGroup.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\rfn_SplitStringByDelimiterValuesToStr.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\rfn_AddInputTypeToRemark.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\Map\GetCityCodeToCompareWithExcellData.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\Map\GetXYMulitplier.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\Map\GetXYCode.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeServiceGroup_QueueOrderDescription.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeClinicTeam.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptGeneralBelongingsByEmployee.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeServiceSector.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetUnitTypes.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetQueueOrderHours.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetQueueOrderMethods.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetQueueOrderPhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_DeptDataForASR.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\InternetTeamViews\vBDCAdministrationLookup.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\InternetTeamViews\vBDCServiceLookup.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\ExternalSPs\InternetTeamSps\rpc_GetUnitTypesForEmergency.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\ExternalSPs\InternetTeamSps\rpc_GetCitiesByAdministration.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\ExternalSPs\InternetTeamSps\rpc_GetDoctorNameForAC.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\ExternalSPs\InternetTeamSps\rpc_GetAreaOfExpertiseForAC.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\ExternalSPs\InternetTeamSps\rpc_GetClinicsForAC.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\ExternalSPs\InternetTeamSps\rpc_GetSubUnitTypesForPharmacies.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetServicePhoneAndFaxes.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getNeighbourhoodsAndSitesByCityCode.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_EmployeeReceptionHoursForShivuk.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_DeptReceptionHoursForShivuk.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMushlamServiceByCode.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMushlamServiceExtendedSearch.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeReceptionAfterExpiration.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getDistrictsByUnitType.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_getEmployeeQueueOrderPhones_Grouped.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMushlamServicesByCodesSearch.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\v_DeptReception.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetDeptEmployeeServicePhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeServiceQueueOrderPhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetDeptEmployeeServiceQueueOrderDescription.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetDeptEmployeeServiceFaxes.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeServiceQueueOrderMethod.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_HelperLongPrint.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_CascadeEmployeeServiceQueueOrderFromDept.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMushlamModelsForService.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="rfn_GetRemarksAreasNames.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="rfn_GetEmployeeRemarkDeptsNames.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="rfn_GetFotmatedRemark.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vServicesAndQueueOrder.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\rfn_GetDeptServiceQueueOrderDescriptionsHTML.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_ClinicData.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_ClinicReceptionHours.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_ClinicPhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_ClinicDoctorsData.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_DoctorReceptions.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_DoctorLanguages.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\InternetTeamViews\VMobileDeptReception.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\InternetTeamViews\VMobileEmployeeReception.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetAdditionalDistrictCodes.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetAdditionalDistrictNames.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\View_DeptEmployeeReceptionCount.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptServices.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDepSubClinics.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_DailyUpdate.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_updateDeptFromDeptStatus.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Interface\rpc_DeleteOldDeptAndEmployeeRemarks.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_ClinicFacilities.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vIngr_DoctorClinicPhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getReceptionTypesByGeneralBelongings.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\InternetTeamViews\VZimunetDeptData.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\View_AllDistricts_Extended.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMushlamConnectionTables.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_insertMushlamToSeferMapping.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetProfessionsAndServicesForEmployeeReception.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Change Scripts\Change Scripts V3.2\SchemaChangesV3.2.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Change Scripts\Change Scripts V3.2\SPChangesV3.2.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Change Scripts\Change Scripts V3.2\DataChangesV3.2.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetBrochures.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetForms.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertNewBrochure.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertNewForm.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateForm.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteForm.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateBrochure.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteBrochure.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\rfn_SplitStringByDelimiterValuesToInt.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetClinicMedicalAspects.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMedicalAspects.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertClinicMedicalAspects.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetServicesForMedicalAspects.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteClinicMedicalAspect.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalServices.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getHealthOfficeCodeDescriptionForSalServicesByServiceCode.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetGroupCodeDescription_ForSearchSalServices.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetProfessionCodeDescription_ForSearchSalServices.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetOmriReturnCodeDescription_ForSearchSalServices.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetOmriReturnsForSalServices.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetICD9DescForSalServices.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetICD9CodeDescription_ForSearchSalServices.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetGroupsForSalServices.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalServices_PopulationTariff.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateEmployeeInDeptCurrentStatusByDeptEmployeeID.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetMedicalAspectsForService.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vManagers.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vAdminManagers.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMedicalAspectsForAutocomplete.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetClalitServicesForAutocomplete.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMedicalAspectDescription_ByMedicalAspectCode.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetClalitServiceDescription_ByClalitServiceCode.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\DailyProcesses\fun_GetEmployeeIndependence.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\DailyProcesses\vClinics.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\DailyProcesses\vDoctors.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptRemarkDetails.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalServiceDetails.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalServiceTarifon.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalServiceICD9.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetPopulationDetails.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalServiceTarifonHistory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetEmployeeMushlamInDeptServices.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMainDeptPhoneByDeptEmployeeID.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalServiceHistoryDetails.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertNewClinicsList.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertUnitTypeConvertSimul.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\DailyProcesses\vInterface_NewDepts.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_deleteSalCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertSalCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalCategories.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateSalCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalProfessionToCategories.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertSalProfessionToCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateSalProfessionToCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteSalProfessionToCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetGroupsByGroupName.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetOmriReturnsByName.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeServiceQueueOrderSpecialPhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\Reports\rfn_GetDeptEmployeeServiceQueueOrderDetails.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalServiceInternetDetails.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateSalServiceInternetDetails.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalBodyOrgans.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\DailyProcesses\VBeraleDeptEmployeeServices.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\DailyProcesses\VBeraleDeptEmployeeServiceReceptions.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\ExternalSPs\InternetTeamSps\rpc_GetServicesForAC.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\GetProfessionsForSalServices_UnCategorized.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\DailyProcesses\VBeraleDeptReception.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\DailyProcesses\VBeraleEmployeeReception.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetProfessionsForInternet.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateProfessionForInternet.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\Reports\RS\rprt_EmployeeMushlamCommunityReceptionDifferences.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_Dept.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_deptEmployeeReception.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_Dept_Employee_Service_Ext.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DeptEmployeeQueueOrderPhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DeptEmployeePhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_Cities.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_deptEmployeeReceptionServices.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DeptHandicappedFacilities.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DeptPhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DeptQueueOrderMethod.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DeptQueueOrderPhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DeptReception.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_deptSimul.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DIC_HandicappedFacilities.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DIC_PhoneTypes.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DIC_QueueOrderMethod.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_Employee.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_EmployeeLanguages.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_EmployeeQueueOrderMethod.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_EmployeeServices.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_languages.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_services.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_Streets.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_UnitType.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_x_Dept_Employee.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DeptEmployeeServicePhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DeptEmployeeServiceQueueOrderPhones.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\IntegrationTeamViews\vWS_DeptEmployeeServiceQueueOrderMethod.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeProfessionsExtended.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\fun_GetDeptAttribution.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vEmployeeReceptionHours_Having180300service.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetSalCategoryDetails.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vMushlamCervices.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetClinicTeamAgreementsInDept.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vEmplServReseption.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\vEmplServAgreemExpert.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\DailyProcesses\vSaharDeptreceptionHours.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetMailToList_ForSalServices.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteAdminComment.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetAdminComments.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateAdminComment.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertAdminComment.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\DailyProcesses\vConversion405.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\vGISDeptData.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\VShivukDeptDataForGoogle.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\vMaraIndependentDoctorsData.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\View_DeptEmployeeService1600.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\vGISDoctorData.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetDeptCategory.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetProfessionsForSalServices.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\vMushlamDoctorsData.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Views\ExternalViews\vCarmelDoctorsData.sql">
+      <SubType>NotInBuild</SubType>
+    </NotInBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <BuildContributorArgument Include="OutDir=$(OutDir)" />
+  </ItemGroup>
+  <ItemGroup>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_CheckIfEmployeeExistsInEmployee.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServiceCategories.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServiceCategory.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getSubUnitTypesWithSubstituteNames.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteSubUnitTypeSubstituteName.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertSubUnitTypeSubstituteName.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertEmployeeServicePhones.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteEmployeeServicePhones.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getEmployeeServiceQueueOrderMethods.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_DeleteEmployeeServiceQueueOrderMethods.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_UpdateEmployeeServiceQueueOrder.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertEmployeeServiceQueueOrderMethod.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertEmployeeServiceQueueOrderPhone.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_InsertEmployeeServiceQueueOrderHours.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetEmployeeServiceQueueOrderDescription.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\Functions\SplitStringNoOrder.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getHealthOfficeDesc.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServiceCodesForSalServices.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_GetPopulationsForSalServices.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+    <NotInBuild Include="Queries\StoredProcedures\rpc_getServiceDescriptionForSalServicesByServiceCode.sql">
+      <SubType>Code</SubType>
+    </NotInBuild>
+  </ItemGroup>
+</Project>

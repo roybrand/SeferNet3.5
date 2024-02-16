@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ADservice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestService" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ADserviceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ADserviceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ADserviceSoapIn">
+    <wsdl:part name="parameters" element="tns:ADservice" />
+  </wsdl:message>
+  <wsdl:message name="ADserviceSoapOut">
+    <wsdl:part name="parameters" element="tns:ADserviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ADserviceHttpGetIn">
+    <wsdl:part name="RequestService" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ADserviceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ADserviceHttpPostIn">
+    <wsdl:part name="RequestService" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ADserviceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="ADservice">
+      <wsdl:input message="tns:ADserviceSoapIn" />
+      <wsdl:output message="tns:ADserviceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpGet">
+    <wsdl:operation name="ADservice">
+      <wsdl:input message="tns:ADserviceHttpGetIn" />
+      <wsdl:output message="tns:ADserviceHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpPost">
+    <wsdl:operation name="ADservice">
+      <wsdl:input message="tns:ADserviceHttpPostIn" />
+      <wsdl:output message="tns:ADserviceHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ADservice">
+      <soap:operation soapAction="http://tempuri.org/ADservice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ADservice">
+      <soap12:operation soapAction="http://tempuri.org/ADservice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpGet" type="tns:Service1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ADservice">
+      <http:operation location="/ADservice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpPost" type="tns:Service1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ADservice">
+      <http:operation location="/ADservice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="https://wsadmin.clalit.org.il/ADservice/ADservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="https://wsadmin.clalit.org.il/ADservice/ADservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpGet" binding="tns:Service1HttpGet">
+      <http:address location="https://wsadmin.clalit.org.il/ADservice/ADservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpPost" binding="tns:Service1HttpPost">
+      <http:address location="https://wsadmin.clalit.org.il/ADservice/ADservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

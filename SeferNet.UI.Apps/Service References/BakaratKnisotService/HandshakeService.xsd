@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BakaratKnisot.Handshake.SI" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BakaratKnisot.Handshake.SI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/HandshakeService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GetTokenByXMLInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationCallingId" type="xs:int" />
+      <xs:element minOccurs="0" name="ApplicationDestinationId" type="xs:int" />
+      <xs:element minOccurs="0" name="ApplicationJsonFormatParams" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MachineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRealName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTokenByXMLInput" nillable="true" type="tns:GetTokenByXMLInput" />
+  <xs:complexType name="GetTokenBaseResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StatusCode" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTokenBaseResult" nillable="true" type="tns:GetTokenBaseResult" />
+  <xs:complexType name="GetTokenBaseInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationCallingId" type="tns:ApplicationEnum" />
+      <xs:element minOccurs="0" name="ApplicationDestinationId" type="tns:ApplicationEnum" />
+      <xs:element minOccurs="0" name="ApplicationJsonFormatParams" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MachineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRealName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTokenBaseInput" nillable="true" type="tns:GetTokenBaseInput" />
+  <xs:simpleType name="ApplicationEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BakaratKnisot">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">740</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Boaz">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">211</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Shvil">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">655</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Confirmation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">237</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OpenText">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">698</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Clicks">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">310</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Moked">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Idan">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SeferNet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">645</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ApplicationEnum" nillable="true" type="tns:ApplicationEnum" />
+  <xs:complexType name="CheckTokenBaseInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationCallingId" type="tns:ApplicationEnum" />
+      <xs:element minOccurs="0" name="ApplicationDestinationId" type="tns:ApplicationEnum" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckTokenBaseInput" nillable="true" type="tns:CheckTokenBaseInput" />
+  <xs:complexType name="CheckTokenBaseResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationJsonFormatParams" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StatusCode" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckTokenBaseResult" nillable="true" type="tns:CheckTokenBaseResult" />
+</xs:schema>

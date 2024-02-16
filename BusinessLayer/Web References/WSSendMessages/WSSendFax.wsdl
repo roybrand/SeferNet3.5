@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendFax">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_xmlData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_ADUserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_sendingApplication" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_faxNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_iAggrigateFilesSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_PlaceIndentifier" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_msgDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendFaxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendFaxResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p_xmlData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_ADUserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_sendingApplication" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_faxNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_iAggrigateFilesSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="p_PlaceIndentifier" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_msgDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDAtaFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDAtaFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDAtaFromDBResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendFaxSoapIn">
+    <wsdl:part name="parameters" element="tns:SendFax" />
+  </wsdl:message>
+  <wsdl:message name="SendFaxSoapOut">
+    <wsdl:part name="parameters" element="tns:SendFaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDAtaFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDAtaFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetDAtaFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDAtaFromDBResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSFaxSenderSoap">
+    <wsdl:operation name="SendFax">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check validity of xml message, Update db with fax line ,Send fax using msmq</wsdl:documentation>
+      <wsdl:input message="tns:SendFaxSoapIn" />
+      <wsdl:output message="tns:SendFaxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check validity of xml message, Update db with message line ,Send sms using msmq</wsdl:documentation>
+      <wsdl:input message="tns:SendSMSSoapIn" />
+      <wsdl:output message="tns:SendSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAtaFromDB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">test service code and db access</wsdl:documentation>
+      <wsdl:input message="tns:GetDAtaFromDBSoapIn" />
+      <wsdl:output message="tns:GetDAtaFromDBSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSFaxSenderSoap" type="tns:WSFaxSenderSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendFax">
+      <soap:operation soapAction="http://tempuri.org/SendFax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://tempuri.org/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDAtaFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetDAtaFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSFaxSenderSoap12" type="tns:WSFaxSenderSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendFax">
+      <soap12:operation soapAction="http://tempuri.org/SendFax" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap12:operation soapAction="http://tempuri.org/SendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDAtaFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetDAtaFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSFaxSender">
+    <wsdl:port name="WSFaxSenderSoap" binding="tns:WSFaxSenderSoap">
+      <soap:address location="http://mkweb111/WSSendFaxes/WSSendFax.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSFaxSenderSoap12" binding="tns:WSFaxSenderSoap12">
+      <soap12:address location="http://mkweb111/WSSendFaxes/WSSendFax.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BakaratKnisot.CentralLog.Server.SI" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BakaratKnisot.CentralLog.Server.SI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mkwebt110.clalit.org.il/BakaratKnisot.WebServices/CentralLogRegularService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CentralLogInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccessful" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MachineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemId" type="tns:ApplicationEnum" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserNameReal" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CentralLogInput" nillable="true" type="tns:CentralLogInput" />
+  <xs:simpleType name="ApplicationEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BakaratKnisot">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">740</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Moked">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Boaz">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">211</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Shvil">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">655</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Confirmation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">237</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SeferNet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">645</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ApplicationEnum" nillable="true" type="tns:ApplicationEnum" />
+  <xs:complexType name="CentralLogOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CentralLogId" type="xs:long" />
+      <xs:element minOccurs="0" name="EventDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FailedCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MachineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemId" type="tns:ApplicationEnum" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserNameReal" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CentralLogOutput" nillable="true" type="tns:CentralLogOutput" />
+  <xs:complexType name="CentralLogGetInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SystemId" type="tns:ApplicationEnum" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CentralLogGetInput" nillable="true" type="tns:CentralLogGetInput" />
+</xs:schema>
